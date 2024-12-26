@@ -1,0 +1,19 @@
+ {
+	"powers": [
+		"moonsorigins:vengeful_spirit/chill_of_the_grave",
+		"moonsorigins:vengeful_spirit/ethereal_form",
+		"moonsorigins:vengeful_spirit/vengeful_aura",
+		"moonsorigins:vengeful_spirit/spirit_rage",
+		"moonsorigins:vengeful_spirit/tormented",
+		"moonsorigins:general_power_library/health_variations_2_heart_lost",
+		"moonsorigins:vengeful_spirit/burning_sun",
+		"moonsorigins:general_power_library/hide_armour",
+		"moonsorigins:vengeful_spirit/corporeal",
+		"moonsorigins:vengeful_spirit/summon_gox"
+	],
+	"icon": "minecraft:chain",
+	"order": 0,
+	"impact": 3,
+	"name": "Vengeful Spirit",
+	"description": "In life, you were a villager wronged by those around you, leading to your tragic demise and the curse of an unsettled spirit. Now, your rage and sorrow manifest in a haunting chill, seeking vengeance against the living. You wander through the Overworld, bound by the remnants of your painful past, able to influence but never fully return to the physical world. Your connection to the supernatural gives you unique powers, yet also curses you with weaknesses tied to the material realm you no longer belong to.\n"
+}

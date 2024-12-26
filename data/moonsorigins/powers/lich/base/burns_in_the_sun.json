@@ -1,0 +1,33 @@
+{
+  "type": "origins:multiple",
+
+  "burn_normal": {
+    "type":"origins:burn",
+    "interval":30,
+    "burn_duration":5,
+    "condition":{
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:exposed_to_sun"
+        },
+        {
+          "type": "origins:in_rain",
+          "inverted": true
+        },
+        {
+          "type": "origins:power",
+          "power": "moonsorigins:lich/forms/shadow/shadow_realm",
+          "inverted": true
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/formless_resource",
+          "comparison": "==",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+  "hidden": true
+}

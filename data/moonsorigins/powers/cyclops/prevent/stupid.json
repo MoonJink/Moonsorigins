@@ -1,0 +1,27 @@
+{
+  "type": "origins:multiple",
+
+  "prevent_use_of_brewing_actionbar": {
+    "type": "origins:action_on_block_use",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "title @s actionbar {\"text\": \"You dont understand what this does!\", \"color\": \"red\"}"
+    },
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:brewing_stand"
+    }
+  },
+  "prevent_use_of_enchanting_actionbar": {
+    "type": "origins:action_on_block_use",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "title @s actionbar {\"text\": \"You dont understand what this does!\", \"color\": \"red\"}"
+    },
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:enchanting_table"
+    }
+  },
+  "hidden": true
+}

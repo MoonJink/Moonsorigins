@@ -1,0 +1,44 @@
+{
+  "hidden": true,
+  "type": "origins:multiple",
+  "base": {
+    "title": "          Alchemist Pouch",
+    "type": "origins:inventory",
+    "container_type": "chest",
+    "key": {
+      "key": "key.origins.secondary_active"
+    }
+  },
+  "modification": {
+    "type": "origins:action_over_time",
+    "interval": 100,
+    "entity_action": {
+      "type": "origins:modify_inventory",
+      "inventory_type": "power",
+      "power": "moonsorigins:alchemist/alchemist_pouch_base",
+      "item_action": {
+        "type": "origins:consume",
+        "amount": 64
+      },
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": [
+          {
+            "tag": "origins:alchemist/alchemist_pouch"
+          },
+          {
+            "tag": "origins:alchemist/potion_ingredients"
+          },
+          {
+            "tag": "origins:alchemist/mjoll_tag"
+          },
+          {
+            "tag": "origins:alchemist/alchemical_transformations"
+          }
+        ],
+        "inverted": true
+
+      }
+    }
+  }
+}

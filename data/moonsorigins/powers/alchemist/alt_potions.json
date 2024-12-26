@@ -1,0 +1,69 @@
+{
+  "type": "origins:multiple",
+  "potion": {
+    "type": "origins:action_on_item_use",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:grant_power",
+          "power": "moonsorigins:alchemist/alt_potions_flight",
+          "source": "moonsorigins:alchemist/alt_potions"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.beacon.activate",
+          "volume": 1,
+          "pitch": 1.5
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 6000,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "power remove @s moonsorigins:alchemist/alt_potions_flight"
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 6000,
+          "action": {
+            "type": "origins:play_sound",
+            "sound": "minecraft:block.beacon.deactivate",
+            "volume": 1,
+            "pitch": 1
+          }
+        }
+      ]
+    },
+    "item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:potion"
+          }
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{CustomPotionColor:16766167}"
+        }
+      ]
+    }
+  },
+  "flight": {
+    "type": "origins:creative_flight"
+  },
+  "action": {
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:execute_command",
+      "command": "power remove @s moonsorigins:alchemist/alt_potions_flight"
+    },
+    "entity_action_removed": {
+      "type": "origins:execute_command",
+      "command": "power remove @s moonsorigins:alchemist/alt_potions_flight"
+    }
+  }
+}

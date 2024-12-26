@@ -1,0 +1,157 @@
+{
+  "type":"origins:multiple",
+  "resource":{
+    "type":"origins:resource",
+    "min":0,
+    "max":350,
+    "start_value": 175,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 16
+    },
+    "max_action": {
+      "type": "origins:execute_command",
+      "command": "playsound minecraft:undead_glug master @a ~ ~ ~ 1 1"
+    },
+    "min_action": {
+      "type":"origins:play_sound",
+      "sound":"minecraft:block.fire.extinguish"
+    }
+  },
+
+  "cool":{
+    "type":"origins:cooldown",
+    "cooldown":60,
+    "hud_render":{
+      "should_render":false
+    }
+  },
+  "resource_drain":{
+    "condition":{
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:submerged_in",
+          "fluid": "minecraft:water",
+          "inverted": true
+        },
+        {
+          "type": "origins:in_rain",
+          "inverted": true
+        }
+      ]
+    },
+    "type":"origins:action_over_time",
+    "interval": 60,
+    "entity_action":{
+      "type":"origins:change_resource",
+      "resource":"moonsorigins:drowned/wetness/wetness_resource",
+      "change": -1,
+      "operation":"add"
+    }
+  },
+  "resource_gain":{
+    "condition":{
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:submerged_in",
+              "fluid": "minecraft:water"
+            },
+            {
+              "type": "origins:in_rain"
+            }
+            ]
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:drowned/wetness/wetness_cool",
+          "comparison": "==",
+          "compare_to": 0
+        }
+      ]
+    },
+    "type":"origins:action_over_time",
+    "interval": 1,
+    "entity_action":{
+      "type":"origins:change_resource",
+      "resource":"moonsorigins:drowned/wetness/wetness_resource",
+      "change": 4,
+      "operation":"add"
+    }
+  },
+
+  "effects_when_low":{
+    "type": "origins:action_over_time",
+    "interval": 60,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:darkness",
+          "duration": 100,
+          "is_ambient": true,
+          "show_particles": false,
+          "show_icon": true
+        },
+        {
+          "effect": "minecraft:slowness",
+          "duration": 60,
+          "amplifier": 1,
+          "is_ambient": true,
+          "show_particles": false,
+          "show_icon": true
+        },
+        {
+          "effect": "minecraft:weakness",
+          "duration": 60,
+          "amplifier": 1,
+          "is_ambient": true,
+          "show_particles": false,
+          "show_icon": true
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:drowned/wetness/wetness_resource",
+      "comparison": "<=",
+      "compare_to": 100
+    }
+  },
+  "effects_when_high":{
+    "type": "origins:action_over_time",
+    "interval": 60,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:speed",
+          "duration": 60,
+          "is_ambient": true,
+          "show_particles": false,
+          "show_icon": false
+        },
+        {
+          "effect": "minecraft:haste",
+          "duration": 60,
+          "amplifier": 0,
+          "is_ambient": true,
+          "show_particles": false,
+          "show_icon": false
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:drowned/wetness/wetness_resource",
+      "comparison": ">=",
+      "compare_to": 300
+    }
+  },
+  "hidden": true
+}

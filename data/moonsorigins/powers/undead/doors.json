@@ -1,0 +1,37 @@
+{
+  "name": "Detestation of Doors",
+  "description": "You would rather move THROUGH doors then OPEN them 😎.\n",
+
+  "type": "origins:multiple",
+
+  "cannot_use": {
+    "type": "origins:prevent_block_use",
+    "block_condition": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:doors"
+    }
+  },
+  "action_on_use": {
+    "type": "origins:action_on_block_use",
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:entity.zombie.attack_iron_door",
+      "volume": 0.5,
+      "category": "master"
+    },
+    "block_condition": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:doors"
+    }
+  },
+  "phasing": {
+    "type": "origins:phasing",
+    "blacklist": false,
+    "render_type": "blindness",
+    "view_distance": 10,
+    "block_condition": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:doors"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Low dexterity",
+  "type": "origins:prevent_item_use",
+  "item_condition": {
+    "type": "origins:ingredient",
+    "ingredient": {
+      "tag": "origins:cyclops/prevent_use"
+    }
+  },
+  "hidden": true
+}

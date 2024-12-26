@@ -1,0 +1,159 @@
+{
+  "type": "origins:multiple",
+
+  "power": {
+    "type": "origins:active_self",
+    "cooldown": 120,
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": true
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "playsound minecraft:lich_phylactery_resurrect master @a[distance=0..15] ~ ~ ~ 5 1"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 120,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "moonsorigins:lich/base/deathless/formless_resource",
+                "change": 0,
+                "operation": "set"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:lich/reform"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/formless_resource",
+          "comparison": "==",
+          "compare_to": 1
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "origins:lich/gauntlet_not_full"
+            }
+          }
+        },
+        {
+          "type": "origins:block_in_radius",
+          "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "minecraft:candles"
+          },
+          "radius": 5,
+          "shape": "cube",
+          "comparison": ">=",
+          "compare_to": 36
+        }
+      ]
+    }
+  },
+
+  "full_gauntlet_power": {
+    "type": "origins:active_self",
+    "cooldown": 120,
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": true
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "playsound minecraft:lich_phylactery_resurrect master @a[distance=0..15] ~ ~ ~ 5 1"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 120,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "moonsorigins:lich/base/deathless/formless_resource",
+                "change": 0,
+                "operation": "set"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:lich/reform"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/formless_resource",
+          "comparison": "==",
+          "compare_to": 1
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "moonsoriginsmod:lich_gauntlet"
+            }
+          }
+        }
+      ]
+    }
+  },
+
+  "limited_movement_xz": {
+    "type": "origins:modify_velocity",
+    "modifier": {
+      "value": 0,
+      "operation": "set_total"
+    },
+    "axes": [
+      "x",
+      "z"
+    ],
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/reform_power",
+          "comparison": ">",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/reform_full_gauntlet_power",
+          "comparison": ">",
+          "compare_to": 0
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,27 @@
+ {
+	"powers": [
+		"moonsorigins:drowned/extra_effects",
+		"moonsorigins:drowned/semi_aquatic",
+		"moonsorigins:drowned/wetness/wetness",
+		"moonsorigins:general_power_library/hide_armour",
+		"moonsorigins:general_power_library/pescatarian",
+		"moonsorigins:general_power_library/health_variations_1_heart_lost",
+		"moonsorigins:drowned/wetness/squirt",
+		"moonsorigins:drowned/wetness/trident",
+		"moonsorigins:drowned/bident",
+
+		"moonsorigins:drowned/polishing/bident",
+		"moonsorigins:drowned/polishing/semi_aquatic",
+		"moonsorigins:drowned/polishing/squirt",
+		"moonsorigins:drowned/polishing/paralysing_tendrils",
+		"moonsorigins:drowned/polishing/weak",
+		"moonsorigins:drowned/polishing/recipes",
+		"origins:like_water",
+		"moonsorigins:ghost_aspects/ethereal"
+	],
+	"icon": "minecraft:cod",
+	"order": 0,
+	"impact": 2,
+	"name": "Drowned (reborn)",
+	"description": "Back again again..."
+}

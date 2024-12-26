@@ -1,0 +1,747 @@
+{
+  "type": "origins:multiple",
+
+  "activate": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:inventory",
+            "process_mode": "items",
+            "item_condition": {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "tag": "origins:alchemist/alchemical_transformations"
+              }
+            },
+            "comparison": ">=",
+            "compare_to": 1
+          }
+        ]
+      },
+      "if_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:grant_power",
+            "power": "moonsorigins:alchemist/alchemical_transformations_iron_to_gold",
+            "source": "moonsorigins:alchemist/alchemical_transformations"
+          },
+          {
+            "type": "origins:grant_power",
+            "power": "moonsorigins:alchemist/alchemical_transformations_gold_to_iron",
+            "source": "moonsorigins:alchemist/alchemical_transformations"
+          },
+          {
+            "type": "origins:grant_power",
+            "power": "moonsorigins:alchemist/alchemical_transformations_shard_to_crystal",
+            "source": "moonsorigins:alchemist/alchemical_transformations"
+          },
+          {
+            "type": "origins:grant_power",
+            "power": "moonsorigins:alchemist/alchemical_transformations_glass_to_bottle",
+            "source": "moonsorigins:alchemist/alchemical_transformations"
+          },
+          {
+            "type": "origins:grant_power",
+            "power": "moonsorigins:alchemist/alchemical_transformations_iron_to_gold_block",
+            "source": "moonsorigins:alchemist/alchemical_transformations"
+          },
+          {
+            "type": "origins:grant_power",
+            "power": "moonsorigins:alchemist/alchemical_transformations_gold_to_iron_block",
+            "source": "moonsorigins:alchemist/alchemical_transformations"
+          }
+        ]
+      },
+      "else_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:execute_command",
+            "command": "power remove @s moonsorigins:alchemist/alchemical_transformations_iron_to_gold"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "power remove @s moonsorigins:alchemist/alchemical_transformations_gold_to_iron"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "power remove @s moonsorigins:alchemist/alchemical_transformations_shard_to_crystal"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "power remove @s moonsorigins:alchemist/alchemical_transformations_glass_to_bottle"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "power remove @s moonsorigins:alchemist/alchemical_transformations_iron_to_gold_block"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "power remove @s moonsorigins:alchemist/alchemical_transformations_gold_to_iron_block"
+          }
+        ]
+      }
+    }
+  },
+  "iron_to_gold": {
+    "type": "origins:action_on_block_use",
+    "result_stack":{
+      "item": "minecraft:gold_ingot",
+      "amount": 1
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "held_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "hands": [
+      "main_hand",
+      "off_hand"
+    ],
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.brewing_stand.brew",
+          "pitch": 1,
+          "volume": 1
+        }
+      ]
+    },
+    "block_action": {
+      "type":"origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:block",
+                "block": "minecraft:water_cauldron"
+              },
+              {
+                "type": "origins:block_state",
+                "property": "level",
+                "comparison": "==",
+                "compare_to": 3
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:set_block",
+            "block": "minecraft:water_cauldron[level=2]"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:block",
+                "block": "minecraft:water_cauldron"
+              },
+              {
+                "type": "origins:block_state",
+                "property": "level",
+                "comparison": "==",
+                "compare_to": 2
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:set_block",
+            "block": "minecraft:water_cauldron[level=1]"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:block",
+                "block": "minecraft:water_cauldron"
+              },
+              {
+                "type": "origins:block_state",
+                "property": "level",
+                "comparison": "==",
+                "compare_to": 1
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:set_block",
+            "block": "minecraft:cauldron"
+          }
+        }
+      ]
+    },
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:water_cauldron"
+    }
+  },
+  "gold_to_iron": {
+    "type": "origins:action_on_block_use",
+    "result_stack":{
+      "item": "minecraft:iron_ingot",
+      "amount": 1
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:gold_ingot"
+      }
+    },
+    "held_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "hands": [
+      "main_hand",
+      "off_hand"
+    ],
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.brewing_stand.brew",
+          "pitch": 1,
+          "volume": 1
+        }
+      ]
+    },
+    "block_action": {
+      "type":"origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:block",
+                "block": "minecraft:water_cauldron"
+              },
+              {
+                "type": "origins:block_state",
+                "property": "level",
+                "comparison": "==",
+                "compare_to": 3
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:set_block",
+            "block": "minecraft:water_cauldron[level=2]"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:block",
+                "block": "minecraft:water_cauldron"
+              },
+              {
+                "type": "origins:block_state",
+                "property": "level",
+                "comparison": "==",
+                "compare_to": 2
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:set_block",
+            "block": "minecraft:water_cauldron[level=1]"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:block",
+                "block": "minecraft:water_cauldron"
+              },
+              {
+                "type": "origins:block_state",
+                "property": "level",
+                "comparison": "==",
+                "compare_to": 1
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:set_block",
+            "block": "minecraft:cauldron"
+          }
+        }
+      ]
+    },
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:water_cauldron"
+    }
+  },
+  "shard_to_crystal": {
+    "type": "origins:action_on_block_use",
+    "result_stack":{
+      "item": "minecraft:prismarine_crystals",
+      "amount": 3
+    },
+    "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:prismarine_shard"
+      }
+    },
+    "held_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "hands": [
+      "main_hand",
+      "off_hand"
+    ],
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.brewing_stand.brew",
+          "pitch": 1,
+          "volume": 1
+        }
+      ]
+    },
+    "block_action": {
+      "type":"origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:block",
+                "block": "minecraft:water_cauldron"
+              },
+              {
+                "type": "origins:block_state",
+                "property": "level",
+                "comparison": "==",
+                "compare_to": 3
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:set_block",
+            "block": "minecraft:water_cauldron[level=2]"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:block",
+                "block": "minecraft:water_cauldron"
+              },
+              {
+                "type": "origins:block_state",
+                "property": "level",
+                "comparison": "==",
+                "compare_to": 2
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:set_block",
+            "block": "minecraft:water_cauldron[level=1]"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:block",
+                "block": "minecraft:water_cauldron"
+              },
+              {
+                "type": "origins:block_state",
+                "property": "level",
+                "comparison": "==",
+                "compare_to": 1
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:set_block",
+            "block": "minecraft:cauldron"
+          }
+        }
+      ]
+    },
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:water_cauldron"
+    }
+  },
+  "glass_to_bottle": {
+    "type": "origins:action_on_block_use",
+    "result_stack":{
+      "item": "minecraft:glass_bottle",
+      "amount": 4
+    },
+    "item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:glass"
+          }
+        },
+        {
+          "type": "origins:amount",
+          "comparison": ">=",
+          "compare_to": 2
+        }
+      ]
+    },
+    "held_item_action": {
+      "type": "origins:consume",
+      "amount": 2
+    },
+    "hands": [
+      "main_hand",
+      "off_hand"
+    ],
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.brewing_stand.brew",
+          "pitch": 1,
+          "volume": 1
+        }
+      ]
+    },
+    "block_action": {
+      "type":"origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:block",
+                "block": "minecraft:water_cauldron"
+              },
+              {
+                "type": "origins:block_state",
+                "property": "level",
+                "comparison": "==",
+                "compare_to": 3
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:set_block",
+            "block": "minecraft:water_cauldron[level=2]"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:block",
+                "block": "minecraft:water_cauldron"
+              },
+              {
+                "type": "origins:block_state",
+                "property": "level",
+                "comparison": "==",
+                "compare_to": 2
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:set_block",
+            "block": "minecraft:water_cauldron[level=1]"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:block",
+                "block": "minecraft:water_cauldron"
+              },
+              {
+                "type": "origins:block_state",
+                "property": "level",
+                "comparison": "==",
+                "compare_to": 1
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:set_block",
+            "block": "minecraft:cauldron"
+          }
+        }
+      ]
+    },
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:water_cauldron"
+    }
+  },
+  "iron_to_gold_block": {
+    "type": "origins:action_on_block_use",
+    "result_stack":{
+      "item": "minecraft:gold_block",
+      "amount": 1
+    },
+    "item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:iron_block"
+          }
+        },
+        {
+          "type": "origins:amount",
+          "comparison": ">=",
+          "compare_to": 1
+        }
+      ]
+    },
+    "held_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "hands": [
+      "main_hand",
+      "off_hand"
+    ],
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.brewing_stand.brew",
+          "pitch": 1,
+          "volume": 1
+        }
+      ]
+    },
+    "block_action": {
+      "type":"origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:block",
+                "block": "minecraft:water_cauldron"
+              },
+              {
+                "type": "origins:block_state",
+                "property": "level",
+                "comparison": "==",
+                "compare_to": 3
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:set_block",
+            "block": "minecraft:water_cauldron[level=2]"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:block",
+                "block": "minecraft:water_cauldron"
+              },
+              {
+                "type": "origins:block_state",
+                "property": "level",
+                "comparison": "==",
+                "compare_to": 2
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:set_block",
+            "block": "minecraft:water_cauldron[level=1]"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:block",
+                "block": "minecraft:water_cauldron"
+              },
+              {
+                "type": "origins:block_state",
+                "property": "level",
+                "comparison": "==",
+                "compare_to": 1
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:set_block",
+            "block": "minecraft:cauldron"
+          }
+        }
+      ]
+    },
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:water_cauldron"
+    }
+  },
+  "gold_to_iron_block": {
+    "type": "origins:action_on_block_use",
+    "result_stack":{
+      "item": "minecraft:iron_block",
+      "amount": 1
+    },
+    "item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:gold_block"
+          }
+        },
+        {
+          "type": "origins:amount",
+          "comparison": ">=",
+          "compare_to": 1
+        }
+      ]
+    },
+    "held_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "hands": [
+      "main_hand",
+      "off_hand"
+    ],
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.brewing_stand.brew",
+          "pitch": 1,
+          "volume": 1
+        }
+      ]
+    },
+    "block_action": {
+      "type":"origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:block",
+                "block": "minecraft:water_cauldron"
+              },
+              {
+                "type": "origins:block_state",
+                "property": "level",
+                "comparison": "==",
+                "compare_to": 3
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:set_block",
+            "block": "minecraft:water_cauldron[level=2]"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:block",
+                "block": "minecraft:water_cauldron"
+              },
+              {
+                "type": "origins:block_state",
+                "property": "level",
+                "comparison": "==",
+                "compare_to": 2
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:set_block",
+            "block": "minecraft:water_cauldron[level=1]"
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:block",
+                "block": "minecraft:water_cauldron"
+              },
+              {
+                "type": "origins:block_state",
+                "property": "level",
+                "comparison": "==",
+                "compare_to": 1
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:set_block",
+            "block": "minecraft:cauldron"
+          }
+        }
+      ]
+    },
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:water_cauldron"
+    }
+  },
+  "hidden": true
+}

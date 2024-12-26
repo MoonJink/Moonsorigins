@@ -1,0 +1,29 @@
+{
+  "type": "origins:multiple",
+
+  "base_effect": {
+    "type": "origins:effect_immunity",
+    "effects": [
+      "minecraft:saturation",
+      "minecraft:night_vision",
+      "minecraft:regeneration",
+      "minecraft:fire_resistance",
+      "minecraft:resistance",
+      "minecraft:water_breathing",
+      "minecraft:speed",
+      "minecraft:strength",
+      "minecraft:luck",
+      "minecraft:absorption",
+      "minecraft:jump_boost",
+      "minecraft:poison"
+    ],
+    "inverted": true
+  },
+  "instant_effect": {
+    "type": "apugli:instant_effect_immunity",
+    "effects": [
+    ],
+    "inverted": true
+  },
+  "hidden": true
+}

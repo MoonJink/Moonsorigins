@@ -1,0 +1,136 @@
+{
+  "type": "origins:multiple",
+  "name": "Cyclopsian Heritage",
+  "description": "You have an innate understanding of the mechanics of smithing and can craft rare items.\n",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": [
+        {
+          "text": "<You enchant all weapons you make>",
+          "color": "yellow",
+          "italic": true
+        }
+      ]
+    },
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "minecraft:textures/item/trident.png",
+      "recipe": {
+        "id": "moonsorigins:cyclopsian_heritage_trident",
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "## ",
+          "#H ",
+          "  X"
+        ],
+        "key": {
+          "#": {
+            "item": "minecraft:prismarine_shard"
+          },
+          "X" : {
+            "item": "minecraft:prismarine_crystals"
+          },
+          "H": {
+            "item": "minecraft:heart_of_the_sea"
+          }
+        },
+        "result": {
+          "item": "minecraft:trident"
+        }
+      }
+    },
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "minecraft:textures/item/nether_star.png",
+      "recipe": {
+        "id": "moonsorigins:cyclopsian_heritage_nether_star",
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "ABA",
+          "CDC",
+          "AEA"
+        ],
+        "key": {
+          "A": {
+            "item": "minecraft:quartz"
+          },
+          "B" : {
+            "item": "minecraft:dragon_breath"
+          },
+          "C": {
+            "item": "minecraft:blaze_rod"
+          },
+          "D": {
+            "item": "minecraft:end_crystal"
+          },
+          "E": {
+            "item": "minecraft:heart_of_the_sea"
+          }
+        },
+        "result": {
+          "item": "minecraft:nether_star"
+        }
+      }
+    }
+  ],
+  "trident": {
+    "type": "origins:recipe",
+    "recipe": {
+      "id": "moonsorigins:cyclopsian_heritage_trident",
+      "type": "minecraft:crafting_shaped",
+      "pattern": [
+        "## ",
+        "#H ",
+        "  X"
+      ],
+      "key": {
+        "#": {
+          "item": "minecraft:prismarine_shard"
+        },
+        "X" : {
+          "item": "minecraft:prismarine_crystals"
+        },
+        "H": {
+          "item": "minecraft:heart_of_the_sea"
+        }
+      },
+      "result": {
+        "item": "minecraft:trident"
+      }
+    }
+  },
+  "nether_star": {
+    "type": "origins:recipe",
+    "recipe": {
+      "id": "moonsorigins:cyclopsian_heritage_nether_star",
+      "type": "minecraft:crafting_shaped",
+      "pattern": [
+        "ABA",
+        "CDC",
+        "AEA"
+      ],
+      "key": {
+        "A": {
+          "item": "minecraft:quartz"
+        },
+        "B" : {
+          "item": "minecraft:dragon_breath"
+        },
+        "C": {
+          "item": "minecraft:blaze_rod"
+        },
+        "D": {
+          "item": "minecraft:end_crystal"
+        },
+        "E": {
+          "item": "minecraft:heart_of_the_sea"
+        }
+      },
+      "result": {
+        "item": "minecraft:nether_star"
+      }
+    }
+  }
+}

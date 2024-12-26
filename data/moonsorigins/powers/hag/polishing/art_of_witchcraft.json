@@ -1,0 +1,64 @@
+{
+  "type": "origins:simple",
+  "name": "The art of witchcraft",
+  "description": "Through you many years in being, you have learnt a variety of spells. \n1. You call down the wrath of your ancestors upon your enemies. \n2. You may heal your allies. \n3. You cast an illusion upon yourself.\n",
+  "badges": [
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Trigger with [attack], [use], [shift+use]"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": [
+        {
+          "text": "<This uses mana>",
+          "color": "yellow",
+          "italic": true
+        },
+        {
+          "text": "\n"
+        },
+        {
+          "text": "<You must wield your staff to cast these spells>",
+          "color": "yellow",
+          "italic": true
+        },
+        {
+          "text": "\n"
+        },
+        {
+          "text": "\n"
+        },
+        {
+          "text": "<1. [attack] damages your enemies>",
+          "color": "yellow",
+          "italic": true
+        },
+        {
+          "text": "\n"
+        },
+        {
+          "text": "\n"
+        },
+        {
+          "text": "<2. [use] heals who you hit, has an AOE for players>",
+          "color": "yellow",
+          "italic": true
+        },
+        {
+          "text": "\n"
+        },
+        {
+          "text": "\n"
+        },
+        {
+          "text": "<3. [shift+use] makes your partially invisible and makes enemies unable to see you>",
+          "color": "yellow",
+          "italic": true
+        }
+      ]
+    }
+  ]
+}

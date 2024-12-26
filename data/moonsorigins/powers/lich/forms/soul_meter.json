@@ -1,0 +1,204 @@
+{
+  "type": "origins:multiple",
+
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 20,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "minecraft:textures/gui/-moonpack_high_priority_bars.png",
+      "bar_index": 0,
+      "condition": {
+        "type": "origins:resource",
+        "resource": "moonsorigins:lich/forms/resource_resource",
+        "comparison": "==",
+        "compare_to": 0
+      }
+    },
+    "start_value": 0
+  },
+  "false_resource_display_arcane": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 20,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "minecraft:textures/gui/-moonpack_high_priority_bars.png",
+      "bar_index": 1,
+      "condition": {
+        "type": "origins:resource",
+        "resource": "moonsorigins:lich/forms/resource_resource",
+        "comparison": "==",
+        "compare_to": 1
+      }
+    },
+    "start_value": 0
+  },
+  "false_resource_display_soul": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 20,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "minecraft:textures/gui/-moonpack_high_priority_bars.png",
+      "bar_index": 2,
+      "condition": {
+        "type": "origins:resource",
+        "resource": "moonsorigins:lich/forms/resource_resource",
+        "comparison": "==",
+        "compare_to": 2
+      }
+    },
+    "start_value": 0
+  },
+  "false_resource_display_shadow": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 20,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "minecraft:textures/gui/-moonpack_high_priority_bars.png",
+      "bar_index": 3,
+      "condition": {
+        "type": "origins:resource",
+        "resource": "moonsorigins:lich/forms/resource_resource",
+        "comparison": "==",
+        "compare_to": 3
+      }
+    },
+    "start_value": 0
+  },
+  "set_resources_equal_to_main_resource": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:modify_resource",
+          "modifier": {
+            "operation": "set_total",
+            "value": 0,
+            "resource": "moonsorigins:lich/forms/soul_meter_resource"
+          },
+          "resource": "moonsorigins:lich/forms/soul_meter_false_resource_display_arcane"
+        },
+        {
+          "type": "origins:modify_resource",
+          "modifier": {
+            "operation": "set_total",
+            "value": 0,
+            "resource": "moonsorigins:lich/forms/soul_meter_resource"
+          },
+          "resource": "moonsorigins:lich/forms/soul_meter_false_resource_display_soul"
+        },
+        {
+          "type": "origins:modify_resource",
+          "modifier": {
+            "operation": "set_total",
+            "value": 0,
+            "resource": "moonsorigins:lich/forms/soul_meter_resource"
+          },
+          "resource": "moonsorigins:lich/forms/soul_meter_false_resource_display_shadow"
+        }
+      ]
+    }
+  },
+
+  "passive_soul_regen": {
+    "type": "origins:action_over_time",
+    "interval": 300,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "moonsorigins:lich/forms/soul_meter_resource",
+      "change": 1,
+      "operation": "add"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/soul/summon_cooldown",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/resource_resource",
+          "comparison": "!=",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/formless_resource",
+          "comparison": "==",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+  "when_entity_dies_gain_1_soul": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:area_of_effect",
+      "radius": 50,
+      "shape": "sphere",
+      "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:actor_action",
+            "action": {
+              "type": "origins:change_resource",
+              "resource": "moonsorigins:lich/forms/soul_meter_resource",
+              "change": 1,
+              "operation": "add"
+            }
+          },
+          {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:execute_command",
+              "command": "particle minecraft:soul ~ ~1 ~ 0.4 0.4 0.4 0 20 normal"
+            }
+          }
+        ]
+      },
+      "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+          "type": "origins:and",
+          "conditions": [
+            {
+              "type": "origins:living"
+            },
+            {
+              "type": "origins:health",
+              "comparison": "==",
+              "compare_to": 0
+            },
+            {
+              "type": "origins:nbt",
+              "nbt": "{Tags:['lichSummon']}",
+              "inverted": true
+            },
+            {
+              "type": "origins:entity_type",
+              "entity_type": "minecraft:player",
+              "inverted": true
+            }
+          ]
+        }
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:lich/base/deathless/formless_resource",
+      "comparison": "==",
+      "compare_to": 0
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "origins:modify_crafting",
+  "recipe": "moonsorigins:recipe_blood_dagger",
+  "result": {
+    "item": "minecraft:iron_sword"
+  },
+  "item_action": {
+    "type": "origins:merge_nbt",
+    "nbt": "{display:{Name:'{\"text\":\"The Vampire\\'s dagger\",\"color\":\"dark_red\",\"bold\":false,\"italic\":true,\"obfuscated\":true}'},CustomModelData:1234511}"
+  },
+  "hidden": true
+}

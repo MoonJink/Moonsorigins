@@ -1,0 +1,99 @@
+{
+  "type": "origins:simple",
+  "name": "Innate knowledge",
+  "description": "You possess an innate knowledge of how to craft magical items, such as staves.\n",
+  "badges": [
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "minecraft:textures/item/hagstaffnew_stage1.png",
+      "recipe":{
+        "type": "minecraft:crafting_shaped",
+        "id": "moonsorigins:staff_lesser",
+        "pattern": [
+          "iIi",
+          " / "
+        ],
+        "key": {
+          "i": {
+            "item": "minecraft:iron_ingot"
+          },
+          "I": {
+            "item": "minecraft:gold_ingot"
+          },
+          "/": {
+            "item": "minecraft:stick"
+          }
+        },
+        "result": {
+          "item": "minecraft:stick",
+          "count": 1
+        }
+      }
+    },
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "minecraft:textures/item/hagstaffnew_stage2.png",
+      "recipe":{
+        "type": "minecraft:crafting_shaped",
+        "id": "moonsorigins:staff_mid",
+        "pattern": [
+          " # ",
+          "iIi",
+          " / "
+        ],
+        "key": {
+          "#": {
+            "item": "minecraft:diamond"
+          },
+          "i": {
+            "item": "minecraft:iron_ingot"
+          },
+          "I": {
+            "item": "minecraft:obsidian"
+          },
+          "/": {
+            "item": "minecraft:stick"
+          }
+        },
+        "result": {
+          "item": "minecraft:stick",
+          "count": 1
+        }
+      }
+    },
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "minecraft:textures/item/hagstaffnew_stage3.png",
+      "recipe":{
+        "type": "minecraft:crafting_shaped",
+        "id": "moonsorigins:staff_greater",
+        "pattern": [
+          "X#X",
+          "iIi",
+          " / "
+        ],
+        "key": {
+          "X": {
+            "item": "minecraft:diamond"
+          },
+          "#": {
+            "item": "minecraft:ender_eye"
+          },
+          "i": {
+            "item": "minecraft:iron_ingot"
+          },
+          "I": {
+            "item": "minecraft:blaze_powder"
+          },
+          "/": {
+            "item": "minecraft:stick"
+          }
+        },
+        "result": {
+          "item": "minecraft:stick",
+          "count": 1
+        }
+      }
+    }
+  ]
+}

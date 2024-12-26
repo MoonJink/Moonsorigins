@@ -1,0 +1,38 @@
+{
+  "type": "origins:simple",
+  "name": "[RECIPES] >>>",
+  "description": "Recipes are listed above\n",
+  "badges": [
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "minecraft:textures/item/drowned_trident_icon.png",
+      "recipe":{
+        "type": "minecraft:crafting_shaped",
+        "id": "moonsorigins:craftable_trident_writing",
+        "pattern": [
+          " # ",
+          "iIi",
+          " / "
+        ],
+        "key": {
+          "#": {
+            "item": "minecraft:diamond_sword"
+          },
+          "i": {
+            "item": "minecraft:nautilus_shell"
+          },
+          "I": {
+            "item": "minecraft:heart_of_the_sea"
+          },
+          "/": {
+            "item": "minecraft:prismarine_shard"
+          }
+        },
+        "result": {
+          "item": "minecraft:trident",
+          "count": 1
+        }
+      }
+    }
+  ]
+}

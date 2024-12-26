@@ -1,0 +1,111 @@
+{
+    "type":"origins:multiple",
+    "resource":{
+       "type":"origins:resource",
+       "min":0,
+       "max":300,
+       "start_value":300,
+       "hud_render": {
+          "should_render": true,
+          "sprite_location": "minecraft:textures/gui/moonpack_bars.png",
+          "bar_index": 8
+       },
+       "min_action": {
+         "type":"origins:and",
+         "actions":[
+            {
+               "type":"origins:play_sound",
+               "sound":"minecraft:entity.allay.ambient_without_item",
+               "pitch":0.5,
+               "volume":1
+            },
+            {
+               "type": "origins:apply_effect",
+               "effects": [
+                  {
+                     "effect": "minecraft:slowness",
+                     "duration": 50,
+                     "amplifier": 1,
+                     "is_ambient": true,
+                     "show_particles": false,
+                     "show_icon": false
+                  },
+                  {
+                     "effect": "minecraft:poison",
+                     "duration": 50,
+                     "amplifier": 1,
+                     "is_ambient": true,
+                     "show_particles": false,
+                     "show_icon": false
+                  },
+                  {
+                     "effect": "minecraft:blindness",
+                     "duration": 50,
+                     "amplifier": 1,
+                     "is_ambient": true,
+                     "show_particles": false,
+                     "show_icon": false
+                  }
+               ]
+            }
+         ]
+       }
+    },
+
+    "reset":{
+       "type":"origins:cooldown",
+       "cooldown":30,
+       "hud_render":{
+          "should_render":false
+       }
+    },
+    "recharge":{
+       "condition":{
+          "type":"origins:resource",
+          "resource":"moonsorigins:hag/magic/mana_bar_reset",
+          "comparison":"==",
+          "compare_to":0
+       },
+       "type":"origins:action_over_time",
+       "interval": 1,
+       "entity_action":{
+          "type":"origins:change_resource",
+          "resource":"moonsorigins:hag/magic/mana_bar_resource",
+          "change": 5,
+          "operation":"add"
+       }
+    },
+    "overlay":{
+      "type": "origins:overlay",
+      "texture": "minecraft:textures/misc/nausea.png",
+      "red": 0.282,
+      "green": 0.094,
+      "blue": 0.698,
+      "strength": 0.6,
+      "draw_mode": "nausea",
+      "draw_phase": "above_hud",
+      "hide_with_hud": false,
+      "visible_in_third_person": false,
+      
+      "condition": {
+          "type":"origins:and",
+          "conditions":[
+              {
+               "type":"origins:resource",
+               "resource":"moonsorigins:hag/magic/mana_bar_resource",
+               "comparison":"<",
+               "compare_to": 43
+              }
+          ]
+      }
+  },
+
+    "no_no_mana": {
+      "type": "origins:self_action_when_hit",
+      "entity_action": {
+        "type": "origins:trigger_cooldown",
+        "power": "moonsorigins:hag/magic/mana_bar_reset"
+      }
+    },
+  "hidden": true
+ }

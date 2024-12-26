@@ -1,0 +1,590 @@
+{
+  "type":"origins:multiple",
+
+  "lesser_beam":{
+    "type": "origins:active_self",
+    "cooldown": 15,
+    "hud_render": {
+      "should_render": false,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 15
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:raycast",
+          "shape_type": "collider",
+          "fluid_handling": "none",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:area_of_effect",
+                  "radius": 2.5,
+                  "shape": "sphere",
+                  "bientity_action": {
+                    "type": "origins:target_action",
+                    "action": {
+                      "type": "origins:and",
+                      "actions": [
+                        {
+                          "type": "origins:heal",
+                          "amount": 3
+                        },
+                        {
+                          "type": "origins:apply_effect",
+                          "effect": {
+                            "effect": "minecraft:glowing",
+                            "duration": 5,
+                            "amplifier": 0
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "bientity_condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                      {
+                        "type": "origins:target_condition",
+                        "condition": {
+                          "type": "origins:living"
+                        }
+                      },
+                      {
+                        "type": "origins:target_condition",
+                        "condition": {
+                          "type": "origins:entity_type",
+                          "entity_type": "minecraft:player"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                    "type": "origins:heal",
+                    "amount": 5
+                },
+                {
+                  "type": "origins:feed",
+                  "food": 4,
+                  "saturation": 2
+                },
+                {
+                  "type": "origins:apply_effect",
+                  "effect": {
+                    "effect": "minecraft:glowing",
+                    "duration": 5,
+                    "amplifier": 0
+                  }
+                }
+              ]
+            }
+          },
+          "distance": 10,
+          "command_step": 1,
+          "command_along_ray": "particle minecraft:end_rod ~ ~ ~ 0.1 0.1 0.1 0.03 2",
+          "block": true
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.illusioner.cast_spell",
+          "pitch": 1.5,
+          "volume": 1
+        },
+        {
+          "type":"origins:change_resource",
+          "resource":"moonsorigins:hag/magic/mana_bar_resource",
+          "change":-42,
+          "operation":"add"
+        },
+        {
+          "type":"origins:trigger_cooldown",
+          "power":"moonsorigins:hag/magic/mana_bar_reset"
+        },
+        {
+          "type": "origins:swing_hand",
+          "hand": "MAIN_HAND"
+        }
+      ]
+    },
+    "key": {
+      "key": "key.use",
+      "continuous": true
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type":"origins:resource",
+          "resource":"moonsorigins:hag/magic/mana_bar_resource",
+          "comparison":">",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                 "tag": "origins:moonsorigins/tools"
+                }
+              },
+              {
+                "type": "origins:nbt",
+                "nbt": "{CustomModelData:123456}"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "mid_beam":{
+    "type": "origins:active_self",
+    "cooldown": 15,
+    "hud_render": {
+      "should_render": false,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 15
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:raycast",
+          "shape_type": "collider",
+          "fluid_handling": "none",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:area_of_effect",
+                  "radius": 2.5,
+                  "shape": "sphere",
+                  "bientity_action": {
+                    "type": "origins:target_action",
+                    "action": {
+                      "type": "origins:and",
+                      "actions": [
+                        {
+                          "type": "origins:heal",
+                          "amount": 7
+                        },
+                        {
+                          "type": "origins:apply_effect",
+                          "effect": {
+                            "effect": "minecraft:glowing",
+                            "duration": 5,
+                            "amplifier": 0
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "bientity_condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                      {
+                        "type": "origins:target_condition",
+                        "condition": {
+                          "type": "origins:living"
+                        }
+                      },
+                      {
+                        "type": "origins:target_condition",
+                        "condition": {
+                          "type": "origins:entity_type",
+                          "entity_type": "minecraft:player"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                    "type": "origins:heal",
+                    "amount": 8
+                },
+                {
+                  "type": "origins:feed",
+                  "food": 4,
+                  "saturation": 2
+                },
+                {
+                  "type": "origins:apply_effect",
+                  "effect": {
+                    "effect": "minecraft:glowing",
+                    "duration": 5,
+                    "amplifier": 0
+                  }
+                }
+              ]
+            }
+          },
+          "distance": 10,
+          "command_step": 1,
+          "command_along_ray": "particle minecraft:end_rod ~ ~ ~ 0.2 0.2 0.2 0.03 2",
+          "block": true
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.illusioner.cast_spell",
+          "pitch": 1.5,
+          "volume": 1
+        },
+        {
+          "type":"origins:change_resource",
+          "resource":"moonsorigins:hag/magic/mana_bar_resource",
+          "change":-45,
+          "operation":"add"
+        },
+        {
+          "type":"origins:trigger_cooldown",
+          "power":"moonsorigins:hag/magic/mana_bar_reset"
+        },
+        {
+          "type": "origins:swing_hand",
+          "hand": "MAIN_HAND"
+        }
+      ]
+    },
+    "key": {
+      "key": "key.use",
+      "continuous": true
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type":"origins:resource",
+          "resource":"moonsorigins:hag/magic/mana_bar_resource",
+          "comparison":">",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "tag": "origins:moonsorigins/tools"
+                }
+              },
+              {
+                "type": "origins:nbt",
+                "nbt": "{CustomModelData:123457}"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "greater_beam":{
+    "type": "origins:active_self",
+    "cooldown": 15,
+    "hud_render": {
+      "should_render": false,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 15
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:raycast",
+          "shape_type": "collider",
+          "fluid_handling": "none",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:area_of_effect",
+                  "radius": 2.5,
+                  "shape": "sphere",
+                  "bientity_action": {
+                    "type": "origins:target_action",
+                    "action": {
+                      "type": "origins:and",
+                      "actions": [
+                        {
+                          "type": "origins:heal",
+                          "amount": 10
+                        },
+                        {
+                          "type": "origins:apply_effect",
+                          "effect": {
+                            "effect": "minecraft:glowing",
+                            "duration": 5,
+                            "amplifier": 0
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "bientity_condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                      {
+                        "type": "origins:target_condition",
+                        "condition": {
+                          "type": "origins:living"
+                        }
+                      },
+                      {
+                        "type": "origins:target_condition",
+                        "condition": {
+                          "type": "origins:entity_type",
+                          "entity_type": "minecraft:player"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "origins:heal",
+                  "amount": 12
+                },
+                {
+                  "type": "origins:feed",
+                  "food": 4,
+                  "saturation": 2
+                },
+                {
+                  "type": "origins:apply_effect",
+                  "effect": {
+                    "effect": "minecraft:glowing",
+                    "duration": 5,
+                    "amplifier": 0
+                  }
+                }
+              ]
+            }
+          },
+          "distance": 10,
+          "command_step": 1,
+          "command_along_ray": "particle minecraft:end_rod ~ ~ ~ 0.3 0.3 0.3 0.03 2",
+          "block": true
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.illusioner.cast_spell",
+          "pitch": 1.5,
+          "volume": 1
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.illusioner.prepare_mirror",
+          "pitch": 2,
+          "volume": 1
+        },
+        {
+          "type":"origins:change_resource",
+          "resource":"moonsorigins:hag/magic/mana_bar_resource",
+          "change":-50,
+          "operation":"add"
+        },
+        {
+          "type":"origins:trigger_cooldown",
+          "power":"moonsorigins:hag/magic/mana_bar_reset"
+        },
+        {
+          "type": "origins:swing_hand",
+          "hand": "MAIN_HAND"
+        }
+      ]
+    },
+    "key": {
+      "key": "key.use",
+      "continuous": true
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type":"origins:resource",
+          "resource":"moonsorigins:hag/magic/mana_bar_resource",
+          "comparison":">",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "tag": "origins:moonsorigins/tools"
+                }
+              },
+              {
+                "type": "origins:nbt",
+                "nbt": "{CustomModelData:123458}"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        }
+      ]
+    }
+  },
+
+  "mid_beam_alt_effect":{
+    "type": "origins:active_self",
+    "cooldown": 15,
+    "hud_render": {
+      "should_render": false,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 15
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:raycast",
+          "shape_type": "collider",
+          "fluid_handling": "none",
+          "distance": 10,
+          "command_step": 1.5,
+          "command_along_ray": "particle minecraft:firework ~ ~ ~ 0.1 0.1 0.1 0.03 2",
+          "block": true
+        }
+      ]
+    },
+    "key": {
+      "key": "key.use",
+      "continuous": true
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type":"origins:resource",
+          "resource":"moonsorigins:hag/magic/mana_bar_resource",
+          "comparison":">",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "tag": "origins:moonsorigins/tools"
+                }
+              },
+              {
+                "type": "origins:or",
+                "conditions": [
+                  {
+                    "type": "origins:nbt",
+                    "nbt": "{CustomModelData:123457}"
+                  },
+                  {
+                    "type": "origins:nbt",
+                    "nbt": "{CustomModelData:123458}"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "greater_beam_alt_effect":{
+    "type": "origins:active_self",
+    "cooldown": 15,
+    "hud_render": {
+      "should_render": false,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 15
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:raycast",
+          "shape_type": "collider",
+          "fluid_handling": "none",
+          "distance": 10,
+          "command_step": 1.5,
+          "command_along_ray": "particle minecraft:witch ~ ~ ~ 0.1 0.1 0.1 0.03 2",
+          "block": true
+        }
+      ]
+    },
+    "key": {
+      "key": "key.use",
+      "continuous": true
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type":"origins:resource",
+          "resource":"moonsorigins:hag/magic/mana_bar_resource",
+          "comparison":">",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "tag": "origins:moonsorigins/tools"
+                }
+              },
+              {
+                "type": "origins:nbt",
+                "nbt": "{CustomModelData:123458}"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "hidden": true
+}

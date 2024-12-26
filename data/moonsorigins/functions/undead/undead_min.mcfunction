@@ -1,0 +1,1 @@
+execute run playsound minecraft:undead_cough master @a ~ ~ ~ 1 1

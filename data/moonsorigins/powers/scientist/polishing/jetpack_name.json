@@ -1,0 +1,17 @@
+{
+  "type": "origins:simple",
+  "name": "Mechanical Jetpack",
+  "description": "With your knowledge, you forge a jetpack to allow you to briefly fly, however this causes overloaded to progress. Which will disable your jetpack\n",
+  "badges": [
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Trigger with [primary]"
+    },
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Trigger with [secondary]"
+    }
+  ]
+}

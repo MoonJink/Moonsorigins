@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:barrier",
+    "minecraft:bedrock",
+    "minecraft:crying_obsidian",
+    "minecraft:obsidian",
+    "minecraft:nether_portal",
+    "minecraft:end_portal",
+    "minecraft:iron_block",
+    "minecraft:gold_block",
+    "minecraft:diamond_block",
+    "minecraft:emerald_block",
+    "minecraft:netherite_block",
+    "minecraft:lapis_block",
+    "minecraft:redstone_block",
+    "minecraft:coal_block"
+  ]
+}

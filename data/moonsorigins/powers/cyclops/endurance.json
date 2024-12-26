@@ -1,0 +1,109 @@
+{
+  "type": "origins:multiple",
+  "name": "Cyclopian Rage",
+  "description": "You unleash your inner rage and channel it into your body. Increasing resistance, regeneration and speed.\n",
+  "endurance": {
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+      "bar_index": 1
+    },
+    "type": "origins:active_self",
+    "cooldown": 300,
+    "key": {
+      "key": "key.origins.secondary_active"
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:resistance",
+              "amplifier": 1,
+              "duration": 100,
+              "is_ambient": true,
+              "show_particles": false,
+              "show_icon": true
+            },
+            {
+              "effect": "minecraft:regeneration",
+              "amplifier": 4,
+              "duration": 100,
+              "is_ambient": true,
+              "show_particles": false,
+              "show_icon": true
+            },
+            {
+              "effect": "minecraft:speed",
+              "amplifier": 1,
+              "duration": 100,
+              "is_ambient": true,
+              "show_particles": false,
+              "show_icon": true
+            }
+          ]
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.wither.spawn",
+          "volume": 0.5,
+          "pitch":1.5
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.ender_dragon.growl",
+          "volume": 1,
+          "pitch":1
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 100,
+          "action": {
+            "type": "origins:play_sound",
+            "sound": "minecraft:entity.wither.hurt",
+            "volume": 0.5,
+            "pitch":1.5
+          }
+        }
+      ]
+    }
+  },
+  "heartbeat":{
+    "type":"origins:action_over_time",
+    "interval":10,
+    "entity_action":{
+      "type":"origins:play_sound",
+      "sound":"minecraft:entity.warden.heartbeat",
+      "volume": 0.7,
+      "pitch": 2,
+      "category": "player"
+    },
+    "condition":{
+      "type":"origins:resource",
+      "resource":"moonsorigins:cyclops/endurance_endurance",
+      "comparison":">=",
+      "compare_to": 200
+    }
+  },
+  "overlay":{
+    "type":"origins:overlay",
+    "texture": "minecraft:textures/misc/nausea.png",
+    "red": 1,
+    "green": 0,
+    "blue": 0,
+    "strength":0.5,
+    "draw_mode": "nausea",
+    "draw_phase": "below_hud",
+    "hide_with_hud": false,
+    "visible_in_third_person": false,
+
+    "condition":{
+      "type":"origins:resource",
+      "resource":"moonsorigins:cyclops/endurance_endurance",
+      "comparison":">=",
+      "compare_to": 200
+    }
+  }
+}

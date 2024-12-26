@@ -1,0 +1,42 @@
+{
+  "name": "Vegetarian",
+  "description": "Your detestation for the flesh drives you to your greens.\n",
+
+  "type": "origins:prevent_item_use",
+  "item_condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:or",
+        "conditions": [
+          {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "origins:meat"
+            }
+          },
+          {
+            "type": "origins:meat"
+          },
+          {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "origins:moonsorigins/meat"
+            }
+          }
+        ]
+      },
+      {
+        "type": "origins:food"
+      },
+      {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "origins:moonsorigins/ignore_diet"
+        },
+        "inverted": true
+      }
+    ]
+  },
+  "hidden": true
+}

@@ -1,0 +1,44 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:camel",
+    "minecraft:donkey",
+    "minecraft:horse",
+    "minecraft:llama",
+    "minecraft:mule",
+    "minecraft:parrot",
+    "minecraft:skeleton_horse",
+    "minecraft:allay",
+    "minecraft:axolotl",
+    "minecraft:fox",
+    "minecraft:villager",
+    "minecraft:sheep",
+    "minecraft:pig",
+    "minecraft:cow",
+    "minecraft:chicken",
+
+    "alexsmobs:mungus",
+    "alexsmobs:shoebill",
+    "alexsmobs:lobster",
+    "alexsmobs:capuchin_monkey",
+    "alexsmobs:raccoon",
+    "alexsmobs:mantis_shrimp",
+    "alexsmobs:leafcutter_ant",
+    "alexsmobs:flutter",
+    "alexsmobs:toucan",
+    "alexsmobs:gelada_monkey",
+    "alexsmobs:jerboa",
+    "alexsmobs:terrapin",
+    "alexsmobs:potoo",
+    "alexsmobs:sugar_glider",
+    "alexsmobs:blue_jay",
+
+    "mowziesmobs:foliaath",
+    "mowziesmobs:grottol",
+
+    "moonsoriginsmod:lich_summoned_skeleton",
+    "moonsoriginsmod:permanent_lich_summoned_skeleton",
+    "moonsoriginsmod:lich_large_summoned_skeleton",
+    "moonsoriginsmod:summon_animal"
+  ]
+}

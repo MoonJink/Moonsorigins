@@ -1,0 +1,260 @@
+{
+  "type": "origins:multiple",
+  "low_stun": {
+    "type": "origins:active_self",
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_points_01.png",
+      "bar_index": 2
+    },
+    "cooldown": 100,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:raycast",
+          "fluid_handling": "none",
+          "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:apply_effect",
+                      "effects": [
+                        {
+                          "effect": "minecraft:slowness",
+                          "duration": 60,
+                          "amplifier": 1,
+                          "is_ambient": true,
+                          "show_particles": false,
+                          "show_icon": false
+                        },
+                        {
+                          "effect": "minecraft:weakness",
+                          "duration": 60,
+                          "amplifier": 0,
+                          "is_ambient": true,
+                          "show_particles": false,
+                          "show_icon": false
+                        }
+                      ]
+                    },
+                    {
+                      "type": "origins:damage",
+                      "amount": 7,
+                      "damage_type": "minecraft:player_attack"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:swing_hand",
+                      "hand": "MAIN_HAND"
+                    },
+                    {
+                      "type": "origins:play_sound",
+                      "sound": "minecraft:entity.drowned.shoot",
+                      "pitch": 0.7,
+                      "volume": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "distance": 25,
+          "block": false,
+          "entity": true,
+          "key": {
+            "key": "key.use",
+            "continuous": true
+          }
+        }
+      ]
+    },
+    "key": {
+      "key": "key.use",
+      "continuous": true
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "minecraft:iron_sword"
+                }
+              },
+              {
+                "type": "origins:nbt",
+                "nbt": "{CustomModelData:123459}"
+              }
+            ]
+          }
+        },
+        {
+          "type":"origins:resource",
+          "resource":"moonsorigins:drowned/wetness/trident_greater_stun",
+          "comparison":"==",
+          "compare_to": 0
+        },
+        {
+          "type":"origins:resource",
+          "resource":"moonsorigins:drowned/wetness/trident_low_stun",
+          "comparison":"==",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+  "greater_stun": {
+    "type": "origins:active_self",
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_points_01.png",
+      "bar_index": 2
+    },
+    "cooldown": 100,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:raycast",
+          "fluid_handling": "none",
+          "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:apply_effect",
+                      "effects": [
+                        {
+                          "effect": "minecraft:slowness",
+                          "duration": 60,
+                          "amplifier": 99,
+                          "is_ambient": true,
+                          "show_particles": false,
+                          "show_icon": false
+                        },
+                        {
+                          "effect": "minecraft:weakness",
+                          "duration": 60,
+                          "amplifier": 1,
+                          "is_ambient": true,
+                          "show_particles": false,
+                          "show_icon": false
+                        }
+                      ]
+                    },
+                    {
+                      "type": "origins:damage",
+                      "amount": 15,
+                      "damage_type": "minecraft:player_attack"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:swing_hand",
+                      "hand": "MAIN_HAND"
+                    },
+                    {
+                      "type": "origins:play_sound",
+                      "sound": "minecraft:entity.drowned.shoot",
+                      "pitch": 0.7,
+                      "volume": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "distance": 25,
+          "block": false,
+          "entity": true,
+          "key": {
+            "key": "key.use",
+            "continuous": true
+          }
+        }
+      ]
+    },
+    "key": {
+      "key": "key.use",
+      "continuous": true
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "item": "minecraft:diamond_sword"
+                }
+              },
+              {
+                "type": "origins:nbt",
+                "nbt": "{CustomModelData:1234510}"
+              }
+            ]
+          }
+        },
+        {
+          "type":"origins:resource",
+          "resource":"moonsorigins:drowned/wetness/trident_greater_stun",
+          "comparison":"==",
+          "compare_to": 0
+        },
+        {
+          "type":"origins:resource",
+          "resource":"moonsorigins:drowned/wetness/trident_low_stun",
+          "comparison":"==",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+  "modify_crafting_trident": {
+    "type": "origins:modify_crafting",
+    "recipe": "moonsorigins:recipe_craftable_trident",
+    "result": {
+      "item": "minecraft:diamond_sword"
+    },
+    "item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{display:{Name:'{\"text\":\"Reif\\'s Trident\",\"color\":\"dark_aqua\",\"italic\":true}'},CustomModelData:1234510}"
+    }
+  },
+  "hidden": true
+}
+

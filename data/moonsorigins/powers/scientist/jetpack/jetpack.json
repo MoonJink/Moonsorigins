@@ -1,0 +1,170 @@
+{
+    "type":"origins:multiple",
+
+    "flight":{
+        "condition": {
+            "type":"origins:and",
+            "conditions":[
+                {
+                    "type": "origins:resource",
+                    "resource": "moonsorigins:scientist/overloaded_resource",
+                    "comparison": "<",
+                    "compare_to": 150
+                },
+                {
+                    "type": "origins:on_block",
+                    "inverted":true
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "moonsorigins:scientist/transformation/mode_resource",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "moonsorigins:scientist/transformation/mode_resource",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:submerged_in",
+                    "fluid": "minecraft:water",
+                    "inverted": true
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:add_velocity",
+              "z":0.25,
+              "y":0.8,
+              "space": "local",
+              "set":true
+            },
+            {
+              "type": "origins:play_sound",
+              "sound": "minecraft:entity.blaze.shoot",
+              "volume": 0.25,
+              "category": "master"
+            },
+            {
+                "type":"origins:trigger_cooldown",
+                "power":"moonsorigins:scientist/overloaded_cool"
+            },
+            {
+                "type": "origins:spawn_particles",
+                "particle": "minecraft:flame",
+                "count": 5,
+                "speed": 0.0,
+                "force": true,
+                "spread": {
+                    "x": 0.5,
+                    "y": 0.25,
+                    "z": 0.5
+                }
+            }
+          ]
+        },
+        "cooldown": 5,
+        "key": {
+          "key": "key.origins.primary_active",
+          "continuous": true
+        }
+    },
+    "particles":{
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:spawn_particles",
+            "particle": "minecraft:flame",
+            "count": 5,
+            "speed": 0.0,
+            "force": true,
+            "spread": {
+                "x": 0.5,
+                "y": 0.25,
+                "z": 0.5
+            },
+            "offset_y":0.5
+        },
+        "key": {
+            "key": "key.origins.primary_active",
+            "continuous": true
+        },
+        "condition": {
+            "type":"origins:and",
+            "conditions":[
+                {
+                    "type": "origins:resource",
+                    "resource": "moonsorigins:scientist/overloaded_resource",
+                    "comparison": "<",
+                    "compare_to": 150
+                },
+                {
+                    "type": "origins:on_block",
+                    "inverted":true
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "moonsorigins:scientist/transformation/mode_resource",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:submerged_in",
+                    "fluid": "minecraft:water",
+                    "inverted": true
+                }
+            ]
+        }
+    },
+    "resource_gain":{
+        "type":"origins:active_self",
+        "entity_action": {
+            "type":"origins:and",
+            "actions":[
+                {
+                    "type":"origins:change_resource",
+                    "resource":"moonsorigins:scientist/overloaded_resource",
+                    "change": 8,
+                    "operation":"add"
+                }
+            ]
+        },
+        "condition": {
+            "type":"origins:and",
+            "conditions":[
+                {
+                    "type": "origins:resource",
+                    "resource": "moonsorigins:scientist/overloaded_resource",
+                    "comparison": "<",
+                    "compare_to": 150
+                },
+                {
+                    "type": "origins:on_block",
+                    "inverted":true
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "moonsorigins:scientist/transformation/mode_resource",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:submerged_in",
+                    "fluid": "minecraft:water",
+                    "inverted": true
+                }
+            ]
+        },
+        "key": {
+            "key": "key.origins.primary_active",
+            "continuous": true
+        },
+        "cooldown":5
+    },
+    "hidden": true
+  }

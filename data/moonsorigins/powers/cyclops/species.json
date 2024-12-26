@@ -1,0 +1,29 @@
+{
+  "type": "origins:simple",
+  "name": "Species: Cyclops",
+  "description": "As you are a Cyclops, you have many traits which differ from a standard human. Firstly, you are larger, have more health and become more hungry quickly. Secondly, you are stronger and can channel your rage into physical form.\n",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": [
+        {
+          "text": "<You have 3 extra hearts and are 30% larger than a standard human>",
+          "color": "yellow",
+          "italic": true
+        }
+      ]
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": [
+        {
+          "text": "<You deal 30% more damage and can perform the abilities SMASH! and Endurance",
+          "color": "yellow",
+          "italic": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "type": "origins:multiple",
+
+  "power": {
+    "type": "origins:active_self",
+    "cooldown": 19,
+    "key": {
+      "key": "key.use",
+      "continuous": true
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:raycast",
+          "shape_type": "collider",
+          "fluid_handling": "none",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:area_of_effect",
+                  "radius": 2.5,
+                  "shape": "sphere",
+                  "bientity_action": {
+                    "type": "origins:target_action",
+                    "action": {
+                      "type": "origins:and",
+                      "actions": [
+                        {
+                          "type": "origins:heal",
+                          "amount": 3
+                        },
+                        {
+                          "type": "origins:apply_effect",
+                          "effect": {
+                            "effect": "minecraft:glowing",
+                            "duration": 5,
+                            "amplifier": 0
+                          }
+                        },
+                        {
+                          "type": "origins:execute_command",
+                          "command": "function moonsorigins:lich/ainirs_blessing/start"
+                        },
+                        {
+                          "type": "origins:delay",
+                          "ticks": 5,
+                          "action": {
+                            "type": "origins:execute_command",
+                            "command": "function moonsorigins:lich/ainirs_blessing/end"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "bientity_condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                      {
+                        "type": "origins:target_condition",
+                        "condition": {
+                          "type": "origins:living"
+                        }
+                      },
+                      {
+                        "type": "origins:or",
+                        "conditions": [
+                          {
+                            "type": "origins:target_condition",
+                            "condition": {
+                              "type": "origins:entity_type",
+                              "entity_type": "minecraft:player"
+                            }
+                          },
+                          {
+                            "type": "origins:target_condition",
+                            "condition": {
+                              "type": "origins:nbt",
+                              "nbt": "{Tags:['lichSummon']}"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "origins:heal",
+                  "amount": 3
+                },
+                {
+                  "type": "origins:apply_effect",
+                  "effect": {
+                    "effect": "minecraft:glowing",
+                    "duration": 5,
+                    "amplifier": 0
+                  }
+                },
+                {
+                  "type": "origins:execute_command",
+                  "command": "function moonsorigins:lich/ainirs_blessing/start"
+                },
+                {
+                  "type": "origins:delay",
+                  "ticks": 5,
+                  "action": {
+                    "type": "origins:execute_command",
+                    "command": "function moonsorigins:lich/ainirs_blessing/end"
+                  }
+                }
+              ]
+            }
+          },
+          "distance": 15,
+          "command_step": 1,
+          "command_along_ray": "function moonsorigins:lich/ainirs_blessing/particle",
+          "block": true
+        },
+        {
+          "type": "origins:swing_hand",
+          "hand": "OFF_HAND"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function moonsorigins:lich/ainirs_blessing/sound_and_sigil"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "moonsorigins:lich/forms/soul_meter_resource",
+          "change": -1,
+          "operation": "add"
+        }
+      ]
+    },
+    "condition": {
+      "type":"origins:and",
+      "conditions":[
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/resource_resource",
+          "comparison": "==",
+          "compare_to": 2
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "origins:lich/spells_soul"
+            }
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:bone"
+            }
+          },
+          "inverted": true
+        },
+        {
+          "type":"origins:raycast",
+          "block":false,
+          "shape_type": "visual",
+          "fluid_handling": "any",
+          "entity": true,
+          "distance":15,
+          "match_bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:living"
+            }
+          }
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/soul_meter_resource",
+          "comparison": ">=",
+          "compare_to": 1
+        }
+      ]
+    }
+  },
+
+  "limited_movement": {
+    "type": "origins:modify_velocity",
+    "modifier": {
+      "value": -0.5,
+      "operation": "multiply_total_multiplicative"
+    },
+    "axes": [
+      "x",
+      "z"
+    ],
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:lich/forms/soul/ainirs_blessing_power",
+      "comparison": "!=",
+      "compare_to": 0
+    }
+  }
+}

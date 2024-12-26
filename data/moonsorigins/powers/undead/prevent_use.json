@@ -1,0 +1,35 @@
+{
+    "type": "origins:damage_over_time",
+    "interval": 20,
+    "onset_delay": 1,
+    "damage":3,
+    "damage_easy":1.5,
+    "damage_type":"generic_kill",
+    
+    "condition": {
+        "type":"origins:or",
+        "conditions":[
+            {
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "tag": "origins:undead/not_usable_tools"
+                    }
+                }
+            },
+            {
+                "type": "origins:equipped_item",
+                "equipment_slot": "offhand",
+                "item_condition": {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "tag": "origins:undead/not_usable_tools"
+                    }
+                }
+            }
+        ]
+    },
+    "hidden":true
+}

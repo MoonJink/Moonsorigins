@@ -1,0 +1,162 @@
+{
+  "type": "origins:multiple",
+
+  "resource":{
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "start_value": 0,
+    "hud_render": {
+      "should_render": false,
+      "inverted": false,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 1
+    },
+    "max_action": {
+      "type": "origins:play_sound",
+      "sound":"minecraft:block.respawn_anchor.set_spawn",
+      "category": "master",
+      "volume": 0.4,
+      "pitch": 1
+    },
+    "min_action": {
+      "type": "origins:play_sound",
+      "sound":"minecraft:block.respawn_anchor.deplete",
+      "category": "master",
+      "volume": 0.6,
+      "pitch": 1
+    }
+  },
+
+  "1_to_0": {
+    "type": "origins:active_self",
+    "cooldown": 560,
+    "key": {
+      "key" : "key.origins.secondary_active",
+      "continuous": false
+    },
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:resource",
+        "resource": "moonsorigins:scientist/transformation/mode_resource",
+        "comparison": "==",
+        "compare_to": 0
+      },
+      "if_action" : {
+        "type": "origins:change_resource",
+        "resource": "moonsorigins:scientist/transformation/mode_resource",
+        "change": 1,
+        "operation": "set"
+      }
+    }
+  },
+  "return_to_original_form": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "moonsorigins:scientist/transformation/mode_resource",
+      "change": 0,
+      "operation": "set"
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:scientist/transformation/mode_1_to_0",
+          "comparison": "<=",
+          "compare_to": 320
+        }
+      ]
+    }
+  },
+  "cancel_power": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "moonsorigins:scientist/transformation/mode_resource",
+          "change": 0,
+          "operation": "set"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "moonsorigins:scientist/transformation/mode_1_to_0",
+          "change": 330,
+          "operation": "set"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:scientist/transformation/mode_resource",
+          "comparison": "==",
+          "compare_to": 1
+        },
+        {
+          "type": "origins:sneaking"
+        }
+      ]
+    }
+  },
+
+  "heat_up": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "moonsorigins:scientist/overloaded_resource",
+          "change": 3,
+          "operation": "add"
+        },
+        {
+          "type":"origins:trigger_cooldown",
+          "power":"moonsorigins:scientist/overloaded_cool"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:scientist/transformation/mode_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+
+  "fake_cooldown":{
+    "type": "origins:cooldown",
+    "cooldown": 320,
+    "hud_render": {
+      "should_render": true,
+      "inverted": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+      "bar_index": 14
+    }
+  },
+  "trigger_fake_cooldown": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:trigger_cooldown",
+      "power": "moonsorigins:scientist/transformation/mode_fake_cooldown"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:scientist/transformation/mode_1_to_0",
+      "comparison": "==",
+      "compare_to": 320
+    }
+  },
+  "hidden": true
+}

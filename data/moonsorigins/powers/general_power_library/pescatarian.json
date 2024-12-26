@@ -1,0 +1,47 @@
+{
+  "type": "origins:prevent_item_use",
+  "name": "Pescatarian",
+  "description": "You may only consume fish.\n",
+  "item_condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:or",
+        "conditions": [
+          {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "origins:meat"
+            }
+          },
+          {
+            "type": "origins:meat"
+          },
+          {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "origins:moonsorigins/meat"
+            }
+          }
+        ]
+      },
+      {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "minecraft:fishes"
+        },
+        "inverted": true
+      },
+      {
+        "type": "origins:food"
+      },
+      {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "origins:moonsorigins/ignore_diet"
+        },
+        "inverted": true
+      }
+    ]
+  }
+}

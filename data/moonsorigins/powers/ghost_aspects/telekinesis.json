@@ -1,0 +1,104 @@
+{
+  "name": "Ghost Aspect: telekinesis",
+  "description": "Guide forth the spirits into an enemy, causing them to levitate away from you.\n\n",
+  "badges": [
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Trigger with [secondary]"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": [
+        {
+          "text": "<This ",
+          "color": "yellow",
+          "italic": true
+        },
+        {
+          "text": "does not ",
+          "color": "red",
+          "italic": true
+        },
+        {
+          "text": "use ",
+          "color": "yellow",
+          "italic": true
+        },
+        {
+          "text": "mana",
+          "color": "aqua",
+          "italic": true
+        },
+        {
+          "text": ">",
+          "color": "yellow",
+          "italic": true
+        }
+      ]
+    }
+  ],
+
+  "type": "origins:active_self",
+  "cooldown": 200,
+  "hud_render": {
+    "should_render": true,
+    "sprite_location": "minecraft:textures/gui/moonpack_bar_points.png",
+    "bar_index": 1
+  },
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:raycast",
+        "shape_type": "collider",
+        "fluid_handling": "none",
+        "bientity_action": {
+          "type":"origins:target_action",
+          "action":{
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_velocity",
+                "z": -1,
+                "y": 1,
+                "space": "local"
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "minecraft:levitation",
+                  "duration": 60,
+                  "amplifier": 4
+                }
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "minecraft:glowing",
+                  "duration": 5,
+                  "amplifier": 0
+                }
+              }
+            ]
+          }
+        },
+        "distance": 10,
+        "command_step": 0.5,
+        "command_along_ray": "particle witch ~ ~-0.5 ~ 0.4 0.4 0.4 0.03 2 normal",
+        "block": true
+      },
+      {
+        "type": "origins:play_sound",
+        "sound": "minecraft:entity.illusioner.prepare_mirror",
+        "pitch": 1.5,
+        "volume": 1
+      }
+    ]
+  },
+  "key": {
+    "key": "key.origins.secondary_active",
+    "continuous":true
+  }
+}

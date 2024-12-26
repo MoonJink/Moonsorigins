@@ -1,0 +1,73 @@
+{
+  "name": "Spirit rage",
+  "description": "Channeling intense rage, you emit a terrifying wail that startles enemies.\n\nAll hostile mobs in a 5 block radius flee briefly, this inflicts blindness and nausea.\n\nYou can only use this ability every 30 seconds.\n\n",
+
+  "type": "origins:active_self",
+  "cooldown": 600,
+  "hud_render": {
+    "should_render": true,
+    "sprite_location": "minecraft:textures/gui/moonpack_bars.png",
+    "bar_index": 7
+  },
+  "key": {
+    "key" : "key.origins.tertiary_active",
+    "continuous": true
+  },
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:area_of_effect",
+        "radius": 5,
+        "shape": "sphere",
+        "bientity_action": {
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_velocity",
+                "z": -3,
+                "y": 0.5,
+                "space": "local",
+                "set": true
+              },
+              {
+                "type": "origins:apply_effect",
+                "effects": [
+                  {
+                    "effect": "minecraft:blindness",
+                    "duration": 200,
+                    "is_ambient": true,
+                    "show_particles": false,
+                    "show_icon": true
+                  },
+                  {
+                    "effect": "minecraft:nausea",
+                    "duration": 200,
+                    "amplifier": 0,
+                    "is_ambient": true,
+                    "show_particles": false,
+                    "show_icon": true
+                  },
+                  {
+                    "effect": "minecraft:slowness",
+                    "duration": 200,
+                    "amplifier": 1,
+                    "is_ambient": true,
+                    "show_particles": false,
+                    "show_icon": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "function moonsorigins:vengeful_spirit/vengeful_spirit_shriek"
+      }
+    ]
+  }
+}

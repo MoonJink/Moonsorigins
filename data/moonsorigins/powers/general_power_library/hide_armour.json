@@ -1,0 +1,8 @@
+{
+  "type": "origins:prevent_feature_render",
+  "features": [
+    "armor",
+    "elytra"
+  ],
+  "hidden": true
+}

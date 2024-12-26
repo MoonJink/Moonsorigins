@@ -1,0 +1,30 @@
+{
+  "type": "origins:simple",
+  "name": "Spirit realm",
+  "description": "As a spirit. You have access to the realm of spirits. Which provides you with the ability to phase, reduced visibility (from others) and the ability to see entities through walls.\nHowever you cannot deal damage, cannot see nearby entities and will take damage if you stay in the realm too long.\n\n\n",
+  "badges": [
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/toggle.png",
+      "text": "Trigger with [primary]"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": {
+        "text": "[If you enter the nether you are trapped in spirit form]",
+        "color": "red",
+        "italic": true
+      }
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": {
+        "text": "<Unless in the nether, you will take damage after a short time in the spirit realm>",
+        "color": "yellow",
+        "italic": true
+      }
+    }
+  ]
+}

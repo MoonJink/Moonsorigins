@@ -1,0 +1,36 @@
+ {
+	"powers": [
+		"moonsorigins:alchemist/extra_effects",
+		"moonsorigins:alchemist/potion_give_activate",
+		"moonsorigins:alchemist/alchemical_transformations_activate",
+		"moonsorigins:alchemist/effect_immunity",
+		"moonsorigins:alchemist/alchemist_pouch",
+		"moonsorigins:alchemist/transform_potion",
+		"moonsorigins:general_power_library/spawn_hell",
+		"moonsorigins:alchemist/vision",
+		"moonsorigins:alchemist/realm/phantom_power",
+		"moonsorigins:alchemist/realm/extra_realm_effects",
+		"moonsorigins:alchemist/realm/sight",
+		"moonsorigins:alchemist/realm/resource",
+		"moonsorigins:alchemist/alchemic_recipe",
+		"moonsorigins:alchemist/imbue",
+		"moonsorigins:alchemist/alt_potions_potion",
+		"moonsorigins:alchemist/alt_potions_action",
+
+		"moonsorigins:general_power_library/no_brewing_stand",
+		"moonsorigins:general_power_library/no_enchantment_table",
+
+
+		"moonsorigins:alchemist/polishing/alchemic_damage_name",
+		"moonsorigins:alchemist/polishing/alchemic_potions_name",
+		"moonsorigins:alchemist/polishing/pouch_name",
+		"moonsorigins:alchemist/polishing/realm_name",
+		"moonsorigins:alchemist/polishing/recipes",
+		"moonsorigins:alchemist/polishing/tooltips"
+	],
+	"icon": "minecraft:cauldron",
+	"order": 0,
+	"impact": 3,
+	"name": "Spirit Alchemist",
+	"description": "Risen from the grave, you seek to use your alchemical knowledge to aid your allies."
+}

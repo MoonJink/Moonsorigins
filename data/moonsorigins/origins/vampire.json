@@ -1,0 +1,30 @@
+ {
+	"powers": [
+		"moonsorigins:vampire/forms/resource",
+		"moonsorigins:vampire/forms/wolf_transformation",
+		"moonsorigins:vampire/forms/rat_transformation",
+		"moonsorigins:vampire/forms/whale_transformation",
+		"moonsorigins:vampire/forms/alt_transformation",
+		"moonsorigins:vampire/extra_effects",
+		"moonsorigins:vampire/blood",
+		"moonsorigins:general_power_library/health_variations_1_heart_lost",
+		"moonsorigins:general_power_library/night_vision",
+		"moonsorigins:vampire/burn_baby_burn",
+		"moonsorigins:general_power_library/hide_armour",
+		"moonsorigins:vampire/hawk_tuah",
+		"moonsorigins:vampire/dagger_craft",
+
+		"moonsorigins:vampire/polishing/vampirism",
+		"moonsorigins:vampire/polishing/wolf_form",
+		"moonsorigins:vampire/polishing/rat_form",
+		"moonsorigins:vampire/polishing/whale_form",
+		"moonsorigins:vampire/polishing/alt_form",
+		"moonsorigins:vampire/polishing/recipes",
+		"moonsorigins:vampire/polishing/tooltip"
+	],
+	"icon": "minecraft:scute",
+	"order": 0,
+	"impact": 3,
+	"name": "The Vampire",
+	"description": "Risen again 👿👿"
+}

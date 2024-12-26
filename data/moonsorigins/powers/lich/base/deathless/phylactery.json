@@ -1,0 +1,64 @@
+{
+  "type": "origins:multiple",
+
+  "activate_prevent_death": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:grant_power",
+      "power": "moonsorigins:lich/base/deathless/phylactery_prevent_death",
+      "source": "moonsorigins:lich"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:lich/forms/soul_meter_resource",
+      "comparison": ">=",
+      "compare_to": 5
+    }
+  },
+  "phylactery_remove": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "power remove @s moonsorigins:lich/base/deathless/phylactery_prevent_death"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:lich/forms/soul_meter_resource",
+      "comparison": "<",
+      "compare_to": 5
+    }
+  },
+
+  "overlay_can_use":{
+    "type":"origins:overlay",
+    "texture": "minecraft:textures/misc/phylactery_heart.png",
+    "draw_mode": "texture",
+    "draw_phase": "above_hud",
+    "hide_with_hud": true,
+    "visible_in_third_person": true,
+
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:lich/forms/soul_meter_resource",
+      "comparison": ">=",
+      "compare_to": 5
+    }
+  },
+  "overlay_can_not_use":{
+    "type":"origins:overlay",
+    "texture": "minecraft:textures/misc/phylactery_heart_empty.png",
+    "draw_mode": "texture",
+    "draw_phase": "above_hud",
+    "hide_with_hud": true,
+    "visible_in_third_person": true,
+
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:lich/forms/soul_meter_resource",
+      "comparison": "<",
+      "compare_to": 5
+    }
+  }
+}

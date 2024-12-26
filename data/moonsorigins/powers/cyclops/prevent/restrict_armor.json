@@ -1,0 +1,56 @@
+{
+  "type": "origins:multiple",
+  "restrict": {
+    "type": "origins:restrict_armor",
+    "head": {
+      "type": "origins:ingredient",
+      "ingredient": [
+        {
+          "tag": "origins:cyclops/restricted_armor"
+        }
+      ]
+    },
+    "chest": {
+      "type": "origins:ingredient",
+      "ingredient": [
+        {
+          "tag": "origins:cyclops/restricted_armor"
+        }
+      ]
+    },
+    "legs": {
+      "type": "origins:ingredient",
+      "ingredient": [
+        {
+          "tag": "origins:cyclops/restricted_armor"
+        }
+      ]
+    },
+    "feet": {
+      "type": "origins:ingredient",
+      "ingredient": [
+        {
+          "tag": "origins:cyclops/restricted_armor"
+        }
+      ]
+    }
+  },
+  "tooltip": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": [
+        {
+          "tag": "origins:cyclops/restricted_armor"
+        }
+      ]
+    },
+    "text": {
+      "text": "Unwearable <Superior Viewpoint>",
+      "color": "red",
+      "order": 0
+
+    }
+  },
+  "hidden": true
+}

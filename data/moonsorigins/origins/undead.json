@@ -1,0 +1,33 @@
+ {
+	"powers": [
+		"moonsorigins:undead/prevent_use",
+		"moonsorigins:undead/mine_dirt_fast",
+		"moonsorigins:undead/lightning_rdo_hitting",
+		"moonsorigins:undead/ignore_water",
+		"moonsorigins:undead/extra_effects",
+		"moonsorigins:undead/glasses",
+		"moonsorigins:undead/mob_ignore",
+		"moonsorigins:undead/sun",
+		"moonsorigins:undead/doors",
+		"moonsorigins:undead/vomit_beam",
+		"moonsorigins:general_power_library/health_variations_3_heart_lost",
+		"moonsorigins:general_power_library/hide_armour",
+
+		"moonsorigins:undead/polishing/let_me_out",
+		"moonsorigins:undead/polishing/scientific_modification",
+		"moonsorigins:undead/polishing/undead",
+		"moonsorigins:undead/polishing/unholy_form",
+		"moonsorigins:general_power_library/flesh_diet",
+		"moonsorigins:undead/polishing/weak_form",
+		"moonsorigins:undead/polishing/recipes",
+
+		"moonsorigins:ghost_aspects/scare_creepers",
+		"moonsorigins:undead/pretend_this_isnt_here",
+		"origins:scare_creepers"
+	],
+	"icon": "minecraft:rotten_flesh",
+	"order": 0,
+	"impact": 2,
+	"name": "The Undead",
+	"description": "Undead again.."
+}

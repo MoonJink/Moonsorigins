@@ -1,0 +1,177 @@
+{
+  "type": "origins:multiple",
+
+  "power": {
+    "type": "origins:active_self",
+    "cooldown": 100,
+    "hud_render": {
+      "should_render": false,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars.png",
+      "bar_index": 22
+    },
+    "key": {
+      "key": "key.use",
+      "continuous": true
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:raycast",
+          "distance": 15,
+          "shape_type": "visual",
+          "fluid_handling": "any",
+          "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "function moonsorigins:lich/curse/give_curse"
+                }
+              },
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "function moonsorigins:lich/curse/damage"
+                }
+              },
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "function moonsorigins:lich/curse/player_damage"
+                }
+              }
+            ]
+          },
+          "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:living"
+            }
+          },
+          "command_step": 1,
+          "block": true
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function moonsorigins:lich/curse/sound_and_sigil"
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "moonsorigins:lich/forms/arcane/curse_cooldown_display"
+        }
+      ]
+    },
+    "condition": {
+      "type":"origins:and",
+      "conditions":[
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/resource_resource",
+          "comparison": "==",
+          "compare_to": 1
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "origins:lich/spells_arcane"
+            }
+          }
+        },
+        {
+          "type":"origins:raycast",
+          "block":false,
+          "shape_type": "visual",
+          "fluid_handling": "any",
+          "entity": true,
+          "distance":15,
+          "match_bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:living"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "cooldown_display": {
+    "type": "origins:cooldown",
+    "cooldown": 100,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars.png",
+      "bar_index": 22
+    }
+  },
+
+
+  "duration_display": {
+    "type": "origins:cooldown",
+    "cooldown": 95,
+    "hud_render": {
+      "should_render": true,
+      "inverted": true,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars.png",
+      "bar_index": 23
+    }
+  },
+  "cursed_slow": {
+    "type": "origins:modify_velocity",
+    "modifier": {
+      "value": -0.25,
+      "operation": "multiply_total_multiplicative"
+    },
+    "axes": [
+      "x",
+      "y",
+      "z"
+    ]
+  },
+  "cursed_glow": {
+    "type": "origins:self_glow",
+    "use_teams": true
+  },
+  "cursed_weak": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "value": -0.3,
+      "operation": "multiply_total_multiplicative"
+    }
+  },
+  "cursed_health": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "value": -0.25,
+      "operation": "multiply_total"
+    }
+  },
+  "cursed_remove_power": {
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "moonsorigins:lich/forms/arcane/curse_duration_display"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 95,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function moonsorigins:lich/curse/remove_curse"
+          }
+        }
+      ]
+    }
+  }
+}

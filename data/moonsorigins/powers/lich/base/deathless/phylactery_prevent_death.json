@@ -1,0 +1,39 @@
+{
+  "type": "origins:prevent_death",
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:change_resource",
+        "resource": "moonsorigins:lich/forms/soul_meter_resource",
+        "change": -5,
+        "operation": "add"
+      },
+      {
+        "type": "origins:change_resource",
+        "resource": "moonsorigins:lich/base/deathless/formless_resource",
+        "change": 1,
+        "operation": "set"
+      },
+      {
+        "type": "origins:feed",
+        "food": 20,
+        "saturation": 20
+      },
+      {
+        "type": "origins:heal",
+        "amount": 20
+      },
+      {
+        "type": "origins:change_resource",
+        "resource": "moonsorigins:lich/forms/resource_resource",
+        "change": 0,
+        "operation": "set"
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "function moonsorigins:lich/phylactery_activated"
+      }
+    ]
+  }
+}

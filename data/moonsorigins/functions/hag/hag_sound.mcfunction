@@ -1,0 +1,1 @@
+execute run playsound minecraft:banshee_scream master @a ~ ~ ~ 3 1

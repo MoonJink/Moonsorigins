@@ -1,0 +1,154 @@
+{
+  "type": "origins:active_self",
+  "name": "ALEIES SMASH!",
+  "description": "You launch upward and after a short time throw nearby creatures upwards!\n",
+  "cooldown": 160,
+  "hud_render": {
+    "should_render": true,
+    "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+    "bar_index": 2
+  },
+  "key": {
+    "key": "key.origins.primary_active"
+  },
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:delay",
+        "ticks": 15,
+        "action": {
+          "type": "origins:area_of_effect",
+          "radius": 15,
+          "shape": "sphere",
+          "include_actor": false,
+          "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:add_velocity",
+                "y": 1.5,
+                "space": "world",
+                "set": true
+              },
+              {
+                "type": "origins:delay",
+                "ticks": 30,
+                "action": {
+                  "type": "origins:target_action",
+                  "action": {
+                    "type": "origins:damage",
+                    "amount": 9,
+                    "damage_type": "minecraft:fall"
+                  }
+                }
+              },
+              {
+                "type": "origins:delay",
+                "ticks": 30,
+                "action": {
+                  "type": "origins:target_action",
+                  "action": {
+                    "type": "origins:apply_effect",
+                    "effects": [
+                      {
+                        "effect": "minecraft:slowness",
+                        "duration": 200,
+                        "amplifier": 2,
+                        "is_ambient": true,
+                        "show_particles": false,
+                        "show_icon": true
+                      },
+                      {
+                        "effect": "minecraft:wither",
+                        "duration": 100,
+                        "amplifier": 1,
+                        "is_ambient": true,
+                        "show_particles": false,
+                        "show_icon": true
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:target_condition",
+                "condition": {
+                  "type": "origins:tamed",
+                  "inverted": true
+                }
+              },
+              {
+                "type": "origins:target_condition",
+                "condition": {
+                  "type": "origins:nbt",
+                  "nbt": "{CustomName:'{\"text\":\"protected\"}'}",
+                  "inverted": true
+                }
+              },
+              {
+                "type": "origins:target_condition",
+                "condition": {
+                  "type": "origins:living"
+                }
+              },
+              {
+                "type": "origins:target_condition",
+                "condition": {
+                  "type": "origins:entity_type",
+                  "entity_type": "minecraft:player",
+                  "inverted": true
+                }
+              },
+              {
+                "type": "origins:target_condition",
+                "condition": {
+                  "type": "origins:on_block"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "origins:add_velocity",
+        "y": 0.8,
+        "space": "world",
+        "set": true
+      },
+      {
+        "type": "origins:delay",
+        "ticks": 20,
+        "action": {
+          "type":"origins:execute_command",
+          "command": "function moonsorigins:cyclops/cyclops_particles"
+        }
+      },
+      {
+        "type": "origins:delay",
+        "ticks": 20,
+        "action": {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.wither.break_block",
+          "volume": 1,
+          "pitch":0.7
+        }
+      },
+      {
+        "type": "origins:delay",
+        "ticks": 20,
+        "action": {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.anvil.land",
+          "volume": 1,
+          "pitch":0.7
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Tormented 😭😭😭👿😭",
+  "description": "Haunted by memories of your tragic end, your spirit form is unstable.\n\nYou have 8 hearts but you receive passive regen while in dim light light level (<7).\n\nIn bright light (sun) your are set on fire.\n\n",
+
+  "type": "origins:action_over_time",
+  "interval": 60,
+  "entity_action": {
+    "type": "origins:apply_effect",
+    "effect": {
+      "effect": "minecraft:regeneration",
+      "duration": 100,
+      "is_ambient": true,
+      "show_particles": false,
+      "show_icon": true
+    }
+  },
+  "condition": {
+    "type": "origins:brightness",
+    "comparison": "<",
+    "compare_to": 0.15
+  }
+}

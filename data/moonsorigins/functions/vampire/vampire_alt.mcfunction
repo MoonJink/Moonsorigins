@@ -1,0 +1,1 @@
+execute run playsound minecraft:mungus_alt master @a ~ ~ ~ 32 1

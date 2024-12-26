@@ -1,0 +1,13 @@
+{
+  "values": [
+    "alchemist:tick",
+    "cyclops:tick",
+    "scientist:tick",
+    "hag:tick",
+    "undead:tick",
+    "drowned:tick",
+    "vampire:tick",
+    "vengeful_spirit:tick",
+    "lich:tick"
+  ]
+}

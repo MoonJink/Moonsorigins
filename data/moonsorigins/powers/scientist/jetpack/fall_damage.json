@@ -1,0 +1,16 @@
+{
+    "type": "origins:modify_falling",
+    "take_fall_damage": false,
+    "velocity":0.08,
+    "hidden":true,
+    
+    "condition":{
+        "type":"origins:equipped_item",
+        "equipment_slot": "feet",
+        "item_condition": {
+            "type": "origins:armor_value",
+            "comparison": ">=",
+            "compare_to": 3
+        }
+    }
+}

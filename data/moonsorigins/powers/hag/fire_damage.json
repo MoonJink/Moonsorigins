@@ -1,0 +1,12 @@
+{
+  "type": "origins:modify_damage_taken",
+  "damage_condition": {
+    "type": "origins:fire"
+  },
+  "modifier": {
+    "name": "More fire damage",
+    "operation": "add_base_early",
+    "value": 1.5
+  },
+  "hidden": true
+}

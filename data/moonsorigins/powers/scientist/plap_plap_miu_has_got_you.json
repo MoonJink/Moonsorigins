@@ -1,0 +1,148 @@
+{
+    "type": "origins:multiple",
+    "hidden": true,
+    "amythest_to_slime": {
+
+        "type": "origins:action_on_being_used",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:amethyst_shard"
+            }
+        },
+        "held_item_action": {
+            "type": "origins:consume",
+            "amount": 1
+        },
+        "priority": 1,
+        "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:spawn_particles",
+                        "particle": "minecraft:item_slime",
+                        "count": 12
+                    }
+                },
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:play_sound",
+                        "sound": "minecraft:block.amethyst_block.chime",
+                        "volume":3
+                    }
+                },
+                {
+                    "type": "origins:chance",
+                    "chance": 0.5,
+                    "action": {
+                        "type": "origins:actor_action",
+                        "action": {
+                            "type": "origins:spawn_entity",
+                            "entity_type": "minecraft:item",
+                            "tag": "{Item:{id:\"minecraft:slime_ball\",Count:1b}}"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "flesh_to_roses": {
+
+        "type": "origins:action_on_being_used",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:rotten_flesh"
+            }
+        },
+        "held_item_action": {
+            "type": "origins:consume",
+            "amount": 1
+        },
+        "priority": 1,
+        "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:spawn_particles",
+                        "particle": "minecraft:item_slime",
+                        "count": 12
+                    }
+                },
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:play_sound",
+                        "sound": "minecraft:block.amethyst_block.chime",
+                        "volume":3
+                    }
+                },
+                {
+                    "type": "origins:chance",
+                    "chance": 0.5,
+                    "action": {
+                        "type": "origins:actor_action",
+                        "action": {
+                            "type": "origins:spawn_entity",
+                            "entity_type": "minecraft:item",
+                            "tag": "{Item:{id:\"minecraft:poppy\",Count:1b}}"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "star_to_diamonds": {
+
+        "type": "origins:action_on_being_used",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:nether_star"
+            }
+        },
+        "held_item_action": {
+            "type": "origins:consume",
+            "amount": 1
+        },
+        "priority": 1,
+        "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:spawn_particles",
+                        "particle": "minecraft:end_rod",
+                        "count": 12
+                    }
+                },
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:play_sound",
+                        "sound": "minecraft:block.amethyst_block.chime",
+                        "volume":3
+                    }
+                },
+                {
+                    "type": "origins:chance",
+                    "chance": 1,
+                    "action": {
+                        "type": "origins:actor_action",
+                        "action": {
+                            "type": "origins:spawn_entity",
+                            "entity_type": "minecraft:item",
+                            "tag": "{Item:{id:\"minecraft:diamond\",Count:16b}}"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,43 @@
+{
+  "type": "origins:simple",
+  "name": "Shrieking hag",
+  "description": "You are a shrieking hag, and as such are able to scream extremely loudly.\n",
+  "badges": [
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Trigger with [primary]"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": [
+        {
+          "text": "<This ",
+          "color": "yellow",
+          "italic": true
+        },
+        {
+          "text": "does not ",
+          "color": "red",
+          "italic": true
+        },
+        {
+          "text": "use ",
+          "color": "yellow",
+          "italic": true
+        },
+        {
+          "text": "mana",
+          "color": "aqua",
+          "italic": true
+        },
+        {
+          "text": ">",
+          "color": "yellow",
+          "italic": true
+        }
+      ]
+    }
+  ]
+}

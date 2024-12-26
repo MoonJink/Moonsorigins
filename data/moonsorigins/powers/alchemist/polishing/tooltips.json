@@ -1,0 +1,511 @@
+{
+  "name": "[TOOLTIPS]",
+  "description": "Under certain items there are tooltips that explain their function.\nIf a tooltip contains [I] then it correlates to you being immune to the effect(s) it provides",
+  "type": "origins:multiple",
+  "brewing_stand": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:brewing_stand"
+      }
+    },
+    "text": {
+      "text": "Unusable (POWER_NAME)",
+      "color": "red",
+      "italic": true,
+      "order": 0
+    }
+  },
+  "cauldron": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:cauldron"
+      }
+    },
+    "text": {
+      "text": "An alchemist's best friend",
+      "color": "light_purple",
+      "italic": true,
+      "order": 0
+    }
+  },
+  "sugar": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:sugar"
+      }
+    },
+    "text": [
+      {
+        "text": "[I] Ingredient: Speed",
+        "color": "gray",
+        "italic": true,
+        "order": 0
+      },
+      {
+        "text": " (Requires 3)",
+        "color": "dark_gray",
+        "italic": true,
+        "order": 0
+      }
+    ]
+  },
+  "blaze_powder": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    "text": {
+      "text": "Ingredient: Strength",
+      "color": "gray",
+      "italic": true,
+      "order": 0
+    }
+  },
+  "rabbit_foot": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:rabbit_foot"
+      }
+    },
+    "text": {
+      "text": "Ingredient: Jump boost",
+      "color": "gray",
+      "italic": true,
+      "order": 0
+    }
+  },
+  "magma_cream": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:magma_cream"
+      }
+    },
+    "text": {
+      "text": "Ingredient: Fire resistance",
+      "color": "gray",
+      "italic": true,
+      "order": 0
+    }
+  },
+  "phantom_membrane": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:phantom_membrane"
+      }
+    },
+    "text": {
+      "text": "[I] Ingredient: Slow falling",
+      "color": "gray",
+      "italic": true,
+      "order": 0
+    }
+  },
+  "kelp": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:kelp"
+      }
+    },
+    "text": [
+      {
+        "text": "Ingredient: Water breathing",
+        "color": "gray",
+        "italic": true,
+        "order": 0
+      },
+      {
+        "text": " (Requires 32)",
+        "color": "dark_gray",
+        "italic": true,
+        "order": 0
+      }
+    ]
+  },
+  "golden_carrot": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:golden_carrot"
+      }
+    },
+    "text": {
+      "text": "[I] Ingredient: Invisibility",
+      "color": "gray",
+      "italic": true,
+      "order": 0
+    }
+  },
+  "fermented_spider_eye": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:fermented_spider_eye"
+      }
+    },
+    "text": {
+      "text": "[I] Ingredient: Weakness",
+      "color": "gray",
+      "italic": true,
+      "order": 0
+    }
+  },
+  "ghast_tear": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:ghast_tear"
+      }
+    },
+    "text": {
+      "text": "Ingredient: Regeneration",
+      "color": "gray",
+      "italic": true,
+      "order": 0
+    }
+  },
+  "spider_eye": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:spider_eye"
+      }
+    },
+    "text": [
+      {
+        "text": "[I] Ingredient: Poison",
+        "color": "gray",
+        "italic": true,
+        "order": 0
+      }
+    ]
+  },
+  "ink_sac": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:ink_sac"
+      }
+    },
+    "text": [
+      {
+        "text": "[I] Ingredient: Slowness",
+        "color": "gray",
+        "italic": true,
+        "order": 0
+      },
+      {
+        "text": " (Requires 2)",
+        "color": "dark_gray",
+        "italic": true,
+        "order": 0
+      }
+    ]
+  },
+  "glistering_melon_slice": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:glistering_melon_slice"
+      }
+    },
+    "text": {
+      "text": "[I] Ingredient: Instant health",
+      "color": "gray",
+      "italic": true,
+      "order": 0
+    }
+  },
+  "pufferfish": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:pufferfish"
+      }
+    },
+    "text": {
+      "text": "[I] Ingredient: Instant damage",
+      "color": "gray",
+      "italic": true,
+      "order": 0
+    }
+  },
+  "prismarine_crystals": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:prismarine_crystals"
+      }
+    },
+    "text": [
+      {
+        "text": "[I] Ingredient: Ainir's Curse",
+        "color": "gray",
+        "italic": true,
+        "order": 0
+      },
+      {
+        "text": " (Requires 3)",
+        "color": "dark_gray",
+        "italic": true,
+        "order": 0
+      }
+    ]
+  },
+  "heart_of_the_sea": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:heart_of_the_sea"
+      }
+    },
+    "text": {
+      "text": "Ingredient: Farnum's Embrace",
+      "color": "gray",
+      "italic": true,
+      "order": 0
+    }
+  },
+  "flowers": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "origins:alchemist/mjoll_tag"
+      }
+    },
+    "text": [
+      {
+        "text": "Ingredient: Mjoll's Gift",
+        "color": "gray",
+        "italic": true,
+        "order": 0
+      },
+      {
+        "text": " (Requires 8)",
+        "color": "dark_gray",
+        "italic": true,
+        "order": 0
+      }
+    ]
+  },
+  "glowstone_dust": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:glowstone_dust"
+      }
+    },
+    "text": [
+      {
+        "text": "Ingredient: Absorption",
+        "color": "gray",
+        "italic": true,
+        "order": 0
+      },
+      {
+        "text": " (Requires 5)",
+        "color": "dark_gray",
+        "italic": true,
+        "order": 0
+      }
+    ]
+  },
+  "gunpowder": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:gunpowder"
+      }
+    },
+    "text": {
+      "text": "Transforms crafted potions into splash variants",
+      "color": "aqua",
+      "italic": true,
+      "order": 0
+    }
+  },
+  "redstone": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:redstone"
+      }
+    },
+    "text": {
+      "text": "Transforms crafted potions into drinkable variants",
+      "color": "aqua",
+      "italic": true,
+      "order": 0
+    }
+  },
+  "nether_wart": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:nether_wart"
+      }
+    },
+    "text": {
+      "text": "Transforms crafted potions into lingering variants",
+      "color": "aqua",
+      "italic": true,
+      "order": 0
+    }
+  },
+  "glass_bottle": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:glass_bottle"
+      }
+    },
+    "text": {
+      "text": "Required for potion creation",
+      "color": "gray",
+      "italic": true,
+      "order": 0
+    }
+  },
+  "water_bucket": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:water_bucket"
+      }
+    },
+    "text": {
+      "text": "Required to fill a cauldron",
+      "color": "gray",
+      "italic": true,
+      "order": 0
+    }
+  },
+  "bucket": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "origins:moonsorigins/bucket_tag"
+      }
+    },
+    "text": {
+      "text": "Do not put in pouch",
+      "color": "red",
+      "italic": true,
+      "order": 0
+    }
+  },
+  "pufferfish_bucket": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:pufferfish_bucket"
+      }
+    },
+    "text": {
+      "text": "Can be placed in pouch separately or together",
+      "color": "gray",
+      "italic": true,
+      "order": 0
+    }
+  },
+  "empty_bucket": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:bucket"
+      }
+    },
+    "text": {
+      "text": "Required to fill a cauldron",
+      "color": "gray",
+      "italic": true,
+      "order": 0
+    }
+  },
+  "alchemical_transformations": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "origins:alchemist/alchemical_transformations"
+      }
+    },
+    "text": [
+      {
+        "text": "Transmutable ",
+        "color": "gray",
+        "italic": true,
+        "order": 0
+      },
+      {
+        "text": "(may require more than 1)",
+        "color": "dark_gray",
+        "italic": true,
+        "order": 0
+      }
+    ]
+  },
+  "pouch": {
+    "type": "origins:tooltip",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": [
+        {
+          "tag": "origins:alchemist/alchemist_pouch"
+        },
+        {
+          "tag": "origins:alchemist/potion_ingredients"
+        },
+        {
+          "tag": "origins:alchemist/mjoll_tag"
+        },
+        {
+          "tag": "origins:alchemist/alchemical_transformations"
+        }
+      ]
+    },
+    "text": [
+      {
+        "text": "Can Store",
+        "color": "dark_gray",
+        "italic": true,
+        "order": 0
+      }
+    ]
+  }
+}

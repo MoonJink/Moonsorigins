@@ -1,0 +1,205 @@
+{
+  "name": "Vengeful aura",
+  "description": "The Vengeful Spirit is driven by a desire for retribution and grows more powerful when enemies are near.\n\nYou gain a strength boost and regen.\n\nThe aura exhausts you. After combat you gain weakness for 10 secs.\n\n",
+
+  "type": "origins:multiple",
+
+  "main_power": {
+    "type": "origins:active_self",
+    "cooldown": 500,
+    "key": {
+      "key" : "key.origins.secondary_active",
+      "continuous": false
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:strength",
+              "duration": 200,
+              "amplifier": 1,
+              "is_ambient": true,
+              "show_particles": false,
+              "show_icon": true
+            },
+            {
+              "effect": "minecraft:regeneration",
+              "duration": 200,
+              "amplifier": 2,
+              "is_ambient": true,
+              "show_particles": false,
+              "show_icon": true
+            }
+          ]
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "moonsorigins:vengeful_spirit/vengeful_aura_strength_duration"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vengeful_spirit/ethereal_form_resource",
+      "comparison": "==",
+      "compare_to": 0
+    }
+  },
+  "weakness": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:weakness",
+            "duration": 200,
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": true
+          }
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "moonsorigins:vengeful_spirit/vengeful_aura_weakness_duration"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vengeful_spirit/vengeful_aura_main_power",
+      "comparison": "==",
+      "compare_to": 300
+    }
+  },
+
+  "cooldown_displayer": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:trigger_cooldown",
+      "power": "moonsorigins:vengeful_spirit/vengeful_aura_cooldown"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vengeful_spirit/vengeful_aura_main_power",
+      "comparison": "==",
+      "compare_to": 100
+    }
+  },
+
+  "overlay_strength":{
+    "type":"origins:overlay",
+    "texture": "minecraft:textures/misc/nausea.png",
+    "red": 1,
+    "green": 0,
+    "blue": 0,
+    "strength":0.5,
+    "draw_mode": "nausea",
+    "draw_phase": "below_hud",
+    "hide_with_hud": false,
+    "visible_in_third_person": false,
+
+    "condition":{
+      "type": "origins:resource",
+      "resource": "moonsorigins:vengeful_spirit/vengeful_aura_main_power",
+      "comparison": ">",
+      "compare_to": 300
+    }
+  },
+  "overlay_weakness":{
+    "type":"origins:overlay",
+    "texture": "minecraft:textures/misc/nausea.png",
+    "red": 0,
+    "green": 0,
+    "blue": 1,
+    "strength":0.25,
+    "draw_mode": "nausea",
+    "draw_phase": "below_hud",
+    "hide_with_hud": false,
+    "visible_in_third_person": false,
+
+    "condition":{
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:vengeful_spirit/vengeful_aura_main_power",
+          "comparison": "<=",
+          "compare_to": 300
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:vengeful_spirit/vengeful_aura_main_power",
+          "comparison": ">=",
+          "compare_to": 100
+        }
+      ]
+    }
+  },
+  "heartbeat":{
+    "type":"origins:action_over_time",
+    "interval":20,
+    "entity_action":{
+      "type":"origins:play_sound",
+      "sound":"minecraft:entity.warden.heartbeat",
+      "volume": 0.5,
+      "pitch": 1.5,
+      "category": "player"
+    },
+    "condition":{
+      "type": "origins:resource",
+      "resource": "moonsorigins:vengeful_spirit/vengeful_aura_main_power",
+      "comparison": ">",
+      "compare_to": 300
+    }
+  },
+  "skin": {
+    "type": "apugli:entity_texture_overlay",
+    "texture_location": "minecraft:textures/skins/vengeful_spirit_rage.png",
+    "show_first_person": true,
+    "use_rendering_powers": true,
+    "render_original_model": false,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vengeful_spirit/vengeful_aura_main_power",
+      "comparison": ">",
+      "compare_to": 300
+    }
+  },
+
+  "strength_duration": {
+    "type": "origins:cooldown",
+    "cooldown": 200,
+    "hud_render": {
+      "should_render": true,
+      "inverted": true,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars.png",
+      "bar_index": 4
+    }
+  },
+  "weakness_duration": {
+    "type": "origins:cooldown",
+    "cooldown": 200,
+    "hud_render": {
+      "should_render": true,
+      "inverted": true,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars.png",
+      "bar_index": 5
+    }
+  },
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 100,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars.png",
+      "bar_index": 6
+    }
+  }
+}

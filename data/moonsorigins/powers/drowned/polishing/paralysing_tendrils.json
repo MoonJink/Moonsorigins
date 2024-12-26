@@ -1,0 +1,12 @@
+{
+  "type": "origins:simple",
+  "name": "Paralysing tendrils",
+  "description": "You posses a small tendril on the end of your weapon which can be used to paralyse attackers.\n",
+  "badges": [
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Trigger with [use]"
+    }
+  ]
+}

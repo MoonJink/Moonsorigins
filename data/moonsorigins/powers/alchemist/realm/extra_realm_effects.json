@@ -1,0 +1,183 @@
+{
+  "type": "origins:multiple",
+  "shader": {
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/invert.json",
+    "toggleable": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:alchemist/realm/resource_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "overlay": {
+    "type": "origins:overlay",
+    "texture": "minecraft:textures/misc/nausea.png",
+    "red": 0.282,
+    "green": 0.094,
+    "blue": 0.698,
+    "strength": 0.6,
+    "draw_mode": "nausea",
+    "draw_phase": "above_hud",
+    "hide_with_hud": false,
+    "visible_in_third_person": false,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:alchemist/realm/resource_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+
+  "night_vision_power": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effect": {
+        "effect": "minecraft:night_vision",
+        "duration": 1000,
+        "amplifier": 5,
+        "is_ambient": true,
+        "show_particles": false,
+        "show_icon": false
+
+      }
+    },
+    "falling_action": {
+      "type": "origins:execute_command",
+      "command": "effect clear @s minecraft:night_vision"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:alchemist/realm/resource_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "transparent": {
+    "type": "origins:model_color",
+    "alpha": 0.4,
+    "conditions": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:alchemist/realm/resource_resource",
+          "comparison": "==",
+          "compare_to": 1
+        }
+      ]
+    }
+  },
+  "flash_transparent": {
+    "type": "origins:model_color",
+    "alpha": 0,
+    "conditions": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:alchemist/realm/resource_resource",
+          "comparison": "==",
+          "compare_to": 1
+        },
+        {
+          "type": "origins:on_block",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "visibility": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "rising_action": {
+      "type": "origins:execute_command",
+      "command": "function moonsorigins:alchemist/alchemist_visibility_callon"
+    },
+    "falling_action": {
+      "type": "origins:execute_command",
+      "command": "function moonsorigins:alchemist/alchemist_visibility_callback"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:alchemist/realm/resource_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "hide_armour": {
+    "type": "origins:prevent_feature_render",
+    "features": [
+      "armor",
+      "elytra",
+      "cape",
+      "shoulder_parrot"
+    ],
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:alchemist/realm/resource_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+
+  "enter_hell": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "moonsorigins:alchemist/realm/resource_resource",
+          "change": 1,
+          "operation": "set"
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "moonsorigins:alchemist/realm/resource_activate"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:dimension",
+      "dimension": "minecraft:the_nether"
+    }
+  },
+
+  "prevent_bed": {
+    "type": "origins:prevent_sleep",
+    "message": "The undead do not rest",
+    "set_spawn_point": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:alchemist/realm/resource_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "no_damage": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "set_total",
+      "value": 0
+    },
+    "condition": [
+      {
+        "type": "origins:resource",
+        "resource": "moonsorigins:alchemist/realm/resource_resource",
+        "comparison": "==",
+        "compare_to": 1
+      },
+      {
+        "type": "origins:dimension",
+        "dimension": "minecraft:the_nether",
+        "inverted": true
+      }
+    ]
+  },
+  "hidden": true
+}

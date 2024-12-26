@@ -1,0 +1,23 @@
+{
+  "type": "origins:simple",
+  "name": "Alchemist's Pouch",
+  "description": "You have a pouch which can ONLY hold potion ingredients and potions.\n",
+  "badges": [
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/toggle.png",
+      "text": "Trigger with [secondary]"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": [
+        {
+          "text": "<Any item marked by a custom tooltip may enter the pouch (unless the tooltip specifies that it cannot enter the pouch)>",
+          "color": "yellow",
+          "italic": true
+        }
+      ]
+    }
+  ]
+}

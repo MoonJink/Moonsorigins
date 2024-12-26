@@ -1,0 +1,19 @@
+{
+    "type":"origins:multiple",
+    
+    "speed": {
+        "type": "origins:modify_swim_speed",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0.025
+        }
+    },
+    "sprint_stop": {
+        "type": "origins:prevent_sprinting",
+        "condition": {
+            "type": "origins:submerged_in",
+            "fluid": "minecraft:water"
+        }
+    },
+    "hidden":true
+}

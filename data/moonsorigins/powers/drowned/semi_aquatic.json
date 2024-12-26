@@ -1,0 +1,80 @@
+{
+  "type": "origins:multiple",
+
+  "swim_speed": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "additionalentityattributes:water_speed",
+      "value": 1.5,
+      "operation": "multiply_base"
+    }
+  },
+  "night_vision_in_water": {
+    "type": "origins:night_vision",
+    "strength": 1,
+    "condition": {
+      "type": "origins:submerged_in",
+      "fluid": "minecraft:water"
+    }
+  },
+  "no_drowning": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:gain_air",
+      "value": 60
+    },
+    "interval": 20,
+    "condition": {
+      "type": "origins:submerged_in",
+      "fluid": "minecraft:water"
+    }
+  },
+  "aqua_affinity": {
+    "type": "origins:multiple",
+    "underwater": {
+      "type": "origins:modify_break_speed",
+      "modifier": {
+        "operation": "multiply_total",
+        "value": 4
+      },
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:submerged_in",
+            "fluid": "minecraft:water"
+          },
+          {
+            "type": "origins:enchantment",
+            "enchantment": "minecraft:aqua_affinity",
+            "comparison": "==",
+            "compare_to": 0
+          }
+        ]
+      }
+    },
+    "ungrounded": {
+      "type": "origins:modify_break_speed",
+      "modifier": {
+        "operation": "multiply_total",
+        "value": 4
+      },
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:fluid_height",
+            "fluid": "minecraft:water",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "origins:on_block",
+            "inverted": true
+          }
+        ]
+      }
+    }
+  },
+  "hidden": true
+}

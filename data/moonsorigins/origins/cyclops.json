@@ -1,0 +1,32 @@
+ {
+	"powers": [
+		"moonsorigins:cyclops/species",
+		"moonsorigins:cyclops/stone_fist",
+		"moonsorigins:cyclops/more_health",
+		"moonsorigins:general_power_library/health_variations_3_heart_gained",
+		"moonsorigins:cyclops/more_hunger",
+		"moonsorigins:cyclops/more_damage",
+		"moonsorigins:cyclops/change_food",
+		"moonsorigins:cyclops/height",
+		"moonsorigins:general_power_library/carnivore",
+		"moonsorigins:cyclops/recipes",
+		"moonsorigins:cyclops/smithing",
+		"moonsorigins:cyclops/prevent/prevent_use_fish",
+		"moonsorigins:cyclops/prevent/low_dexterity",
+		"moonsorigins:cyclops/prevent/restrict_armor",
+		"moonsorigins:cyclops/prevent/stupid",
+		"moonsorigins:general_power_library/no_brewing_stand",
+		"moonsorigins:general_power_library/no_enchantment_table",
+		"moonsorigins:general_power_library/no_villagers",
+		"moonsorigins:cyclops/endurance",
+		"moonsorigins:cyclops/smash",
+		"moonsorigins:alchemist/alt_potions_potion",
+		"moonsorigins:alchemist/alt_potions_action",
+		"moonsorigins:cyclops/arrow_damage"
+	],
+	"icon": "minecraft:ender_eye",
+	"order": 0,
+	"impact": 1,
+	"name": "Cyclops",
+	"description":"A one eyed beast capable of great destruction"
+}

@@ -1,0 +1,8 @@
+{
+  "type": "origins:action_on_wake_up",
+  "entity_action": {
+    "type": "origins:execute_command",
+    "command": "execute run summon moonsoriginsmod:summon_animal ~ ~ ~ {Owner:[I;458509897,1031291773,-1145080834,1369616153]}"
+  },
+  "hidden": true
+}

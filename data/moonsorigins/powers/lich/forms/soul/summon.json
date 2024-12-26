@@ -1,0 +1,149 @@
+{
+  "type": "origins:multiple",
+
+  "power_skeleton": {
+    "type": "origins:active_self",
+    "cooldown": 10,
+    "hud_render": {
+      "should_render": false
+    },
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": true
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function moonsorigins:lich/summon_skeleton"
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "moonsorigins:lich/forms/soul/summon_cooldown"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "moonsorigins:lich/forms/soul_meter_resource",
+          "change": -2,
+          "operation": "add"
+        },
+        {
+          "type": "origins:swing_hand",
+          "hand": "OFF_HAND"
+        }
+      ]
+    },
+    "condition": {
+      "type":"origins:and",
+      "conditions":[
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/resource_resource",
+          "comparison": "==",
+          "compare_to": 2
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/soul_meter_resource",
+          "comparison": ">=",
+          "compare_to": 2
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "origins:lich/spells_soul"
+            }
+          }
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/soul/summon_cooldown",
+          "comparison": "==",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+  "power_ravager": {
+    "type": "origins:active_self",
+    "cooldown": 10,
+    "hud_render": {
+      "should_render": false
+    },
+    "key": {
+      "key": "key.origins.secondary_active",
+      "continuous": true
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function moonsorigins:lich/summon_ravager"
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "moonsorigins:lich/forms/soul/summon_cooldown"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "moonsorigins:lich/forms/soul_meter_resource",
+          "change": -6,
+          "operation": "add"
+        },
+        {
+          "type": "origins:swing_hand",
+          "hand": "OFF_HAND"
+        }
+      ]
+    },
+    "condition": {
+      "type":"origins:and",
+      "conditions":[
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/resource_resource",
+          "comparison": "==",
+          "compare_to": 2
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/soul_meter_resource",
+          "comparison": ">=",
+          "compare_to": 6
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "origins:lich/spells_soul"
+            }
+          }
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/soul/summon_cooldown",
+          "comparison": "==",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 800,
+    "hud_render": {
+      "should_render": true,
+      "inverted": false,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars.png",
+      "bar_index": 24
+    }
+  }
+}

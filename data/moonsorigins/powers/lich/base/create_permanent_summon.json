@@ -1,0 +1,121 @@
+{
+  "type": "origins:multiple",
+
+  "skeleton": {
+    "type": "origins:action_on_block_use",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "execute as @s rotated ~ 0 run particle moonsoriginsmod:summon_sigil ^ ^1.62 ^1.5 0 0 0 0 0 normal"
+    },
+    "held_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:amethyst_shard"
+      }
+    },
+    "block_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:set_block",
+          "block": "minecraft:air"
+        },
+        {
+          "type": "origins:offset",
+          "action": {
+            "type": "origins:set_block",
+            "block": "minecraft:air"
+          },
+          "y": -1
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function moonsorigins:lich/create_permanent_summon_skeleton"
+        }
+      ]
+    },
+    "block_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:block",
+          "block": "minecraft:coal_block"
+        },
+        {
+          "type": "origins:offset",
+          "condition": {
+            "type": "origins:block",
+            "block": "minecraft:coal_block"
+          },
+          "y": -1
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:block_in_radius",
+      "block_condition": {
+        "type": "origins:in_tag",
+        "tag": "minecraft:candles"
+      },
+      "radius": 5,
+      "shape": "cube",
+      "comparison": ">=",
+      "compare_to": 36
+    }
+  },
+
+  "wolves": {
+    "type": "origins:action_on_block_use",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "execute as @s rotated ~ 0 run particle moonsoriginsmod:summon_sigil ^ ^1.62 ^1.5 0 0 0 0 0 normal"
+    },
+    "held_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:bone"
+      }
+    },
+    "block_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:set_block",
+          "block": "minecraft:air"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function moonsorigins:lich/create_permanent_summon_wolf"
+        }
+      ]
+    },
+    "block_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:block",
+          "block": "minecraft:coal_block"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:block_in_radius",
+      "block_condition": {
+        "type": "origins:in_tag",
+        "tag": "minecraft:candles"
+      },
+      "radius": 5,
+      "shape": "cube",
+      "comparison": ">=",
+      "compare_to": 36
+    }
+  }
+}

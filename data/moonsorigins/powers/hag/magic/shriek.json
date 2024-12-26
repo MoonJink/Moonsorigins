@@ -1,0 +1,269 @@
+{
+  "type": "origins:multiple",
+
+  "shriek": {
+    "type": "origins:active_self",
+    "cooldown": 20,
+    "key": {
+      "key": "key.origins.tertiary_active",
+      "continuous": true
+    },
+    "hud_render": {
+      "should_render": false,
+      "inverted": false,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 23
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:area_of_effect",
+          "radius": 15,
+          "shape": "sphere",
+          "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:damage",
+                  "amount": 15,
+                  "damage_type": "minecraft:explosion"
+                }
+              },
+              {
+                "type": "origins:add_velocity",
+                "y": 0.7,
+                "z": 1,
+                "space": "world",
+                "set": true
+              }
+            ]
+          },
+          "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:target_condition",
+                    "condition": {
+                      "type": "origins:tamed",
+                      "inverted": true
+                    }
+                  },
+                  {
+                    "type": "origins:target_condition",
+                    "condition": {
+                      "type": "origins:living"
+                    }
+                  },
+                  {
+                    "type": "origins:target_condition",
+                    "condition": {
+                      "type": "origins:entity_type",
+                      "entity_type": "minecraft:player",
+                      "inverted": true
+                    }
+                  },
+                  {
+                    "type": "origins:target_condition",
+                    "condition": {
+                      "type": "origins:in_tag",
+                      "tag": "origins:immune",
+                      "inverted": true
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.ghast.warn",
+          "volume": 1.5,
+          "pitch": 1
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.beacon.power_select",
+          "volume": 1.5,
+          "pitch": 0.3
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.generic.explode",
+          "volume": 1.5,
+          "pitch": 0.6
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function moonsorigins:hag/hag_particle"
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "moonsorigins:hag/magic/shriek_shriek_beam"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sneaking"
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:hag/magic/shriek_shriek_beam",
+          "comparison": "==",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+  "shriek_beam": {
+    "type": "origins:active_self",
+    "cooldown": 200,
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": true
+    },
+    "hud_render": {
+      "should_render": true,
+      "inverted": false,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 22
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:raycast",
+          "shape_type": "collider",
+          "fluid_handling": "none",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:area_of_effect",
+                  "radius": 4,
+                  "shape": "sphere",
+                  "bientity_action": {
+                    "type": "origins:and",
+                    "actions": [
+                      {
+                        "type": "origins:target_action",
+                        "action": {
+                          "type": "origins:damage",
+                          "amount": 10,
+                          "damage_type": "minecraft:explosion"
+                        }
+                      },
+                      {
+                        "type": "origins:add_velocity",
+                        "y": 1,
+                        "space": "world",
+                        "set": false
+                      },
+                      {
+                        "type": "origins:add_velocity",
+                        "z": 1.3,
+                        "space": "local",
+                        "set": false
+                      }
+                    ]
+                  },
+                  "bientity_condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                      {
+                        "type": "origins:and",
+                        "conditions": [
+                          {
+                            "type": "origins:target_condition",
+                            "condition": {
+                              "type": "origins:tamed",
+                              "inverted": true
+                            }
+                          },
+                          {
+                            "type": "origins:target_condition",
+                            "condition": {
+                              "type": "origins:living"
+                            }
+                          },
+                          {
+                            "type": "origins:target_condition",
+                            "condition": {
+                              "type": "origins:entity_type",
+                              "entity_type": "minecraft:player",
+                              "inverted": true
+                            }
+                          },
+                          {
+                            "type": "origins:target_condition",
+                            "condition": {
+                              "type": "origins:in_tag",
+                              "tag": "origins:immune",
+                              "inverted": true
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "origins:damage",
+                  "amount": 15,
+                  "damage_type": "minecraft:player_attack"
+                },
+                {
+                  "type": "origins:apply_effect",
+                  "effect": {
+                    "effect": "minecraft:glowing",
+                    "duration": 5,
+                    "amplifier": 0
+                  }
+                }
+              ]
+            }
+          },
+          "distance": 10,
+          "command_step": 3,
+          "command_along_ray": "particle minecraft:sonic_boom ~ ~ ~ 0.2 0.2 0.2 0.03 1",
+          "block": true
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.generic.explode",
+          "volume": 1.5,
+          "pitch": 0.6
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function moonsorigins:hag/hag_small_particle"
+        } ,
+        {
+          "type": "origins:execute_command",
+          "command": "function moonsorigins:hag/hag_sound"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "hidden": true
+}

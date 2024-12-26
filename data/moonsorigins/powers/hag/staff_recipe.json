@@ -1,0 +1,38 @@
+{
+  "type": "origins:multiple",
+
+  "modify_crafting_lesser": {
+    "type": "origins:modify_crafting",
+    "recipe": "moonsorigins:recipe_staff_lesser",
+    "result": {
+      "item": "minecraft:netherite_axe"
+    },
+    "item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{display:{Name:'{\"text\":\"Staff of Ainir\",\"color\":\"light_purple\",\"italic\":true,\"obfuscated\":true}'},CustomModelData:123456}"
+    }
+  },
+  "modify_crafting_mid": {
+  "type": "origins:modify_crafting",
+  "recipe": "moonsorigins:recipe_staff_mid",
+  "result": {
+    "item": "minecraft:netherite_axe"
+  },
+  "item_action": {
+    "type": "origins:merge_nbt",
+    "nbt": "{display:{Name:'{\"text\":\"Staff of Ainir\",\"color\":\"light_purple\",\"italic\":true,\"obfuscated\":true}'},CustomModelData:123457}"
+    }
+  },
+  "modify_crafting_greater": {
+  "type": "origins:modify_crafting",
+  "recipe": "moonsorigins:recipe_staff_greater",
+  "result": {
+    "item": "minecraft:netherite_axe"
+  },
+  "item_action": {
+    "type": "origins:merge_nbt",
+    "nbt": "{display:{Name:'{\"text\":\"Staff of Ainir\",\"color\":\"light_purple\",\"italic\":true,\"obfuscated\":true}'},CustomModelData:123458}"
+    }
+  },
+  "hidden": true
+}

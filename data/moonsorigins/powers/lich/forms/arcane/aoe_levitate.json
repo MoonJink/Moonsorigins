@@ -1,0 +1,107 @@
+{
+  "type": "origins:multiple",
+
+  "power": {
+    "type": "origins:active_self",
+    "cooldown": 300,
+    "hud_render": {
+      "sprite_location": "minecraft:textures/gui/moonpack_bars.png",
+      "bar_index": 21
+    },
+    "key": {
+      "key": "key.origins.secondary_active",
+      "continuous": true
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:area_of_effect",
+          "radius": 6,
+          "shape": "sphere",
+          "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:target_action",
+                "action": {
+                  "type": "origins:apply_effect",
+                  "effect": {
+                    "effect": "minecraft:levitation",
+                    "duration": 20,
+                    "amplifier": 10,
+                    "show_particles": false,
+                    "show_icon": true
+                  }
+                }
+              }
+            ]
+          },
+          "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:target_condition",
+                "condition": {
+                  "type": "origins:tamed",
+                  "inverted" : true
+                }
+              },
+              {
+                "type": "origins:target_condition",
+                "condition": {
+                  "type": "origins:living"
+                }
+              },
+              {
+                "type": "origins:target_condition",
+                "condition": {
+                  "type": "origins:entity_type",
+                  "entity_type": "minecraft:player",
+                  "inverted": true
+                }
+              },
+              {
+                "type": "origins:target_condition",
+                "condition": {
+                  "type": "origins:in_tag",
+                  "tag": "origins:immune",
+                  "inverted": true
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function moonsorigins:lich/aoe_levitate_sound_and_sigil"
+        },
+        {
+          "type": "origins:swing_hand",
+          "hand": "OFF_HAND"
+        }
+      ]
+    },
+    "condition": {
+      "type":"origins:and",
+      "conditions":[
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/resource_resource",
+          "comparison": "==",
+          "compare_to": 1
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "origins:lich/spells_arcane"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

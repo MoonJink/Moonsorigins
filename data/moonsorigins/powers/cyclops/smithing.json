@@ -1,0 +1,95 @@
+{
+  "type": "origins:multiple",
+
+  "base_smithing": {
+    "type": "origins:modify_crafting",
+    "item_action_after_crafting": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Enchantments:[{id:\"minecraft:sharpness\",lvl:1s},{id:\"minecraft:unbreaking\",lvl:2s}]}"
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "origins:moonsorigins/weapons"
+      }
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.smithing_table.use",
+          "volume": 1,
+          "pitch": 0.5
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.respawn_anchor.set_spawn",
+          "volume": 1,
+          "pitch": 1
+        }
+      ]
+    }
+  },
+  "tool_smithing": {
+    "type": "origins:modify_crafting",
+    "item_action_after_crafting": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Enchantments:[{id:\"minecraft:efficiency\",lvl:3s},{id:\"minecraft:unbreaking\",lvl:2s}]}"
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag": "origins:moonsorigins/tools"
+      }
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.smithing_table.use",
+          "volume": 1,
+          "pitch": 0.5
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.respawn_anchor.set_spawn",
+          "volume": 1,
+          "pitch": 1
+        }
+      ]
+    }
+  },
+  "trident": {
+    "type": "origins:modify_crafting",
+    "item_action_after_crafting": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Enchantments:[{id:\"minecraft:sharpness\",lvl:3s},{id:\"minecraft:unbreaking\",lvl:2s},{id:\"minecraft:loyalty\",lvl:3s},{id:\"minecraft:channeling\",lvl:1s}]}"
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.smithing_table.use",
+          "volume": 1,
+          "pitch": 0.5
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.respawn_anchor.set_spawn",
+          "volume": 1,
+          "pitch": 1
+        }
+      ]
+    },
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:trident"
+      }
+    }
+  },
+  "hidden": true
+}

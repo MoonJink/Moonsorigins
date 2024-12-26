@@ -1,0 +1,82 @@
+{
+  "type": "origins:multiple",
+  "fire": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:resource",
+        "resource": "moonsorigins:scientist/transformation/mode_resource",
+        "comparison": "==",
+        "compare_to": 1
+      },
+      "if_action": {
+        "type": "origins:execute_command",
+        "command": "power grant @s moonsorigins:scientist/fire_immunity"
+      },
+      "else_action": {
+        "type": "origins:execute_command",
+        "command": "power remove @s moonsorigins:scientist/fire_immunity"
+      }
+    }
+  },
+  "damage_res": {
+    "type": "origins:modify_damage_taken",
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:scientist/transformation/mode_resource",
+      "comparison": "==",
+      "compare_to": 1
+    },
+    "modifier": {
+      "operation": "multiply_total_multiplicative",
+      "value": -0.2
+    }
+  },
+  "swirly": {
+    "type": "apugli:energy_swirl",
+    "texture_location": "minecraft:textures/entity/wither/wither_armor.png",
+    "speed": 0.01,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:scientist/transformation/mode_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "shader": {
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/scan_pincushion.json",
+    "toggleable": true,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:dimension",
+          "dimension": "minecraft:overworld",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "overlay": {
+    "type": "origins:overlay",
+    "texture": "minecraft:textures/misc/nausea.png",
+    "red": 0.749,
+    "green": 0.506,
+    "blue": 0,
+    "strength": 0.6,
+    "draw_mode": "nausea",
+    "draw_phase": "above_hud",
+    "hide_with_hud": false,
+    "visible_in_third_person": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:scientist/transformation/mode_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "hidden": true
+}

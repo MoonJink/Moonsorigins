@@ -1,0 +1,12 @@
+{
+  "type": "origins:simple",
+  "name": "Skillful dash",
+  "description": "Through your many years, you have learnt to dash forward. (More effective in water)\n",
+  "badges": [
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Trigger with [primary]"
+    }
+  ]
+}

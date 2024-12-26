@@ -1,0 +1,18 @@
+{
+    "type": "origins:starting_equipment",
+    "stacks": [
+        {
+            "item": "minecraft:carved_pumpkin",
+            "amount":1,
+            "tag":"{CustomModelData:500245,display:{Name:'{\"text\":\"Glasses\",\"color\":\"yellow\"}'}}",
+            "slot": 39
+        },
+        {
+            "item": "minecraft:stone_sword",
+            "amount":1,
+            "tag":"{display:{Name:'{\"text\":\"Weak Shank\",\"color\":\"yellow\",\"italic\":true}'},CustomModelData:123458}",
+            "slot": 0
+        }
+    ],
+    "hidden":true
+}

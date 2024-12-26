@@ -1,0 +1,88 @@
+{
+  "type": "origins:multiple",
+  "switch": {
+    "type": "origins:active_self",
+    "cooldown": 600,
+    "key": {
+      "key" : "key.origins.tertiary_active",
+      "continuous": false
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "moonsorigins:vampire/forms/resource_resource",
+          "change": 4,
+          "operation": "set"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function moonsorigins:vampire/vampire_alt"
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "moonsorigins:vampire/forms/resource_fake_cooldown_duration"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vampire/forms/resource_resource",
+      "comparison": "==",
+      "compare_to": 0
+    }
+  },
+  "skin": {
+    "type": "apugli:entity_texture_overlay",
+    "texture_location": "minecraft:textures/skins/mungus_alt.png",
+    "show_first_person": true,
+    "render_original_model": false,
+    "render_player_outer_layer": false,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vampire/forms/resource_resource",
+      "comparison": "==",
+      "compare_to": 4
+    }
+  },
+  "fake_cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 400,
+    "hud_render": {
+      "should_render": true,
+      "inverted": true,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars.png",
+      "bar_index": 1
+    }
+  },
+  "trigger_fake_cooldown": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:trigger_cooldown",
+      "power": "moonsorigins:vampire/forms/alt_transformation_fake_cooldown"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vampire/forms/alt_transformation_switch",
+      "comparison": "==",
+      "compare_to": 400
+    }
+  },
+  "life_protects_mungus": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "function moonsorigins:misc/life_protects_mungus"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vampire/forms/alt_transformation_switch",
+      "comparison": "==",
+      "compare_to": 400
+    }
+  },
+  "hidden": true
+}

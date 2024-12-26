@@ -1,0 +1,33 @@
+ {
+	"powers": [
+		"moonsorigins:hag/fire_damage",
+		"moonsorigins:general_power_library/no_shields",
+		"moonsorigins:hag/iron_dmg",
+		"moonsorigins:hag/iron_equip",
+		"moonsorigins:general_power_library/chainmail_recipe",
+		"moonsorigins:general_power_library/hide_armour",
+		"moonsorigins:general_power_library/spawn_hell",
+		"moonsorigins:hag/extra_effects",
+		"moonsorigins:hag/staff_recipe",
+
+		"moonsorigins:hag/magic/mana_bar",
+		"moonsorigins:hag/magic/shriek",
+		"moonsorigins:hag/magic/healing_beam",
+		"moonsorigins:hag/magic/smite",
+		"moonsorigins:hag/magic/survive",
+
+		"moonsorigins:hag/polishing/shrieking_hag",
+		"moonsorigins:hag/polishing/art_of_witchcraft",
+		"moonsorigins:hag/polishing/innate_knowledge",
+		"moonsorigins:hag/polishing/fey_ancestry",
+		"moonsorigins:hag/polishing/hag_ancestry",
+		"moonsorigins:hag/polishing/tooltips",
+		"moonsorigins:ghost_aspects/telekinesis",
+		"moonsorigins:hag/polishing/recipes"
+	],
+	"icon": "minecraft:potion",
+	"order": 0,
+	"impact": 2,
+	"name": "The Hag (reborn)",
+	"description": "You return once again.."
+}

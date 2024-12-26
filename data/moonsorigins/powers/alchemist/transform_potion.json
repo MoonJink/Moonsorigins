@@ -1,0 +1,1951 @@
+{
+  "type": "origins:multiple",
+  "hidden": true,
+  "swiftness": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:redstone"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:strong_swiftness\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:strong_swiftness\"}"
+    }
+  },
+  "strength": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:redstone"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:strong_strength\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:strong_strength\"}"
+    }
+  },
+  "leaping": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:redstone"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:strong_leaping\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:strong_leaping\"}"
+    }
+  },
+  "fire_resistance": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:redstone"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:long_fire_resistance\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:long_fire_resistance\"}"
+    }
+  },
+  "slow_falling": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:redstone"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:slow_falling\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:slow_falling\"}"
+    }
+  },
+  "water_breathing": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:redstone"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:water_breathing\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:water_breathing\"}"
+    }
+  },
+  "invisibility": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:redstone"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:invisibility\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:invisibility\"}"
+    }
+  },
+  "weakness": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:redstone"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:weakness\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:weakness\"}"
+    }
+  },
+  "regeneration": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:redstone"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:strong_regeneration\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:strong_regeneration\"}"
+    }
+  },
+  "poison": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:redstone"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:strong_poison\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:strong_poison\"}"
+    }
+  },
+  "slowness": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:redstone"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:strong_slowness\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:strong_slowness\"}"
+    }
+  },
+  "instant_health": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:redstone"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:strong_healing\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:strong_healing\"}"
+    }
+  },
+  "instant_damage": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:redstone"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:strong_harming\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:strong_harming\"}"
+    }
+  },
+  "absorption": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:redstone"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{CustomPotionEffects:[{Id:22,Amplifier:0b,Duration:800,ShowParticles:0b}],CustomPotionColor:16769093}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{display:{Name:'{\"text\":\"Potion of Absorption\",\"italic\":false}'},CustomPotionEffects:[{Id:22,Amplifier:0b,Duration:800,ShowParticles:0b}],CustomPotionColor:16769093}"
+    }
+  },
+
+  "swiftness_splash": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:gunpowder"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:splash_potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:strong_swiftness\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:splash_potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:strong_swiftness\"}"
+    }
+  },
+  "strength_splash": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:gunpowder"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:splash_potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:strong_strength\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:splash_potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:strong_strength\"}"
+    }
+  },
+  "leaping_splash": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:gunpowder"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:splash_potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:strong_leaping\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:splash_potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:strong_leaping\"}"
+    }
+  },
+  "fire_resistance_splash": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:gunpowder"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:splash_potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:long_fire_resistance\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:splash_potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:long_fire_resistance\"}"
+    }
+  },
+  "slow_falling_splash": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:gunpowder"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:splash_potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:slow_falling\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:splash_potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:slow_falling\"}"
+    }
+  },
+  "water_breathing_splash": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:gunpowder"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:splash_potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:water_breathing\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:splash_potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:water_breathing\"}"
+    }
+  },
+  "invisibility_splash": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:gunpowder"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:splash_potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:invisibility\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:splash_potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:invisibility\"}"
+    }
+  },
+  "weakness_splash": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:gunpowder"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:splash_potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:weakness\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:splash_potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:weakness\"}"
+    }
+  },
+  "regeneration_splash": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:gunpowder"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:splash_potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:strong_regeneration\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:splash_potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:strong_regeneration\"}"
+    }
+  },
+  "poison_splash": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:gunpowder"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:splash_potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:strong_poison\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:splash_potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:strong_poison\"}"
+    }
+  },
+  "slowness_splash": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:gunpowder"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:splash_potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:strong_slowness\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:splash_potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:strong_slowness\"}"
+    }
+  },
+  "instant_health_splash": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:gunpowder"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:splash_potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:strong_healing\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:splash_potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:strong_healing\"}"
+    }
+  },
+  "instant_damage_splash": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:gunpowder"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:splash_potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:strong_harming\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:splash_potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:strong_harming\"}"
+    }
+  },
+  "absorption_splash": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:gunpowder"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:splash_potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{CustomPotionEffects:[{Id:22,Amplifier:0b,Duration:800,ShowParticles:0b}],CustomPotionColor:16769093}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:splash_potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{display:{Name:'{\"text\":\"Potion of Absorption\",\"italic\":false}'},CustomPotionEffects:[{Id:22,Amplifier:0b,Duration:800,ShowParticles:0b}],CustomPotionColor:16769093}"
+    }
+  },
+
+  "fire_resistance_lingering": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:nether_wart"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:lingering_potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:long_fire_resistance\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:lingering_potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:long_fire_resistance\"}"
+    }
+  },
+  "slowness_lingering": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:nether_wart"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:lingering_potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:strong_slowness\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:lingering_potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:strong_slowness\"}"
+    }
+  },
+  "poison_lingering": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:nether_wart"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:lingering_potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:strong_poison\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:lingering_potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:strong_poison\"}"
+    }
+  },
+  "water_breathing_lingering": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:nether_wart"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:lingering_potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:water_breathing\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:lingering_potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:water_breathing\"}"
+    }
+  },
+  "weakness_lingering": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:nether_wart"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:lingering_potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:weakness\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:lingering_potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:weakness\"}"
+    }
+  },
+  "instant_health_lingering": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:nether_wart"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:lingering_potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:strong_healing\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:lingering_potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:strong_healing\"}"
+    }
+  },
+  "instant_damage_lingering": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:nether_wart"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:lingering_potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{Potion:\"minecraft:strong_harming\"}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:lingering_potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{Potion:\"minecraft:strong_harming\"}"
+    }
+  },
+  "absorption_lingering": {
+    "type": "origins:item_on_item",
+
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.brewing_stand.brew",
+      "pitch": 1,
+      "volume": 1
+    },
+    "using_item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:nether_wart"
+      }
+    },
+    "using_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "on_item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "tag": "origins:alchemist/potion_tag"
+          }
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": {
+            "item": "minecraft:lingering_potion"
+          },
+          "inverted": true
+        },
+        {
+          "type": "origins:nbt",
+          "nbt": "{CustomPotionEffects:[{Id:22,Amplifier:0b,Duration:800,ShowParticles:0b}],CustomPotionColor:16769093}"
+        }
+      ]
+    },
+    "on_item_action": {
+      "type": "origins:consume",
+      "amount": 1
+    },
+    "result": {
+      "item": "minecraft:lingering_potion",
+      "amount": 1
+    },
+    "result_item_action": {
+      "type": "origins:merge_nbt",
+      "nbt": "{display:{Name:'{\"text\":\"Potion of Absorption\",\"italic\":false}'},CustomPotionEffects:[{Id:22,Amplifier:0b,Duration:800,ShowParticles:0b}],CustomPotionColor:16769093}"
+    }
+  }
+}

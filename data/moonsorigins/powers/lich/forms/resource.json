@@ -1,0 +1,509 @@
+{
+  "type": "origins:multiple",
+
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 3,
+    "hud_render": {
+      "should_render": false,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars.png",
+      "bar_index": 19
+    },
+    "start_value": 0
+  },
+
+  "resource_switch_full_gauntlet": {
+    "type": "origins:active_self",
+    "cooldown": 5,
+    "key": {
+      "key": "key.sneak",
+      "continuous": false
+    },
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "moonsorigins:lich/forms/resource_resource",
+            "comparison": "==",
+            "compare_to": 0
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "moonsorigins:lich/forms/resource_resource",
+                "change": 1,
+                "operation": "set"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:lich/transforms/arcane"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "moonsorigins:lich/forms/resource_resource",
+                "comparison": "==",
+                "compare_to": 1
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "moonsorigins:lich/forms/resource_resource",
+                "change": 2,
+                "operation": "set"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:lich/transforms/soul"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "moonsorigins:lich/forms/resource_resource",
+                "comparison": "==",
+                "compare_to": 2
+              }
+            ]
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "moonsorigins:lich/forms/resource_resource",
+                "change": 3,
+                "operation": "set"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:lich/transforms/shadow"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "moonsorigins:lich/forms/resource_resource",
+            "comparison": "==",
+            "compare_to": 3
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "moonsorigins:lich/forms/resource_resource",
+                "change": 1,
+                "operation": "set"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:lich/transforms/arcane"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "moonsoriginsmod:lich_gauntlet"
+            }
+          }
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/formless_resource",
+          "comparison": "==",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+  "resource_switch_soul_gauntlet": {
+    "type": "origins:active_self",
+    "cooldown": 5,
+    "key": {
+      "key": "key.sneak",
+      "continuous": false
+    },
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "moonsorigins:lich/forms/resource_resource",
+            "comparison": "==",
+            "compare_to": 0
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "moonsorigins:lich/forms/resource_resource",
+                "change": 1,
+                "operation": "set"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:lich/transforms/arcane"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "moonsorigins:lich/forms/resource_resource",
+            "comparison": "==",
+            "compare_to": 1
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "moonsorigins:lich/forms/resource_resource",
+                "change": 2,
+                "operation": "set"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:lich/transforms/soul"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "moonsorigins:lich/forms/resource_resource",
+            "comparison": "==",
+            "compare_to": 2
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "moonsorigins:lich/forms/resource_resource",
+                "change": 1,
+                "operation": "set"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:lich/transforms/arcane"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "moonsorigins:lich/forms/resource_resource",
+            "comparison": "==",
+            "compare_to": 3
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "moonsorigins:lich/forms/resource_resource",
+                "change": 1,
+                "operation": "set"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:lich/transforms/arcane"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "moonsoriginsmod:lich_gauntlet_soul"
+            }
+          }
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/formless_resource",
+          "comparison": "==",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+  "resource_switch_shadow_gauntlet": {
+    "type": "origins:active_self",
+    "cooldown": 5,
+    "key": {
+      "key": "key.sneak",
+      "continuous": false
+    },
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "moonsorigins:lich/forms/resource_resource",
+            "comparison": "==",
+            "compare_to": 0
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "moonsorigins:lich/forms/resource_resource",
+                "change": 1,
+                "operation": "set"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:lich/transforms/arcane"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "moonsorigins:lich/forms/resource_resource",
+            "comparison": "==",
+            "compare_to": 1
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "moonsorigins:lich/forms/resource_resource",
+                "change": 3,
+                "operation": "set"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:lich/transforms/shadow"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "moonsorigins:lich/forms/resource_resource",
+            "comparison": "==",
+            "compare_to": 3
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "moonsorigins:lich/forms/resource_resource",
+                "change": 1,
+                "operation": "set"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:lich/transforms/arcane"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "moonsorigins:lich/forms/resource_resource",
+            "comparison": "==",
+            "compare_to": 2
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "moonsorigins:lich/forms/resource_resource",
+                "change": 1,
+                "operation": "set"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:lich/transforms/arcane"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "moonsoriginsmod:lich_gauntlet_shadow"
+            }
+          }
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/formless_resource",
+          "comparison": "==",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+  "resource_switch_empty_gauntlet": {
+    "type": "origins:active_self",
+    "cooldown": 5,
+    "key": {
+      "key": "key.sneak",
+      "continuous": false
+    },
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "moonsorigins:lich/forms/resource_resource",
+            "comparison": "==",
+            "compare_to": 0
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "moonsorigins:lich/forms/resource_resource",
+                "change": 1,
+                "operation": "set"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:lich/transforms/arcane"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "moonsorigins:lich/forms/resource_resource",
+            "comparison": "==",
+            "compare_to": 2
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "moonsorigins:lich/forms/resource_resource",
+                "change": 1,
+                "operation": "set"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:lich/transforms/arcane"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:resource",
+            "resource": "moonsorigins:lich/forms/resource_resource",
+            "comparison": "==",
+            "compare_to": 3
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "moonsorigins:lich/forms/resource_resource",
+                "change": 1,
+                "operation": "set"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:lich/transforms/arcane"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "moonsoriginsmod:lich_gauntlet_empty"
+            }
+          }
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/formless_resource",
+          "comparison": "==",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+
+  "hidden": true
+}

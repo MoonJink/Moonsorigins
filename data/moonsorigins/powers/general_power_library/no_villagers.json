@@ -1,0 +1,18 @@
+{
+  "type": "origins:prevent_entity_use",
+  "bientity_action": {
+    "type": "origins:actor_action",
+    "action": {
+      "type": "origins:execute_command",
+      "command": "title @s actionbar {\"text\": \"You are too fearful to interact!\", \"color\": \"red\"}"
+    }
+  },
+  "bientity_condition": {
+    "type": "origins:target_condition",
+    "condition": {
+      "type": "origins:entity_type",
+      "entity_type": "minecraft:villager"
+    }
+  },
+  "hidden": true
+}

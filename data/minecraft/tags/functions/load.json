@@ -1,0 +1,12 @@
+{
+  "values": [
+    "alchemist:load",
+    "cyclops:load",
+    "scientist:load",
+    "hag:load",
+    "undead:load",
+    "drowned:load",
+    "vengeful_spirit:load",
+    "lich:load"
+  ]
+}

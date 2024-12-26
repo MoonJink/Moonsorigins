@@ -1,0 +1,47 @@
+ {
+	"powers": [
+		"moonsorigins:general_power_library/health_variations_5_heart_lost",
+		"moonsorigins:general_power_library/cant_wear_armour",
+
+		"moonsorigins:lich/base/burns_in_the_sun",
+		"moonsorigins:lich/base/weak_to_arrows",
+		"moonsorigins:lich/base/natural_armour",
+		"moonsorigins:lich/base/magic_resistant",
+		"moonsorigins:lich/base/action_on_origin_choose",
+		"moonsorigins:lich/base/create_permanent_summon",
+
+
+		"moonsorigins:lich/base/deathless/formless",
+		"moonsorigins:lich/base/deathless/phylactery",
+		"moonsorigins:lich/base/deathless/reform",
+
+		"moonsorigins:lich/forms/resource",
+		"moonsorigins:lich/forms/skins_and_overlays",
+		"moonsorigins:lich/forms/soul_meter",
+
+		"moonsorigins:lich/forms/arcane/delayed_teleport",
+		"moonsorigins:lich/forms/arcane/aoe_levitate",
+		"moonsorigins:lich/forms/arcane/curse_power",
+		"moonsorigins:lich/forms/arcane/curse_cooldown_display",
+
+		"moonsorigins:lich/forms/soul/ainirs_blessing",
+		"moonsorigins:lich/forms/soul/summon",
+
+		"moonsorigins:lich/forms/shadow/shroud",
+		"moonsorigins:lich/forms/shadow/faded_grasp_power",
+		"moonsorigins:lich/forms/shadow/faded_grasp_cooldown_display",
+
+
+		"moonsorigins:lich/polishing/lich",
+		"moonsorigins:lich/polishing/form_switch",
+		"moonsorigins:lich/polishing/form_arcane",
+		"moonsorigins:lich/polishing/form_soul",
+		"moonsorigins:lich/polishing/form_flame",
+		"moonsorigins:lich/polishing/tooltips"
+	],
+	"icon": "minecraft:soul_lantern",
+	"order": 0,
+	"impact": 3,
+	"name": "The Lich",
+	"description": "You desired life beyond your natural fate so you performed a profane ritual to gain immortality. Now you use your magic to conquer the land, at a grave cost..."
+}

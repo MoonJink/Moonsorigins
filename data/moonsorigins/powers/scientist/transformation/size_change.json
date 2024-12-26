@@ -1,0 +1,22 @@
+{
+  "type": "origins:action_over_time",
+  "interval": 1,
+  "entity_action": {
+    "type": "origins:if_else",
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:scientist/transformation/mode_resource",
+      "comparison": "==",
+      "compare_to": 1
+    },
+    "if_action": {
+      "type": "origins:execute_command",
+      "command": "function moonsorigins:scientist/scientist_height_callon"
+    },
+    "else_action": {
+      "type": "origins:execute_command",
+      "command": "function moonsorigins:scientist/scientist_height_callback"
+    }
+  },
+  "hidden": true
+}

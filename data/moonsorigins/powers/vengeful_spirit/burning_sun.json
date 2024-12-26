@@ -1,0 +1,84 @@
+{
+  "type": "origins:multiple",
+  "damage_helmet": {
+    "type":"origins:action_over_time",
+    "interval": 100,
+    "entity_action": {
+      "type":"origins:if_else_list",
+      "actions": [
+        {
+          "action":{
+            "type":"origins:equipped_item_action",
+            "equipment_slot": "head",
+            "action":{
+              "type":"origins:damage",
+              "amount": 1,
+              "ignore_unbreaking": false
+            }
+          },
+          "condition":{
+            "type":"origins:and",
+            "conditions":[
+              {
+                "type": "origins:exposed_to_sun"
+              },
+              {
+                "type": "origins:equipped_item",
+                "equipment_slot": "head",
+                "item_condition": {
+                  "type": "origins:ingredient",
+                  "ingredient": {
+                    "tag": "origins:undead_helmets"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "sun_effects": {
+    "type": "origins:action_over_time",
+    "interval": 100,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": [
+        {
+          "effect": "minecraft:slowness",
+          "duration": 200,
+          "amplifier": 2,
+          "show_particles": false,
+          "show_icon": true
+        },
+        {
+          "effect": "minecraft:weakness",
+          "duration": 200,
+          "amplifier": 2,
+          "show_particles": false,
+          "show_icon": true
+        }
+      ]
+    },
+    "condition":{
+      "type":"origins:and",
+      "conditions":[
+        {
+          "type": "origins:exposed_to_sun"
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "head",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "origins:undead_helmets"
+            }
+          },
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "hidden": true
+}

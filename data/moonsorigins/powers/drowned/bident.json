@@ -1,0 +1,12 @@
+{
+    "type": "origins:starting_equipment",
+    "stacks": [
+        {
+            "item": "minecraft:iron_sword",
+            "amount":1,
+            "tag":"{display:{Name:'{\"text\":\"Reif\\'s Bident \",\"color\":\"aqua\",\"italic\":true}'},CustomModelData:123459}",
+            "slot": 0
+        }
+    ],
+    "hidden":true
+}

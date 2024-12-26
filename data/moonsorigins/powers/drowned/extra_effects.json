@@ -1,0 +1,102 @@
+{
+  "type": "origins:multiple",
+
+  "double_regen_in_water":{
+    "type": "origins:modify_healing",
+    "modifier": {
+      "operation": "multiply_total_multiplicative",
+      "value": 1
+    },
+    "condition": {
+      "type":"origins:or",
+      "conditions":[
+        {
+          "type": "origins:in_rain"
+        },
+        {
+          "type": "origins:submerged_in",
+          "fluid": "minecraft:water"
+        }
+      ]
+    }
+  },
+  "less_regen_on_land":{
+    "type": "origins:modify_healing",
+    "modifier": {
+      "operation": "multiply_total_multiplicative",
+      "value": -0.75
+    },
+    "condition": {
+      "type":"origins:or",
+      "conditions":[
+        {
+          "type": "origins:in_rain",
+          "inverted":true
+        },
+        {
+          "type": "origins:submerged_in",
+          "fluid": "minecraft:water",
+          "inverted":true
+        }
+      ]
+    }
+  },
+
+  "shell_drop": {
+    "type": "origins:action_over_time",
+    "rising_action": {
+      "type": "origins:chance",
+      "action": {
+        "type": "origins:execute_command",
+        "command": "summon item ~ ~ ~ {Item:{id:\"minecraft:nautilus_shell\",Count:1b}}"
+      },
+      "chance": 0.05
+    },
+    "interval": 1,
+    "condition": {
+      "type": "origins:health",
+      "comparison": "==",
+      "compare_to": 0
+    }
+  },
+
+  "glow_in_water": {
+    "type": "origins:self_glow",
+    "use_teams": true,
+    "condition": {
+      "type": "origins:submerged_in",
+      "fluid": "minecraft:water"
+    }
+  },
+  "shake_not_in_water": {
+    "type": "origins:shaking",
+    "condition": {
+      "type": "origins:submerged_in",
+      "fluid": "minecraft:water",
+      "inverted": true
+    }
+  },
+
+  "height_shift": {
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+      "type": "origins:execute_command",
+      "command": "function moonsorigins:alchemist/alchemist_height_callon"
+    },
+    "entity_action_lost": {
+      "type": "origins:execute_command",
+      "command": "function moonsorigins:alchemist/alchemist_height_callback"
+    },
+    "execute_chosen_when_orb": true
+  },
+  "height_check": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "execute unless entity @s[pehkui.scale_nbt={\"pehkui:scale_data_types\":{\"pehkui:height\":{scale:0.8f}}}] run function moonsorigins:alchemist/alchemist_height_callon"
+    },
+    "interval": 50
+  },
+
+  "hidden": true
+}

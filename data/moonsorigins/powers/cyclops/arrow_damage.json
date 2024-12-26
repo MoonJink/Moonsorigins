@@ -1,0 +1,19 @@
+{
+  "type": "origins:modify_damage_taken",
+  "damage_condition": {
+    "type": "origins:projectile",
+    "projectile_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:arrow"
+        }
+      ]
+    }
+  },
+  "modifier": {
+    "operation": "multiply_total_multiplicative",
+    "value": -0.5
+  }
+}

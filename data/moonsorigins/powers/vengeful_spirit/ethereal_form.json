@@ -1,0 +1,216 @@
+{
+  "name": "Ethereal form",
+  "description": "As a spectral being, you are non-corporeal.\n\nYou can phase through blocks.\n\nWhile phasing, vision blurs and movement speed slows. You cannot phase through metals (such as iron and gold).\n\nThis has a brief cooldown to prevent overuse.\n\n",
+
+  "type": "origins:multiple",
+
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "hud_render": {
+      "should_render": false
+    },
+    "start_value": 0
+  },
+  "phase_on_plus_cooldown": {
+    "type": "origins:active_self",
+    "cooldown": 300,
+    "key": {
+      "key" : "key.origins.primary_active",
+      "continuous": false
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:change_resource",
+          "resource": "moonsorigins:vengeful_spirit/ethereal_form_resource",
+          "change": 1,
+          "operation": "set"
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:slowness",
+            "duration": 220,
+            "amplifier": 2,
+            "show_particles": false,
+            "show_icon": false
+          }
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "moonsorigins:vengeful_spirit/ethereal_form_duration_display"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function moonsorigins:vengeful_spirit/vengeful_spirit_phase_callon"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vengeful_spirit/vengeful_aura_main_power",
+      "comparison": "<=",
+      "compare_to": 300
+    }
+  },
+  "phase_off": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:resource",
+            "resource": "moonsorigins:vengeful_spirit/ethereal_form_resource",
+            "comparison": "==",
+            "compare_to": 1
+          },
+          {
+            "type": "origins:resource",
+            "resource": "moonsorigins:vengeful_spirit/ethereal_form_phase_on_plus_cooldown",
+            "comparison": "<=",
+            "compare_to": 100
+          }
+        ]
+      },
+      "if_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:change_resource",
+            "resource": "moonsorigins:vengeful_spirit/ethereal_form_resource",
+            "change": 0,
+            "operation": "set"
+          },
+          {
+            "type": "origins:clear_effect",
+            "effect": "minecraft:slowness"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "function moonsorigins:vengeful_spirit/vengeful_spirit_phase_callback"
+          },
+          {
+            "type": "origins:trigger_cooldown",
+            "power": "moonsorigins:vengeful_spirit/ethereal_form_cooldown_display"
+          }
+        ]
+      }
+    }
+  },
+
+  "phasing": {
+    "type": "origins:phasing",
+    "blacklist": true,
+    "render_type": "blindness",
+    "view_distance": 10,
+    "block_condition": {
+      "type": "origins:in_tag",
+      "tag": "origins:cannot_spirit_pass"
+    },
+    "phase_down_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sneaking"
+        },
+        {
+          "type": "origins:on_block"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vengeful_spirit/ethereal_form_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+
+  "shader": {
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/blur.json",
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vengeful_spirit/ethereal_form_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "particle_soul": {
+    "type": "origins:particle",
+    "particle": "minecraft:soul",
+    "frequency": 2,
+    "count": 50,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vengeful_spirit/ethereal_form_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "particle_flame": {
+    "type": "origins:particle",
+    "particle": "minecraft:soul_fire_flame",
+    "frequency": 1,
+    "count": 100,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vengeful_spirit/ethereal_form_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "invisible": {
+    "type": "origins:model_color",
+    "alpha": 0,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vengeful_spirit/ethereal_form_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "noise_on_ready": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:block.respawn_anchor.set_spawn",
+      "volume": 1,
+      "pitch": 1
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vengeful_spirit/ethereal_form_phase_on_plus_cooldown",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+
+  "duration_display": {
+    "type": "origins:cooldown",
+    "cooldown": 200,
+    "hud_render": {
+      "should_render": true,
+      "inverted": true,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars.png",
+      "bar_index": 2
+    }
+  },
+  "cooldown_display": {
+    "type": "origins:cooldown",
+    "cooldown": 100,
+    "hud_render": {
+      "should_render": true,
+      "inverted": false,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars.png",
+      "bar_index": 3
+    }
+  }
+}

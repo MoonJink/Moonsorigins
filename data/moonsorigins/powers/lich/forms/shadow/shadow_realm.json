@@ -1,0 +1,41 @@
+{
+  "type": "origins:multiple",
+
+  "particle": {
+    "type": "origins:action_over_time",
+    "interval": 2,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle dust 0.000 0.000 0.000 2 ~ ~0.5 ~ 0.5 0.5 0.5 1 20 normal"
+    }
+  },
+  "shader": {
+    "type": "origins:shader",
+    "toggleable": false,
+    "shader": "minecraft:shaders/post/pencil.json"
+  },
+  "prevent_item_render": {
+    "type": "origins:prevent_feature_render",
+    "feature": "held_item"
+  },
+  "invisible": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effects": {
+        "effect": "minecraft:invisibility",
+        "amplifier": 1,
+        "duration": 5,
+        "show_particles": false,
+        "show_icon": false
+      }
+    }
+  },
+  "fire_immunity": {
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:fire"
+    }
+  }
+}

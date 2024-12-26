@@ -1,0 +1,88 @@
+{
+    "type":"origins:multiple",
+    
+    "death_sound":{
+        "type": "apugli:custom_death_sound",
+        "sound":"minecraft:entity.vex.death",
+        "pitch": 1,
+        "volume": 1.5
+    },
+    "hurt_sound":{
+        "type": "apugli:custom_hurt_sound",
+        "sound": "minecraft:entity.allay.hurt",
+        "pitch":1,
+        "volume": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "moonsorigins:alchemist/realm/resource_resource",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "less_health": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "name": "Max health increase",
+            "attribute": "minecraft:generic.max_health",
+            "value": -10,
+            "operation": "addition"
+        },
+        "condition": {
+            "type": "origins:status_effect",
+            "effect": "minecraft:luck",
+            "min_amplifier": 0,
+            "inverted": true
+        }
+    },
+    "height_shift": {
+        "type": "origins:action_on_callback",
+        "entity_action_chosen": {
+            "type": "origins:execute_command",
+            "command": "function moonsorigins:alchemist/alchemist_height_callon"
+        },
+        "entity_action_lost": {
+            "type": "origins:execute_command",
+            "command": "function moonsorigins:alchemist/alchemist_height_callback"
+        },
+        "execute_chosen_when_orb": true
+    },
+    "height_check": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "execute unless entity @s[pehkui.scale_nbt={\"pehkui:scale_data_types\":{\"pehkui:height\":{scale:0.8f}}}] run function moonsorigins:alchemist/alchemist_height_callon"
+        },
+        "interval": 50
+    },
+    "prevent_use_of_brewing_actionbar": {
+        "type": "origins:action_on_block_use",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "title @s actionbar {\"text\": \"You are greater than this moronic implement\", \"color\": \"red\"}"
+        },
+        "block_condition": {
+            "type": "origins:block",
+            "block": "minecraft:brewing_stand"
+        }
+    },
+    "prevent_use_of_enchanting_actionbar": {
+        "type": "origins:action_on_block_use",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "title @s actionbar {\"text\": \"Your path is chosen. You may not enchant!\", \"color\": \"red\"}"
+        },
+        "block_condition": {
+            "type": "origins:block",
+            "block": "minecraft:enchanting_table"
+        }
+    },
+    "give_journal": {
+        "type": "origins:action_on_callback",
+        "entity_action_chosen": {
+            "type": "origins:execute_command",
+            "command": "function moonsorigins:alchemist/alchemist_give_journal"
+        },
+        "execute_chosen_when_orb": true
+    },
+    "hidden": true
+}

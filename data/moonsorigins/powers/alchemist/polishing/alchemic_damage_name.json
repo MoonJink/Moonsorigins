@@ -1,0 +1,48 @@
+{
+  "type": "origins:simple",
+  "name": "Choice of Profession",
+  "description": "Due to your chosen profession you may not trade with villagers or utilise magical stations. As well as this the natural risks of your job have caused you to lose much health.\n",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": [
+        {
+          "text": "<You cannot use a ",
+          "color": "yellow",
+          "italic": true
+        },
+        {
+          "text": "brewing stand ",
+          "color": "aqua",
+          "italic": true
+        },
+        {
+          "text": "or ",
+          "color": "yellow",
+          "italic": true
+        },
+        {
+          "text": "enchanting table",
+          "color": "aqua",
+          "italic": true
+        },
+        {
+          "text": ">, <You have ",
+          "color": "yellow",
+          "italic": true
+        },
+        {
+          "text": "5 ",
+          "color": "aqua",
+          "italic": true
+        },
+        {
+          "text": "hearts>",
+          "color": "yellow",
+          "italic": true
+        }
+      ]
+    }
+  ]
+}

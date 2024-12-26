@@ -1,0 +1,218 @@
+{
+  "type": "origins:multiple",
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "hud_render": {
+      "should_render": false
+    },
+    "start_value": 1
+  },
+
+  "flight": {
+    "type": "origins:swimming",
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:lich/base/deathless/formless_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "phase": {
+    "type": "origins:phasing",
+    "blacklist": true,
+    "render_type": "blindness",
+    "view_distance": 0,
+    "block_condition": {
+      "type": "origins:in_tag",
+      "tag": "origins:cannot_spirit_pass"
+    },
+    "phase_down_condition": {
+      "type": "origins:sneaking"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:lich/base/deathless/formless_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+
+  "no_falling": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "apoli:add_velocity",
+      "y": 0.09,
+      "space": "world",
+      "set": true
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:swimming",
+          "inverted": true
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/formless_resource",
+          "comparison": "==",
+          "compare_to": 1
+        }
+      ]
+    }
+  },
+  "invulnerability": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_total_multiplicative",
+      "value": -1
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:lich/base/deathless/formless_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "unable_to_deal_damage": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "multiply_total_multiplicative",
+      "value": -0.99
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:lich/base/deathless/formless_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "shader": {
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/spirit_realm.json",
+    "toggleable": false,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:lich/base/deathless/formless_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "prevent_item_render": {
+    "type": "origins:prevent_feature_render",
+    "feature": "held_item",
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:lich/base/deathless/formless_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "skin": {
+    "type": "apugli:entity_texture_overlay",
+    "texture_location": "minecraft:textures/skins/lich_ghost_form.png",
+    "show_first_person": true,
+    "render_original_model": false,
+    "use_rendering_powers": true,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:lich/base/deathless/formless_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+
+  "flash_resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "hud_render": {
+      "should_render": false
+    },
+    "start_value": 0
+  },
+  "increment_flash": {
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+      "type": "origins:choice",
+      "actions": [
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "resource": "moonsorigins:lich/base/deathless/formless_flash_resource",
+            "change": 1,
+            "operation": "set"
+          },
+          "weight": 1
+        },
+        {
+          "element": {
+            "type": "origins:change_resource",
+            "resource": "moonsorigins:lich/base/deathless/formless_flash_resource",
+            "change": 0,
+            "operation": "set"
+          },
+          "weight": 1
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:lich/base/deathless/formless_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+  "transparent": {
+    "type": "origins:model_color",
+    "red": 0,
+    "green": 1,
+    "blue": 0.712,
+    "alpha": 0.7,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/formless_resource",
+          "comparison": "==",
+          "compare_to": 1
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/formless_flash_resource",
+          "comparison": "==",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+  "invisible": {
+    "type": "origins:model_color",
+    "red": 0,
+    "green": 1,
+    "blue": 0.712,
+    "alpha": 0,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/formless_resource",
+          "comparison": "==",
+          "compare_to": 1
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/formless_flash_resource",
+          "comparison": "==",
+          "compare_to": 1
+        }
+      ]
+    }
+  }
+}

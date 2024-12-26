@@ -1,0 +1,41 @@
+{
+  "name": "Corporeal form",
+  "description": "Your spirit form struggles to interact with the physical world.\n\nYou deal reduced damage to players and mobs unless in a state of high emotion (when Vengeful Aura is active).\n\nBeing a spirit, you are also transparent.\n\n",
+
+  "type": "origins:multiple",
+
+  "damage": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "multiply_total_multiplicative",
+      "value": -0.3
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vengeful_spirit/vengeful_aura_main_power",
+      "comparison": "<=",
+      "compare_to": 300
+    }
+  },
+  "transparent": {
+    "type": "origins:model_color",
+    "alpha": 0.7
+  },
+  "chains": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:chance",
+      "action": {
+        "type": "origins:play_sound",
+        "sound": "minecraft:block.chain.place",
+        "volume": 0.25,
+        "pitch": 1
+      },
+      "chance": 0.1
+    },
+    "condition": {
+      "type": "origins:moving"
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "type": "origins:multiple",
+  "hidden": true,
+
+  "1_heart_lost": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "value": -2,
+      "operation": "addition"
+    }
+  },
+  "2_heart_lost": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "value": -4,
+      "operation": "addition"
+    }
+  },
+  "3_heart_lost": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "value": -6,
+      "operation": "addition"
+    }
+  },
+  "4_heart_lost": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "value": -8,
+      "operation": "addition"
+    }
+  },
+  "5_heart_lost": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "value": -10,
+      "operation": "addition"
+    }
+  },
+
+  "1_heart_gained": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "value": 2,
+      "operation": "addition"
+    }
+  },
+  "2_heart_gained": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "value": 4,
+      "operation": "addition"
+    }
+  },
+  "3_heart_gained": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "value": 6,
+      "operation": "addition"
+    }
+  },
+  "4_heart_gained": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "value": 8,
+      "operation": "addition"
+    }
+  },
+  "5_heart_gained": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "value": 10,
+      "operation": "addition"
+    }
+  }
+}

@@ -1,0 +1,309 @@
+{
+  "type": "origins:multiple",
+
+  "self_heal":{
+    "type": "origins:active_self",
+    "cooldown": 200,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars.png",
+      "bar_index": 9
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function moonsorigins:hag/hag_heal_particle"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "effect clear @s"
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:speed",
+            "duration": 60,
+            "amplifier": 0,
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": true
+          }
+        },
+        {
+          "type":"origins:heal",
+          "amount": 4
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.witch.drink",
+          "pitch": 1,
+          "volume": 1
+        },
+        {
+          "type":"origins:change_resource",
+          "resource":"moonsorigins:hag/magic/mana_bar_resource",
+          "change":-150,
+          "operation":"add"
+        },
+        {
+          "type":"origins:trigger_cooldown",
+          "power":"moonsorigins:hag/magic/mana_bar_reset"
+        },
+        {
+          "type": "origins:swing_hand",
+          "hand": "MAIN_HAND"
+        }
+      ]
+    },
+    "key": {
+      "key": "key.use",
+      "continuous": true
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type":"origins:resource",
+          "resource":"moonsorigins:hag/magic/mana_bar_resource",
+          "comparison":">",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "tag": "origins:moonsorigins/tools"
+                }
+              },
+              {
+                "type": "origins:or",
+                "conditions": [
+                  {
+                    "type": "origins:nbt",
+                    "nbt": "{CustomModelData:123456}"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:sneaking"
+        }
+      ]
+    }
+  },
+  "greater_self_heal":{
+    "type": "origins:active_self",
+    "cooldown": 200,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars.png",
+      "bar_index": 9
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "function moonsorigins:hag/hag_heal_particle"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "effect clear @s"
+        },
+        {
+          "type": "origins:apply_effect",
+          "effect": {
+            "effect": "minecraft:speed",
+            "duration": 60,
+            "amplifier": 2,
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": true
+          }
+        },
+        {
+          "type":"origins:heal",
+          "amount": 8
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.witch.drink",
+          "pitch": 1,
+          "volume": 1
+        },
+        {
+          "type":"origins:change_resource",
+          "resource":"moonsorigins:hag/magic/mana_bar_resource",
+          "change":-150,
+          "operation":"add"
+        },
+        {
+          "type":"origins:trigger_cooldown",
+          "power":"moonsorigins:hag/magic/mana_bar_reset"
+        },
+        {
+          "type": "origins:swing_hand",
+          "hand": "MAIN_HAND"
+        }
+      ]
+    },
+    "key": {
+      "key": "key.use",
+      "continuous": true
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type":"origins:resource",
+          "resource":"moonsorigins:hag/magic/mana_bar_resource",
+          "comparison":">",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:ingredient",
+                "ingredient": {
+                  "tag": "origins:moonsorigins/tools"
+                }
+              },
+              {
+                "type": "origins:or",
+                "conditions": [
+                  {
+                    "type": "origins:nbt",
+                    "nbt": "{CustomModelData:123457}"
+                  },
+                  {
+                    "type": "origins:nbt",
+                    "nbt": "{CustomModelData:123458}"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:sneaking"
+        }
+      ]
+    }
+  },
+  "visibility_shift": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:or",
+        "conditions": [
+          {
+            "type":"origins:resource",
+            "resource":"moonsorigins:hag/magic/survive_self_heal",
+            "comparison":">=",
+            "compare_to": 140
+          },
+          {
+            "type":"origins:resource",
+            "resource":"moonsorigins:hag/magic/survive_greater_self_heal",
+            "comparison":">=",
+            "compare_to": 140
+          }
+        ]
+      },
+      "if_action": {
+        "type": "origins:execute_command",
+        "command": "function moonsorigins:hag/hag_visibility_callon"
+      },
+      "else_action": {
+        "type": "origins:execute_command",
+        "command": "function moonsorigins:hag/hag_visibility_callback"
+      }
+    }
+  },
+  "transparent": {
+    "type": "origins:model_color",
+    "alpha": 0.6,
+    "conditions": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type":"origins:resource",
+          "resource":"moonsorigins:hag/magic/survive_self_heal",
+          "comparison":">=",
+          "compare_to": 140
+        }
+      ]
+    }
+  },
+  "overlay": {
+    "type": "origins:overlay",
+    "texture": "minecraft:textures/misc/nausea.png",
+    "red": 0.282,
+    "green": 0.094,
+    "blue": 0.698,
+    "strength": 0.6,
+    "draw_mode": "nausea",
+    "draw_phase": "above_hud",
+    "hide_with_hud": false,
+    "visible_in_third_person": false,
+    "condition": {
+      "type":"origins:resource",
+      "resource":"moonsorigins:hag/magic/survive_self_heal",
+      "comparison":">=",
+      "compare_to": 140
+    }
+  },
+  "shader": {
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/deconverge.json",
+    "toggleable": true,
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type":"origins:resource",
+          "resource":"moonsorigins:hag/magic/survive_self_heal",
+          "comparison":">=",
+          "compare_to": 140
+        },
+        {
+          "type":"origins:resource",
+          "resource":"moonsorigins:hag/magic/survive_greater_self_heal",
+          "comparison":">=",
+          "compare_to": 140
+        }
+      ]
+    }
+  },
+  "hide_armour": {
+    "type": "origins:prevent_feature_render",
+    "features": [
+      "armor",
+      "elytra",
+      "cape",
+      "shoulder_parrot"
+    ],
+    "condition": {
+      "type":"origins:resource",
+      "resource":"moonsorigins:hag/magic/survive_self_heal",
+      "comparison":">=",
+      "compare_to": 140
+    }
+  },
+  "hidden": true
+}

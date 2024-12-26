@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:kelp",
+    "minecraft:sugar",
+    "minecraft:rabbit_foot",
+    "minecraft:magma_cream",
+    "minecraft:phantom_membrane",
+    "minecraft:golden_carrot",
+    "minecraft:glistering_melon_slice",
+    "minecraft:pufferfish",
+    "minecraft:ghast_tear",
+    "minecraft:spider_eye",
+    "minecraft:fermented_spider_eye",
+    "minecraft:ink_sac",
+    "minecraft:blaze_powder",
+    "minecraft:prismarine_crystals",
+    "minecraft:heart_of_the_sea",
+    "minecraft:glowstone_dust",
+    "minecraft:feather",
+    "alexsmobs:banana"
+  ]
+}

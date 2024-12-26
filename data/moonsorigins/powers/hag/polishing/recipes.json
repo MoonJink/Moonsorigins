@@ -1,0 +1,181 @@
+{
+  "type": "origins:simple",
+  "name": "[RECIPES] >>>",
+  "description": "Recipes are listed above\n",
+  "badges": [
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "minecraft:textures/item/chainmail_helmet.png",
+      "recipe":{
+        "type": "minecraft:crafting_shaped",
+        "id": "moonsorigins:chainmail_helmet",
+        "pattern": [
+          "###",
+          "# #"
+        ],
+        "key": {
+          "#": {
+            "item": "minecraft:chain"
+          }
+        },
+        "result": {
+          "item": "minecraft:chainmail_helmet"
+        }
+      }
+    },
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "minecraft:textures/item/chainmail_chestplate.png",
+      "recipe":{
+        "type": "minecraft:crafting_shaped",
+        "id": "moonsorigins:chainmail_chestplate",
+        "pattern": [
+          "# #",
+          "###",
+          "###"
+        ],
+        "key": {
+          "#": {
+            "item": "minecraft:chain"
+          }
+        },
+        "result": {
+          "item": "minecraft:chainmail_chestplate"
+        }
+      }
+    },
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "minecraft:textures/item/chainmail_leggings.png",
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "id": "moonsorigins:chainmail_leggings",
+        "pattern": [
+          "###",
+          "# #",
+          "# #"
+        ],
+        "key": {
+          "#": {
+            "item": "minecraft:chain"
+          }
+        },
+        "result": {
+          "item": "minecraft:chainmail_leggings"
+        }
+      }
+    },
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "minecraft:textures/item/chainmail_boots.png",
+      "recipe":{
+        "type": "minecraft:crafting_shaped",
+        "id": "moonsorigins:chainmail_boots",
+        "pattern": [
+          "# #",
+          "# #"
+        ],
+        "key": {
+          "#": {
+            "item": "minecraft:chain"
+          }
+        },
+        "result": {
+          "item": "minecraft:chainmail_boots"
+        }
+      }
+    },
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "minecraft:textures/item/hagstaffnew_stage1.png",
+      "recipe":{
+        "type": "minecraft:crafting_shaped",
+        "id": "moonsorigins:staff_lesser",
+        "pattern": [
+          "iIi",
+          " / "
+        ],
+        "key": {
+          "i": {
+            "item": "minecraft:iron_ingot"
+          },
+          "I": {
+            "item": "minecraft:gold_ingot"
+          },
+          "/": {
+            "item": "minecraft:stick"
+          }
+        },
+        "result": {
+          "item": "minecraft:stick",
+          "count": 1
+        }
+      }
+    },
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "minecraft:textures/item/hagstaffnew_stage2.png",
+      "recipe":{
+        "type": "minecraft:crafting_shaped",
+        "id": "moonsorigins:staff_mid",
+        "pattern": [
+          " # ",
+          "iIi",
+          " / "
+        ],
+        "key": {
+          "#": {
+            "item": "minecraft:diamond"
+          },
+          "i": {
+            "item": "minecraft:iron_ingot"
+          },
+          "I": {
+            "item": "minecraft:obsidian"
+          },
+          "/": {
+            "item": "minecraft:stick"
+          }
+        },
+        "result": {
+          "item": "minecraft:stick",
+          "count": 1
+        }
+      }
+    },
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "minecraft:textures/item/hagstaffnew_stage3.png",
+      "recipe":{
+        "type": "minecraft:crafting_shaped",
+        "id": "moonsorigins:staff_greater",
+        "pattern": [
+          "X#X",
+          "iIi",
+          " / "
+        ],
+        "key": {
+          "X": {
+            "item": "minecraft:diamond"
+          },
+          "#": {
+            "item": "minecraft:ender_eye"
+          },
+          "i": {
+            "item": "minecraft:iron_ingot"
+          },
+          "I": {
+            "item": "minecraft:blaze_powder"
+          },
+          "/": {
+            "item": "minecraft:stick"
+          }
+        },
+        "result": {
+          "item": "minecraft:stick",
+          "count": 1
+        }
+      }
+    }
+  ]
+}

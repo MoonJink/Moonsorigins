@@ -1,0 +1,185 @@
+{
+  "type": "origins:multiple",
+
+  "power": {
+    "type": "origins:active_self",
+    "cooldown": 300,
+    "key": {
+      "key": "key.origins.secondary_active",
+      "continuous": true
+    },
+    "hud_render": {
+      "should_render": false
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:raycast",
+          "distance": 15,
+          "shape_type": "visual",
+          "fluid_handling": "any",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:execute_command",
+              "command": "function moonsorigins:lich/faded_grasp/start"
+            }
+          },
+          "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:living"
+            }
+          },
+          "command_step": 1,
+          "block": true
+        },
+        {
+          "type": "origins:area_of_effect",
+          "radius": 6,
+          "shape": "sphere",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:execute_command",
+              "command": "function moonsorigins:lich/faded_grasp/start"
+            }
+          },
+          "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:target_condition",
+                "condition": {
+                  "type": "origins:tamed",
+                  "inverted" : true
+                }
+              },
+              {
+                "type": "origins:target_condition",
+                "condition": {
+                  "type": "origins:living"
+                }
+              },
+              {
+                "type": "origins:target_condition",
+                "condition": {
+                  "type": "origins:entity_type",
+                  "entity_type": "minecraft:player",
+                  "inverted": true
+                }
+              },
+              {
+                "type": "origins:target_condition",
+                "condition": {
+                  "type": "origins:in_tag",
+                  "tag": "origins:immune",
+                  "inverted": true
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function moonsorigins:lich/faded_grasp/sound_and_sigil"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 70,
+          "action": {
+            "type": "origins:trigger_cooldown",
+            "power": "moonsorigins:lich/forms/shadow/faded_grasp_cooldown_display"
+          }
+        },
+        {
+          "type": "origins:swing_hand",
+          "hand": "OFF_HAND"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "origins:lich/spells_shadow"
+            }
+          }
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/resource_resource",
+          "comparison": "==",
+          "compare_to": 3
+        }
+      ]
+    }
+  },
+  "cooldown_display": {
+    "type": "origins:cooldown",
+    "cooldown": 230,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars_2.png",
+      "bar_index": 3
+    }
+  },
+
+  "duration_display": {
+    "type": "origins:cooldown",
+    "cooldown": 70,
+    "hud_render": {
+      "should_render": true,
+      "inverted": true,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars_2.png",
+      "bar_index": 1
+    }
+  },
+  "limited_movement_xz": {
+    "type": "origins:modify_velocity",
+    "modifier": {
+      "value": -0.8,
+      "operation": "multiply_total_multiplicative"
+    },
+    "axes": [
+      "x",
+      "z"
+    ]
+  },
+  "limited_movement_y": {
+    "type": "origins:modify_velocity",
+    "modifier": {
+      "value": -0.7,
+      "operation": "multiply_total_multiplicative"
+    },
+    "axes": [
+      "y"
+    ]
+  },
+  "remove_power": {
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "moonsorigins:lich/forms/shadow/faded_grasp_duration_display"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 70,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function moonsorigins:lich/faded_grasp/end"
+          }
+        }
+      ]
+    }
+  }
+}

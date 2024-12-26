@@ -1,0 +1,264 @@
+{
+  "type": "origins:multiple",
+
+  "power": {
+    "type": "origins:active_self",
+    "cooldown": 300,
+    "key": {
+      "key" : "key.origins.primary_active",
+      "continuous": true
+    },
+    "hud_render": {
+      "should_render": false
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:apply_effect",
+          "effects": {
+              "effect": "minecraft:speed",
+              "amplifier": 1,
+              "duration": 100,
+              "show_particles": false,
+              "show_icon": false
+          }
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "moonsorigins:lich/forms/shadow/shroud_duration"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function moonsorigins:lich/shroud/start"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 100,
+          "action": {
+            "type": "origins:if_else",
+            "condition": {
+              "type": "origins:resource",
+              "resource": "moonsorigins:lich/forms/shadow/shroud_has_cancelled",
+              "comparison": "==",
+              "compare_to": 0
+            },
+            "if_action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:execute_command",
+                  "command": "function moonsorigins:lich/shroud/end"
+                },
+                {
+                  "type": "origins:trigger_cooldown",
+                  "power": "moonsorigins:lich/forms/shadow/shroud_cooldown"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "origins:swing_hand",
+          "hand": "OFF_HAND"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "origins:lich/spells_shadow"
+            }
+          }
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/resource_resource",
+          "comparison": "==",
+          "compare_to": 3
+        }
+      ]
+    }
+  },
+  "cancel": {
+    "type": "origins:active_self",
+    "cooldown": 1,
+    "key": {
+      "key" : "key.sneak",
+      "continuous": false
+    },
+    "hud_render": {
+      "should_render": false
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "moonsorigins:lich/forms/shadow/shroud_cooldown"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function moonsorigins:lich/shroud/cancel"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 200,
+          "action": {
+            "type": "origins:change_resource",
+            "resource": "moonsorigins:lich/forms/shadow/shroud_has_cancelled",
+            "change": 0,
+            "operation": "set"
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:lich/forms/shadow/shroud_power",
+      "comparison": ">=",
+      "compare_to": 200
+    }
+  },
+  "has_cancelled": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "hud_render": {
+      "should_render": false
+    },
+    "start_value": 0
+  },
+
+  "levitate_self": {
+    "type": "origins:active_self",
+    "cooldown": 1,
+    "key": {
+      "key" : "key.use",
+      "continuous": true
+    },
+    "hud_render": {
+      "should_render": false
+    },
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effect": {
+        "effect": "minecraft:levitation",
+        "duration": 2,
+        "amplifier": 4,
+        "show_particles": false,
+        "show_icon": false
+      }
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "offhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "origins:lich/spells_shadow"
+            }
+          }
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/resource_resource",
+          "comparison": "==",
+          "compare_to": 3
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/shadow/shroud_power",
+          "comparison": ">=",
+          "compare_to": 200
+        }
+      ]
+    }
+  },
+  "levitate_air_control" : {
+    "type": "origins:modify_air_speed",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": 0.42
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/resource_resource",
+          "comparison": "==",
+          "compare_to": 3
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/shadow/shroud_power",
+          "comparison": ">=",
+          "compare_to": 200
+        },
+        {
+          "type": "origins:status_effect",
+          "effect": "minecraft:levitation"
+        }
+      ]
+    }
+  },
+  "limited_movement": {
+    "type": "origins:modify_velocity",
+    "modifier": {
+      "value": -0.5,
+      "operation": "multiply_total_multiplicative"
+    },
+    "axes": [
+      "x",
+      "y",
+      "z"
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/resource_resource",
+          "comparison": "==",
+          "compare_to": 3
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/shadow/shroud_power",
+          "comparison": ">=",
+          "compare_to": 200
+        }
+      ]
+    }
+  },
+
+  "duration": {
+    "type": "origins:cooldown",
+    "cooldown": 100,
+    "hud_render": {
+      "should_render": true,
+      "inverted": true,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars_2.png",
+      "bar_index": 1
+    }
+  },
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 200,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars_2.png",
+      "bar_index": 2
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+    "type": "origins:modify_break_speed",
+    "block_condition": {
+        "type": "origins:in_tag",
+        "tag": "origins:zombie_wants_to_come_out"
+    },
+    "modifier": {
+        "operation": "multiply_base_multiplicative",
+        "value": 3
+    },
+    "hidden":true
+}

@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:golden_apple",
+    "minecraft:enchanted_golden_apple",
+    "minecraft:chorus_fruit",
+    "minecraft:cookie",
+    "minecraft:milk_bucket",
+    "minecraft:honey_bottle"
+  ]
+}

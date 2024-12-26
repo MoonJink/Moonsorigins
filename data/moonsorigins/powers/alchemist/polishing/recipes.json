@@ -1,0 +1,86 @@
+{
+  "type": "origins:simple",
+  "name": "[RECIPES] >>>",
+  "description": "Recipes are listed above",
+  "badges": [
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "minecraft:textures/item/heart_of_the_sea.png",
+      "recipe": {
+        "id": "moonsorigins:alchemical_knowledge_heart_of_the_sea",
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "X#X",
+          "#H#",
+          "X#X"
+        ],
+        "key": {
+          "#": {
+            "item": "minecraft:prismarine_shard"
+          },
+          "X" : {
+            "item": "minecraft:prismarine_crystals"
+          },
+          "H": {
+            "item": "minecraft:nautilus_shell"
+          }
+        },
+        "result": {
+          "item": "minecraft:heart_of_the_sea"
+        }
+      }
+    },
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "minecraft:textures/item/dragon_breath.png",
+      "recipe": {
+        "id": "moonsorigins:alchemical_knowledge_dragon_breath",
+        "type": "minecraft:crafting_shaped",
+        "pattern": [
+          "XYZ",
+          "#H#",
+          "Z#X"
+        ],
+        "key": {
+          "#": {
+            "item": "minecraft:obsidian"
+          },
+          "X" : {
+            "item": "minecraft:potion"
+          },
+          "H": {
+            "item": "minecraft:glass_bottle"
+          },
+          "Y": {
+            "item": "minecraft:crying_obsidian"
+          }  ,
+          "Z": {
+            "item": "minecraft:splash_potion"
+          }
+        },
+        "result": {
+          "item": "minecraft:dragon_breath"
+        }
+      }
+    },
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "minecraft:textures/item/pufferfish.png",
+      "recipe": {
+        "id": "moonsorigins:alchemical_knowledge_pufferfish",
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "minecraft:tropical_fish"
+          },
+          {
+            "item": "minecraft:yellow_dye"
+          }
+        ],
+        "result": {
+          "item": "minecraft:pufferfish"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+    "replace": false,
+    "origins": [
+        "moonsorigins:alchemist",
+        "moonsorigins:cyclops",
+        "moonsorigins:scientist",
+        "moonsorigins:hag",
+        "moonsorigins:undead",
+        "moonsorigins:drowned",
+        "moonsorigins:vampire",
+        "moonsorigins:vengeful_spirit",
+        "moonsorigins:lich"
+    ]
+}

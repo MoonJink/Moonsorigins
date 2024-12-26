@@ -1,0 +1,39 @@
+{
+  "type": "origins:simple",
+  "name": "Overdrive",
+  "description": "You are able force overload your jetpack.\n\n",
+  "badges": [
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/toggle.png",
+      "text": "Trigger with [secondary]"
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": [
+        {
+          "text": "<You gain 20% damage resistance and your overloaded progresses passively>",
+          "color": "yellow",
+          "italic": true
+        },
+        {
+          "text": "\n"
+        },
+        {
+          "text": "<Makes you immune to fire>",
+          "color": "yellow",
+          "italic": true
+        },
+        {
+        "text": "\n"
+        },
+        {
+          "text": "<Cancel with shift>",
+          "color": "yellow",
+          "italic": true
+        }
+      ]
+    }
+  ]
+}

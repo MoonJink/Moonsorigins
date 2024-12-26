@@ -1,0 +1,54 @@
+{
+  "type": "origins:multiple",
+
+  "resource":{
+    "type": "origins:resource",
+    "min": 0,
+    "max": 150,
+    "start_value": 0,
+    "hud_render": {
+      "should_render": true,
+      "inverted": false,
+      "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+      "bar_index": 5
+    },
+    "max_action": {
+      "type":"origins:and",
+      "actions":[
+        {
+          "type": "origins:set_on_fire",
+          "duration": 5
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:block.fire.extinguish",
+          "volume": 1.5
+        }
+      ]
+    }
+  },
+  "cool":{
+    "type":"origins:cooldown",
+    "cooldown":60,
+    "hud_render":{
+      "should_render":false
+    }
+  },
+  "recharge":{
+    "condition":{
+      "type":"origins:resource",
+      "resource":"moonsorigins:scientist/overloaded_cool",
+      "comparison":"==",
+      "compare_to":0
+    },
+    "type":"origins:action_over_time",
+    "interval": 1,
+    "entity_action":{
+      "type":"origins:change_resource",
+      "resource":"moonsorigins:scientist/overloaded_resource",
+      "change": -5,
+      "operation":"add"
+    }
+  },
+  "hidden": true
+}

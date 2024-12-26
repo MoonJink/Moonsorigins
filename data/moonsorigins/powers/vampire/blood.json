@@ -1,0 +1,478 @@
+{
+  "hidden": true,
+  "type": "origins:multiple",
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 301,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars.png",
+      "bar_index": 0
+    },
+    "max_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "particle dust 0.710 0.000 0.000 1.5 ~ ~ ~ 0.5 0.5 0.5 1 20 normal"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "moonsorigins:vampire/blood_resource",
+          "change": 300,
+          "operation": "set"
+        },
+        {
+          "type": "origins:damage",
+          "amount": 3,
+          "damage_type": "moonsorigins:desiccation"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function moonsorigins:undead/undead_min"
+        }
+      ]
+    },
+    "min_action": {
+      "type": "origins:damage",
+      "amount": 4,
+      "damage_type": "moonsorigins:desiccation"
+    },
+    "start_value": 100
+  },
+  "suck": {
+    "type": "origins:action_on_entity_use",
+    "hands": [
+      "main_hand"
+    ],
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "moonsorigins:vampire/blood_resource",
+                "change": 30,
+                "operation": "add"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "moonsorigins:vampire/blood_internal_cooldown"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:vampire/vampire_blood_glug"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:damage",
+          "damage_type": "moonsorigins:drained",
+          "amount": 3
+        }
+      ]
+    },
+    "bientity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:actor_condition",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:sneaking"
+              },
+              {
+                "type": "origins:resource",
+                "resource": "moonsorigins:vampire/blood_internal_cooldown",
+                "comparison": "==",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:resource",
+                "resource": "moonsorigins:vampire/forms/resource_resource",
+                "comparison": "==",
+                "compare_to": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:living"
+              },
+              {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:player",
+                    "inverted": true
+                  },
+                  {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:villager",
+                    "inverted": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "human_suck": {
+    "type": "origins:action_on_entity_use",
+    "hands": [
+      "main_hand"
+    ],
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "moonsorigins:vampire/blood_resource",
+                "change": 45,
+                "operation": "add"
+              },
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "moonsorigins:vampire/blood_internal_cooldown"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:vampire/vampire_blood_glug"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:damage",
+          "damage_type": "moonsorigins:drained",
+          "amount": 3
+        }
+      ]
+    },
+    "bientity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:actor_condition",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:sneaking"
+              },
+              {
+                "type": "origins:resource",
+                "resource": "moonsorigins:vampire/blood_internal_cooldown",
+                "comparison": "==",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:resource",
+                "resource": "moonsorigins:vampire/forms/resource_resource",
+                "comparison": "==",
+                "compare_to": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:living"
+              },
+              {
+                "type": "origins:or",
+                "conditions": [
+                  {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:player"
+                  },
+                  {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:villager"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "dagger_suck": {
+    "type": "origins:action_on_hit",
+    "cooldown": 5,
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "moonsorigins:vampire/blood_resource",
+                "change": 20,
+                "operation": "add"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:vampire/vampire_blood_glug"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "bientity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:actor_condition",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:resource",
+                "resource": "moonsorigins:vampire/forms/resource_resource",
+                "comparison": "==",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                  "type": "origins:and",
+                  "conditions": [
+                    {
+                      "type": "origins:ingredient",
+                      "ingredient": {
+                        "tag": "origins:moonsorigins/weapons"
+                      }
+                    },
+                    {
+                      "type": "origins:nbt",
+                      "nbt": "{CustomModelData:1234511}"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:living"
+          }
+        }
+      ]
+    }
+  },
+
+  "raw_meat_eat": {
+    "type": "origins:active_self",
+    "cooldown": 15,
+    "key": {
+      "key": "key.use",
+      "continuous": true
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:equipped_item_action",
+          "equipment_slot": "mainhand",
+          "action": {
+            "type": "origins:consume",
+            "amount": 1
+          }
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.generic.eat"
+        },
+        {
+          "type": "origins:change_resource",
+          "resource": "moonsorigins:vampire/blood_resource",
+          "change": 20,
+          "operation": "add"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "origins:moonsorigins/raw_meat"
+        }
+      }
+    },
+    "drain": {
+      "type": "origins:action_over_time",
+      "interval": 80,
+      "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "moonsorigins:vampire/blood_resource",
+        "change": -4,
+        "operation": "add"
+      },
+      "condition": {
+        "type": "origins:resource",
+        "resource": "moonsorigins:vampire/blood_resource",
+        "comparison": ">",
+        "compare_to": 0
+      }
+    },
+    "drained_effects_over_time": {
+      "type": "origins:action_over_time",
+      "interval": 20,
+      "entity_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:apply_effect",
+            "effects": [
+              {
+                "effect": "minecraft:weakness",
+                "duration": 40,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": true
+              },
+              {
+                "effect": "minecraft:slowness",
+                "duration": 40,
+                "amplifier": 1,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": true
+              },
+              {
+                "effect": "minecraft:mining_fatigue",
+                "duration": 40,
+                "amplifier": 1,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": true
+              }
+            ]
+          },
+          {
+            "type": "origins:damage",
+            "amount": 0.25,
+            "damage_type": "moonsorigins:desiccation"
+          }
+        ]
+      },
+      "condition": {
+        "type": "origins:resource",
+        "resource": "moonsorigins:vampire/blood_resource",
+        "comparison": "==",
+        "compare_to": 0
+      }
+    },
+    "internal_cooldown": {
+      "type": "origins:cooldown",
+      "cooldown": 10
+    },
+    "hidden": true
+  },
+
+  "drain": {
+    "type": "origins:action_over_time",
+    "interval": 80,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "moonsorigins:vampire/blood_resource",
+      "change": -4,
+      "operation": "add"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vampire/blood_resource",
+      "comparison": ">",
+      "compare_to": 0
+    }
+  },
+  "drained_effects_over_time": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:weakness",
+              "duration": 40,
+              "is_ambient": true,
+              "show_particles": false,
+              "show_icon": true
+            },
+            {
+              "effect": "minecraft:slowness",
+              "duration": 40,
+              "amplifier": 1,
+              "is_ambient": true,
+              "show_particles": false,
+              "show_icon": true
+            },
+            {
+              "effect": "minecraft:mining_fatigue",
+              "duration": 40,
+              "amplifier": 1,
+              "is_ambient": true,
+              "show_particles": false,
+              "show_icon": true
+            }
+          ]
+        },
+        {
+          "type": "origins:damage",
+          "amount": 0.25,
+          "damage_type": "minecraft:out_of_world"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vampire/blood_resource",
+      "comparison": "==",
+      "compare_to": 0
+    }
+  },
+
+  "internal_cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 10
+  }
+}

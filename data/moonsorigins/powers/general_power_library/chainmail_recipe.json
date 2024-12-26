@@ -1,0 +1,84 @@
+{
+  "hidden": true,
+
+  "type": "origins:multiple",
+
+  "chainmail_helm":{
+    "type":"origins:recipe",
+    "recipe":{
+      "type": "minecraft:crafting_shaped",
+      "id": "moonsorigins:chainmail_helmet",
+      "pattern": [
+        "###",
+        "# #"
+      ],
+      "key": {
+        "#": {
+          "item": "minecraft:chain"
+        }
+      },
+      "result": {
+        "item": "minecraft:chainmail_helmet"
+      }
+    }
+  },
+  "chainmail_chestplate":{
+    "type":"origins:recipe",
+    "recipe":{
+      "type": "minecraft:crafting_shaped",
+      "id": "moonsorigins:chainmail_chestplate",
+      "pattern": [
+        "# #",
+        "###",
+        "###"
+      ],
+      "key": {
+        "#": {
+          "item": "minecraft:chain"
+        }
+      },
+      "result": {
+        "item": "minecraft:chainmail_chestplate"
+      }
+    }
+  },
+  "chainmail_legs":{
+    "type":"origins:recipe",
+    "recipe":{
+      "type": "minecraft:crafting_shaped",
+      "id": "moonsorigins:chainmail_leggings",
+      "pattern": [
+        "###",
+        "# #",
+        "# #"
+      ],
+      "key": {
+        "#": {
+          "item": "minecraft:chain"
+        }
+      },
+      "result": {
+        "item": "minecraft:chainmail_leggings"
+      }
+    }
+  },
+  "chainmail_boots":{
+    "type":"origins:recipe",
+    "recipe":{
+      "type": "minecraft:crafting_shaped",
+      "id": "moonsorigins:chainmail_boots",
+      "pattern": [
+        "# #",
+        "# #"
+      ],
+      "key": {
+        "#": {
+          "item": "minecraft:chain"
+        }
+      },
+      "result": {
+        "item": "minecraft:chainmail_boots"
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name":"Unnatural hunger",
+  "description":"You have.. unique tastes.\n",
+
+  "type": "origins:multiple",
+
+  "diet": {
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:food"
+        },
+        {
+          "type": "origins:ingredient",
+          "ingredient": [
+            {
+              "tag":"origins:moonsorigins/flesh_diet"
+            }
+          ],
+          "inverted": true
+        },
+        {
+          "type":"origins:ingredient",
+          "ingredient":{
+            "tag":"origins:moonsorigins/ignore_diet"
+          },
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "rotten_flesh_modifiers": {
+    "type": "origins:modify_food",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "tag":"origins:moonsorigins/flesh_diet"
+      }
+    },
+    "food_modifier": {
+      "operation": "addition",
+      "value": 2.5
+    },
+    "saturation_modifier": {
+      "operation": "addition",
+      "value": 9.2
+    },
+    "prevent_effects":true,
+    "hidden":true
+  }
+}

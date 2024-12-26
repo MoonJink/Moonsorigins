@@ -1,0 +1,166 @@
+{
+  "type": "origins:multiple",
+
+  "null_skin": {
+    "type": "apugli:entity_texture_overlay",
+    "texture_location": "minecraft:textures/skins/lich_null_form.png",
+    "show_first_person": true,
+    "render_original_model": false,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/formless_resource",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/resource_resource",
+          "comparison": "==",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+  "arcane_skin": {
+    "type": "apugli:entity_texture_overlay",
+    "texture_location": "minecraft:textures/skins/lich_arcane_form.png",
+    "show_first_person": true,
+    "render_original_model": false,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/formless_resource",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/resource_resource",
+          "comparison": "==",
+          "compare_to": 1
+        }
+      ]
+    }
+  },
+  "soul_skin": {
+    "type": "apugli:entity_texture_overlay",
+    "texture_location": "minecraft:textures/skins/lich_soul_form.png",
+    "show_first_person": true,
+    "render_original_model": false,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/formless_resource",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/resource_resource",
+          "comparison": "==",
+          "compare_to": 2
+        }
+      ]
+    }
+  },
+  "shadow_skin": {
+    "type": "apugli:entity_texture_overlay",
+    "texture_location": "minecraft:textures/skins/lich_shadow_form.png",
+    "show_first_person": true,
+    "render_original_model": false,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/formless_resource",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/resource_resource",
+          "comparison": "==",
+          "compare_to": 3
+        }
+      ]
+    }
+  },
+
+  "arcane_particles": {
+    "type": "origins:particle",
+    "particle": "minecraft:portal",
+    "frequency": 5,
+    "count": 2,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/formless_resource",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/resource_resource",
+          "comparison": "==",
+          "compare_to": 1
+        }
+      ]
+    }
+  },
+  "soul_particles": {
+    "type": "origins:particle",
+    "particle": "minecraft:soul_fire_flame",
+    "frequency": 10,
+    "count": 2,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/formless_resource",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/resource_resource",
+          "comparison": "==",
+          "compare_to": 2
+        }
+      ]
+    }
+  },
+  "shadow_particles": {
+    "type": "origins:particle",
+    "particle": "minecraft:smoke",
+    "frequency": 5,
+    "count": 2,
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/formless_resource",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/forms/resource_resource",
+          "comparison": "==",
+          "compare_to": 3
+        }
+      ]
+    }
+  }
+}

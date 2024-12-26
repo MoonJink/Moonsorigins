@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "iIi",
+    " / "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond_sword"
+    },
+    "i": {
+      "item": "minecraft:nautilus_shell"
+    },
+    "I": {
+      "item": "minecraft:heart_of_the_sea"
+    },
+    "/": {
+      "item": "minecraft:prismarine_shard"
+    }
+  },
+  "result": {
+    "item": "minecraft:prismarine_shard",
+    "count": 1
+  }
+}
