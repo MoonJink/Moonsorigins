@@ -1,0 +1,24 @@
+{
+  "type": "origins:multiple",
+
+  "cannot_use_doors": {
+    "type": "origins:prevent_block_use",
+    "block_condition": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:doors"
+    }
+  },
+  "knock_on_door": {
+    "type": "origins:action_on_block_use",
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:entity.zombie.attack_iron_door",
+      "volume": 0.5,
+      "category": "player"
+    },
+    "block_condition": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:doors"
+    }
+  }
+}

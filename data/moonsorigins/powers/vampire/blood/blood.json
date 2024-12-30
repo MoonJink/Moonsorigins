@@ -1,0 +1,530 @@
+{
+  "type": "origins:multiple",
+
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 301,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars.png",
+      "bar_index": 0
+    },
+    "max_action": {
+      "type": "origins:execute_command",
+      "command": "function moonsorigins:vampire/blood/max_blood"
+    },
+    "min_action": {
+      "type": "origins:execute_command",
+      "command": "function moonsorigins:vampire/blood/min_blood"
+    },
+    "start_value": 150
+  },
+  "internal_cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 10
+  },
+
+  "suck": {
+    "type": "origins:action_on_entity_use",
+    "hands": [
+      "main_hand"
+    ],
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:trigger_cooldown",
+            "power": "moonsorigins:vampire/blood/blood_internal_cooldown"
+          }
+        },
+        {
+          "type": "origins:damage",
+          "damage_type": "moonsorigins:drained",
+          "amount": 3
+        },
+        {
+          "type": "origins:if_else_list",
+          "actions": [
+            {
+              "condition": {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:target_condition",
+                    "condition": {
+                      "type": "origins:entity_type",
+                      "entity_type": "minecraft:villager",
+                      "inverted": true
+                    }
+                  },
+                  {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                      "type": "origins:equipped_item",
+                      "equipment_slot": "mainhand",
+                      "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                          "item": "moonsoriginsmod:empty_blood_vial"
+                        },
+                        "inverted": true
+                      }
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "function moonsorigins:vampire/blood/medium_gain"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:target_condition",
+                    "condition": {
+                      "type": "origins:entity_type",
+                      "entity_type": "minecraft:villager"
+                    }
+                  },
+                  {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                      "type": "origins:equipped_item",
+                      "equipment_slot": "mainhand",
+                      "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                          "item": "moonsoriginsmod:empty_blood_vial"
+                        },
+                        "inverted": true
+                      }
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:execute_command",
+                  "command": "function moonsorigins:vampire/blood/major_gain"
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:target_condition",
+                    "condition": {
+                      "type": "origins:entity_type",
+                      "entity_type": "minecraft:villager",
+                      "inverted": true
+                    }
+                  },
+                  {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                      "type": "origins:equipped_item",
+                      "equipment_slot": "mainhand",
+                      "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                          "item": "moonsoriginsmod:empty_blood_vial"
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:equipped_item_action",
+                      "equipment_slot": "mainhand",
+                      "action": {
+                        "type": "origins:consume",
+                        "amount": 1
+                      }
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "function moonsorigins:vampire/blood/give_lesser_blood"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "condition": {
+                "type": "origins:and",
+                "conditions": [
+                  {
+                    "type": "origins:target_condition",
+                    "condition": {
+                      "type": "origins:entity_type",
+                      "entity_type": "minecraft:villager"
+                    }
+                  },
+                  {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                      "type": "origins:equipped_item",
+                      "equipment_slot": "mainhand",
+                      "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                          "item": "moonsoriginsmod:empty_blood_vial"
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "action": {
+                "type": "origins:actor_action",
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:equipped_item_action",
+                      "equipment_slot": "mainhand",
+                      "action": {
+                        "type": "origins:consume",
+                        "amount": 1
+                      }
+                    },
+                    {
+                      "type": "origins:execute_command",
+                      "command": "function moonsorigins:vampire/blood/give_greater_blood"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "bientity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:actor_condition",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:sneaking"
+              },
+              {
+                "type": "origins:resource",
+                "resource": "moonsorigins:vampire/blood/blood_internal_cooldown",
+                "comparison": "==",
+                "compare_to": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:living"
+              },
+              {
+                "type": "origins:health",
+                "comparison": ">",
+                "compare_to": 0
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "dagger_suck": {
+    "type": "origins:action_on_hit",
+    "cooldown": 5,
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function moonsorigins:vampire/blood/minor_gain"
+          }
+        }
+      ]
+    },
+    "bientity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:actor_condition",
+          "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "moonsoriginsmod:vampire_dagger"
+              }
+            }
+          }
+        },
+        {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:living"
+          }
+        }
+      ]
+    }
+  },
+  "raw_meat_eat": {
+    "type": "origins:active_self",
+    "cooldown": 15,
+    "key": {
+      "key": "key.use",
+      "continuous": true
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:equipped_item_action",
+          "equipment_slot": "mainhand",
+          "action": {
+            "type": "origins:consume",
+            "amount": 1
+          }
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.generic.eat"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function moonsorigins:vampire/blood/minor_gain"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "origins:moonsorigins/raw_meat"
+        }
+      }
+    }
+  },
+
+  "drink_vial": {
+    "type": "origins:action_on_item_use",
+    "trigger": "finish",
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "moonsoriginsmod:lesser_blood_vial"
+              }
+            }
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:vampire/blood/medium_gain"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "give @s moonsoriginsmod:empty_blood_vial 1"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "item": "moonsoriginsmod:greater_blood_vial"
+              }
+            }
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:vampire/blood/major_gain"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "give @s moonsoriginsmod:empty_blood_vial 1"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+
+  "drain": {
+    "type": "origins:action_over_time",
+    "interval": 40,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "moonsorigins:vampire/blood/blood_resource",
+      "change": -1,
+      "operation": "add"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vampire/blood/blood_resource",
+      "comparison": ">",
+      "compare_to": 0
+    }
+  },
+  "drained_effects_over_time": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:apply_effect",
+          "effects": [
+            {
+              "effect": "minecraft:weakness",
+              "duration": 40,
+              "is_ambient": true,
+              "show_particles": false,
+              "show_icon": true
+            },
+            {
+              "effect": "minecraft:slowness",
+              "duration": 40,
+              "amplifier": 1,
+              "is_ambient": true,
+              "show_particles": false,
+              "show_icon": true
+            },
+            {
+              "effect": "minecraft:mining_fatigue",
+              "duration": 40,
+              "amplifier": 1,
+              "is_ambient": true,
+              "show_particles": false,
+              "show_icon": true
+            }
+          ]
+        },
+        {
+          "type": "origins:damage",
+          "amount": 0.25,
+          "damage_type": "minecraft:out_of_world"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vampire/blood/blood_resource",
+      "comparison": "==",
+      "compare_to": 0
+    }
+  },
+  "low_blood_warning": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "playsound minecraft:entity.arrow.hit_player master @s ~ ~ ~ 0.25 1"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:vampire/blood/blood_resource",
+          "comparison": "<=",
+          "compare_to": 20
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:vampire/blood/blood_resource",
+          "comparison": ">",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+  "regeneration_drain": {
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "moonsorigins:vampire/blood/blood_resource",
+      "change": -4,
+      "operation": "add"
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:vampire/blood/blood_resource",
+          "comparison": ">",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:health",
+          "comparison": "<",
+          "compare_to": 20
+        },
+        {
+          "type": "origins:health",
+          "comparison": ">",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+
+  "no_hunger": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:feed",
+      "food": 20,
+      "saturation": 20
+    }
+  }
+}

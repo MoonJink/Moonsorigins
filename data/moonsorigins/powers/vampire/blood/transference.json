@@ -1,0 +1,110 @@
+{
+  "type": "origins:multiple",
+
+  "power": {
+    "type": "origins:active_self",
+    "cooldown": 100,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars_2.png",
+      "bar_index": 4
+    },
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": true
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:raycast",
+          "distance": 50,
+          "block": false,
+          "entity": true,
+          "shape_type": "visual",
+          "fluid_handling": "any",
+          "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+              "type": "origins:and",
+              "actions": [
+                {
+                  "type": "origins:execute_command",
+                  "command": "summon armor_stand ~ ~ ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,PersistenceRequired:1b,Tags:[\"isVampireTransferenceTarget\"]}"
+                },
+                {
+                  "type": "origins:delay",
+                  "ticks": 1,
+                  "action": {
+                    "type": "origins:execute_command",
+                    "command": "tp @s @e[type=minecraft:armor_stand,sort=nearest,limit=1,tag=isTargetTransferenceTarget]"
+                  }
+                }
+              ]
+            }
+          },
+          "command_along_ray": "function moonsorigins:vampire/blood_particles",
+          "command_step": 1
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "summon armor_stand ~ ~ ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Marker:1b,Invisible:1b,PersistenceRequired:1b,Tags:[\"isTargetTransferenceTarget\"]}"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 1,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "tp @s @e[type=minecraft:armor_stand,sort=nearest,limit=1,tag=isVampireTransferenceTarget]"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:vampire/transference/effects"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 2,
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function moonsorigins:vampire/transference/kill"
+          }
+        },
+        {
+          "type": "origins:swing_hand",
+          "hand": "main_hand"
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type":"origins:raycast",
+          "block":false,
+          "shape_type": "visual",
+          "fluid_handling": "any",
+          "entity": true,
+          "distance":50,
+          "match_bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+              "type": "origins:living"
+            }
+          }
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:vampire/blood/blood_resource",
+          "comparison": ">",
+          "compare_to": 0
+        }
+      ]
+    }
+  }
+}

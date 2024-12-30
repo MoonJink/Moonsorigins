@@ -1,0 +1,1 @@
+execute run power grant @s moonsorigins:vampire/night_benefits_movement

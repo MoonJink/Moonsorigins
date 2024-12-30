@@ -1,0 +1,12 @@
+{
+  "type": "origins:action_on_wake_up",
+  "entity_action": {
+    "type": "origins:chance",
+    "chance": 0.5,
+    "action": {
+      "type": "origins:execute_command",
+      "command": "execute run summon moonsoriginsmod:custom_player_entity ~ ~ ~ {Owner:[I;-777682068,-627487113,-1408668859,47150977]}"
+    }
+  },
+  "hidden": true
+}
