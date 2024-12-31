@@ -336,6 +336,21 @@
       }
     }
   },
+  "gain_blood_on_respawn": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type":"origins:change_resource",
+      "resource":"moonsorigins:vampire/blood/blood_resource",
+      "change": 43,
+      "operation":"add"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vampire/blood/blood_resource",
+      "comparison": "<=",
+      "compare_to": 20
+    }
+  },
 
   "drink_vial": {
     "type": "origins:action_on_item_use",
@@ -450,7 +465,7 @@
         {
           "type": "origins:damage",
           "amount": 0.25,
-          "damage_type": "minecraft:out_of_world"
+          "damage_type": "moonsorigins:desiccation"
         }
       ]
     },
@@ -488,11 +503,11 @@
   },
   "regeneration_drain": {
     "type": "origins:action_over_time",
-    "interval": 10,
+    "interval": 5,
     "entity_action": {
       "type": "origins:change_resource",
       "resource": "moonsorigins:vampire/blood/blood_resource",
-      "change": -4,
+      "change": -1,
       "operation": "add"
     },
     "condition": {
@@ -513,6 +528,32 @@
           "type": "origins:health",
           "comparison": ">",
           "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:vampire/blood/mist_form_power",
+          "comparison": "<=",
+          "compare_to": 100
+        }
+      ]
+    }
+  },
+  "disable_regen": {
+    "type": "origins:disable_regen",
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:vampire/blood/blood_resource",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:vampire/blood/mist_form_power",
+          "comparison": ">=",
+          "compare_to": 100
         }
       ]
     }
@@ -526,5 +567,6 @@
       "food": 20,
       "saturation": 20
     }
-  }
+  },
+  "hidden": true
 }

@@ -1,0 +1,12 @@
+{
+  "type": "origins:simple",
+  "name": "Form: Shadow",
+  "description": "When in shadow form you can access two spells:\n\n(PRIMARY)\n\"Shroud\"\nEnter the shadow realm and gain the ability to levitate, while being impervious to the sun.\n\n(SECONDARY)\n\"Faded Grasp\"\nForce enemies in a 6 block area into the shadow realm.\n",
+  "badges": [
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Hold [USE] to levitate when Shroud is active"
+    }
+  ]
+}

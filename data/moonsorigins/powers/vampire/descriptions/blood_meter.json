@@ -1,0 +1,151 @@
+{
+  "type": "origins:simple",
+  "name": "Blood",
+  "description": "You have blood that you must keep up to continue survival.\n",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": [
+        {
+          "text": "<You can ",
+          "color": "white",
+          "italic": true
+        },
+        {
+          "text": "shift right-click ",
+          "color": "yellow",
+          "italic": true
+        },
+        {
+          "text": "to ",
+          "color": "white",
+          "italic": true
+        },
+        {
+          "text": "drink blood",
+          "color": "red",
+          "italic": true
+        },
+        {
+          "text": ", drinking a ",
+          "color": "white",
+          "italic": true
+        },
+        {
+          "text": "villager ",
+          "color": "yellow",
+          "italic": true
+        },
+        {
+          "text": "yields more ",
+          "color": "white",
+          "italic": true
+        },
+        {
+          "text": "blood>",
+          "color": "red",
+          "italic": true
+        },
+        {
+          "text": ">",
+          "color": "white",
+          "italic": true
+        }
+      ]
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": [
+        {
+          "text": "<You can ",
+          "color": "white",
+          "italic": true
+        },
+        {
+          "text": "use your dagger ",
+          "color": "yellow",
+          "italic": true
+        },
+        {
+          "text": "to ",
+          "color": "white",
+          "italic": true
+        },
+        {
+          "text": "drink blood",
+          "color": "red",
+          "italic": true
+        },
+        {
+          "text": ">",
+          "color": "white",
+          "italic": true
+        }
+      ]
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": [
+        {
+          "text": "<You can ",
+          "color": "white",
+          "italic": true
+        },
+        {
+          "text": "shift right-click ",
+          "color": "yellow",
+          "italic": true
+        },
+        {
+          "text": "to ",
+          "color": "white",
+          "italic": true
+        },
+        {
+          "text": "extract blood",
+          "color": "red",
+          "italic": true
+        },
+        {
+          "text": ">",
+          "color": "white",
+          "italic": true
+        }
+      ]
+    },
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": [
+        {
+          "text": "<You can ",
+          "color": "white",
+          "italic": true
+        },
+        {
+          "text": "eat raw meat ",
+          "color": "yellow",
+          "italic": true
+        },
+        {
+          "text": "to ",
+          "color": "white",
+          "italic": true
+        },
+        {
+          "text": "drink minor blood",
+          "color": "red",
+          "italic": true
+        },
+        {
+          "text": ">",
+          "color": "white",
+          "italic": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "type": "origins:multiple",
+
+  "power": {
+    "type": "origins:active_self",
+    "cooldown": 160,
+    "hud_render": {
+      "should_render": false,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars.png",
+      "bar_index": 0
+    },
+    "key": {
+      "key": "key.origins.tertiary_active",
+      "continuous": false
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type":"origins:change_resource",
+          "resource":"moonsorigins:vampire/blood/blood_resource",
+          "change":-15,
+          "operation":"add"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "function moonsorigins:vampire/mist_form/start"
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "moonsorigins:vampire/blood/mist_form_duration"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 60,
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:trigger_cooldown",
+                "power": "moonsorigins:vampire/blood/mist_form_cooldown"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "function moonsorigins:vampire/mist_form/end"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:vampire/blood/mist_form_cooldown",
+          "compare_to": 0,
+          "comparison": "=="
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:vampire/blood/blood_resource",
+          "compare_to": 0,
+          "comparison": ">"
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:vampire/blood/echolocation_power",
+          "comparison": "<=",
+          "compare_to": 100
+        }
+      ]
+    }
+  },
+  "remove_power_on_respawn": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "function moonsorigins:vampire/mist_form/end"
+    }
+  },
+
+  "duration": {
+    "type": "origins:cooldown",
+    "cooldown": 60,
+    "hud_render": {
+      "should_render": true,
+      "inverted": true,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars_2.png",
+      "bar_index": 7
+    }
+  },
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 100,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars_2.png",
+      "bar_index": 8
+    }
+  },
+
+  "invulnerability": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_total_multiplicative",
+      "value": -1
+    },
+    "damage_condition": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:is_fire",
+      "inverted": true
+    }
+  },
+  "phase": {
+    "type": "origins:phasing",
+    "blacklist": true,
+    "render_type": "blindness",
+    "view_distance": 0,
+    "block_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:in_tag",
+          "tag": "origins:cannot_pass"
+        },
+        {
+          "type": "origins:in_tag",
+          "tag": "minecraft:doors"
+        }
+      ]
+    },
+    "phase_down_condition": {
+      "type": "origins:exists",
+      "inverted": true
+    }
+  },
+  "speed": {
+    "type": "origins:modify_velocity",
+    "modifier": {
+      "value": 0.4,
+      "operation": "multiply_total_multiplicative"
+    },
+    "axes": [
+      "x",
+      "z"
+    ]
+  },
+
+  "lower_health": {
+    "type": "origins:attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "value": -16,
+      "operation": "addition"
+    }
+  },
+  "unable_to_deal_damage": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "multiply_total_multiplicative",
+      "value": -1
+    }
+  },
+
+  "particles": {
+    "type": "origins:action_over_time",
+    "interval": 2,
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "particle cloud ~ ~ ~ 1 0.5 1 0 100 normal"
+    }
+  },
+  "transparent": {
+    "type": "origins:model_color",
+    "alpha": 0
+  },
+  "shader": {
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/sobel.json"
+  },
+  "hidden": true
+}

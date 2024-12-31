@@ -39,5 +39,6 @@
       "type": "origins:execute_command",
       "command": "execute run team join lich"
     }
-  }
+  },
+  "hidden": true
 }

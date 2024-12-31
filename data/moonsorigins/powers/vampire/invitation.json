@@ -20,5 +20,6 @@
       "type": "origins:in_tag",
       "tag": "minecraft:doors"
     }
-  }
+  },
+  "hidden": true
 }

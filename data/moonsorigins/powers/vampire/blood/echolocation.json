@@ -15,6 +15,12 @@
       "type": "origins:and",
       "actions": [
         {
+          "type":"origins:change_resource",
+          "resource":"moonsorigins:vampire/blood/blood_resource",
+          "change":-5,
+          "operation":"add"
+        },
+        {
           "type": "origins:play_sound",
           "sound": "minecraft:block.respawn_anchor.charge",
           "volume": 1,
@@ -42,6 +48,12 @@
           "resource": "moonsorigins:vampire/blood/blood_resource",
           "comparison": ">",
           "compare_to": 0
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:vampire/blood/mist_form_power",
+          "comparison": "<=",
+          "compare_to": 100
         }
       ]
     }
@@ -140,9 +152,20 @@
     "cooldown": 100,
     "hud_render": {
       "should_render": true,
-      "inverted": true,
       "sprite_location": "minecraft:textures/gui/moonpack_bars_2.png",
       "bar_index": 6
     }
-  }
+  },
+
+  "shader": {
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/sobel.json",
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vampire/blood/echolocation_power",
+      "comparison": ">=",
+      "compare_to": 100
+    }
+  },
+  "hidden": true
 }

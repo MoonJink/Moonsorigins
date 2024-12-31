@@ -23,7 +23,7 @@
 		"moonsorigins:ghost_aspects/commune"
 	],
 	"icon": "minecraft:iron_block",
-	"order": 0,
+	"order": 1000,
 	"impact": 2,
 	"name": "Scientist reborn",
 	"description": "Brought back from the dead. As you always wished."

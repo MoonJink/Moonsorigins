@@ -35,5 +35,6 @@
         "command": "function moonsorigins:lich/phylactery_activated"
       }
     ]
-  }
+  },
+  "hidden": true
 }

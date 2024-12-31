@@ -1,4 +1,5 @@
 {
   "type": "origins:self_glow",
-  "use_teams": true
+  "use_teams": true,
+  "hidden": true
 }

@@ -25,7 +25,7 @@
 		"moonsorigins:cyclops/arrow_damage"
 	],
 	"icon": "minecraft:ender_eye",
-	"order": 0,
+	"order": 1000,
 	"impact": 1,
 	"name": "Cyclops",
 	"description":"A one eyed beast capable of great destruction"

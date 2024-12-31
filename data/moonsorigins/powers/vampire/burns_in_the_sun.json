@@ -20,20 +20,6 @@
             }
           },
           "inverted": true
-        },
-        {
-          "type": "origins:resource",
-          "resource": "moonsorigins:vampire/forms/resource_resource",
-          "comparison": "==",
-          "compare_to": 2,
-          "inverted": true
-        },
-        {
-          "type": "origins:resource",
-          "resource": "moonsorigins:vampire/forms/resource_resource",
-          "comparison": "==",
-          "compare_to": 3,
-          "inverted": true
         }
       ]
     }

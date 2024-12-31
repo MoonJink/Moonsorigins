@@ -20,7 +20,7 @@
 		"moonsorigins:ghost_aspects/ethereal"
 	],
 	"icon": "minecraft:cod",
-	"order": 0,
+	"order": 1000,
 	"impact": 2,
 	"name": "Drowned (reborn)",
 	"description": "Back again again..."

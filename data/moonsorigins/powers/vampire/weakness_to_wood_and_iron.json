@@ -1,0 +1,97 @@
+{
+  "type": "origins:multiple",
+
+  "power": {
+    "type": "origins:modify_damage_taken",
+    "bientity_condition": {
+      "type": "origins:actor_condition",
+      "condition": {
+        "type": "origins:equipped_item",
+        "equipment_slot": "mainhand",
+        "item_condition": {
+          "type": "origins:or",
+          "conditions": [
+            {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "tag": "origins:moonsorigins/iron"
+              }
+            },
+            {
+              "type": "origins:ingredient",
+              "ingredient": {
+                "tag": "origins:moonsorigins/wood"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "modifier": {
+      "operation": "add_base_early",
+      "value": 4
+    }
+  },
+  "cant_wear_iron": {
+    "type": "origins:restrict_armor",
+    "head": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:iron_helmet"
+      }
+    },
+    "chest": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:iron_chestplate"
+      }
+    },
+    "legs": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:iron_leggings"
+      }
+    },
+    "feet": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:iron_boots"
+      }
+    }
+  },
+  "damage_over_time": {
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+      "type": "origins:damage",
+      "amount": 4,
+      "damage_type": "moonsorigins:cursed"
+    },
+    "condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "origins:moonsorigins/iron"
+            }
+          }
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "origins:moonsorigins/wood"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "hidden": true
+}

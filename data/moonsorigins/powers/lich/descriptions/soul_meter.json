@@ -1,0 +1,33 @@
+{
+  "type": "origins:simple",
+  "name": "Soul meter",
+  "description": "You absorb nearby souls and use them for magic. When using a gauntlet you can passively gain souls.\n",
+  "badges": [
+    {
+      "type": "origins:tooltip",
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": [
+        {
+          "text": "<You can store up to ",
+          "color": "white",
+          "italic": true
+        },
+        {
+          "text": "20 ",
+          "color": "yellow",
+          "italic": true
+        },
+        {
+          "text": "souls",
+          "color": "aqua",
+          "italic": true
+        },
+        {
+          "text": ">",
+          "color": "white",
+          "italic": true
+        }
+      ]
+    }
+  ]
+}

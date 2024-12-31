@@ -205,5 +205,6 @@
       "comparison": "!=",
       "compare_to": 0
     }
-  }
+  },
+  "hidden": true
 }

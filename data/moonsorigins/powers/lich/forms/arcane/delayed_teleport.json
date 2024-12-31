@@ -151,5 +151,6 @@
       "comparison": ">=",
       "compare_to": 120
     }
-  }
+  },
+  "hidden": true
 }

@@ -120,7 +120,7 @@
       {
         "type":"origins:change_resource",
         "resource":"moonsorigins:vampire/blood/blood_resource",
-        "change":-20,
+        "change":-10,
         "operation":"add"
       },
       {

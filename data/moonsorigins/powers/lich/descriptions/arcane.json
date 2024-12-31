@@ -1,0 +1,5 @@
+{
+  "type": "origins:simple",
+  "name": "Form: Arcane",
+  "description": "When in Arcane form you gain access to three spells:\n\n(USE)\n\"Curse\"\nYou curse an enemy within 15 blocks.\n\n(PRIMARY)\n\"Delayed Warp\"\nWarp yourself forth after a 2 second delay.\n\n(SECONDARY)\n\"Levitate\"\nIn a 6 block area you levitate all enemies.\n"
+}

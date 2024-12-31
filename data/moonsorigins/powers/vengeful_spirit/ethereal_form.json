@@ -45,7 +45,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "function moonsorigins:vengeful_spirit/vengeful_spirit_phase_callon"
+          "command": "function moonsorigins:vengeful_spirit/phase_callon"
         }
       ]
     },
@@ -93,7 +93,7 @@
           },
           {
             "type": "origins:execute_command",
-            "command": "function moonsorigins:vengeful_spirit/vengeful_spirit_phase_callback"
+            "command": "function moonsorigins:vengeful_spirit/phase_callback"
           },
           {
             "type": "origins:trigger_cooldown",

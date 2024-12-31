@@ -117,5 +117,6 @@
       "comparison": ">=",
       "compare_to": 36
     }
-  }
+  },
+  "hidden": true
 }

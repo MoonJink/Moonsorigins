@@ -1,0 +1,42 @@
+{
+  "type": "origins:multiple",
+
+  "prevent_player_being_used": {
+    "type": "origins:prevent_being_used"
+  },
+  "prevent_block_place": {
+    "type": "origins:prevent_block_place"
+  },
+  "prevent_block_selection": {
+    "type": "origins:prevent_block_selection"
+  },
+  "prevent_block_use": {
+    "type": "origins:prevent_block_use"
+  },
+  "prevent_entity_render": {
+    "type": "origins:prevent_entity_render",
+    "entity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:entity_type",
+          "entity_type": "minecraft:player",
+          "inverted": true
+        },
+        {
+          "type": "origins:living"
+        }
+      ]
+    }
+  },
+  "prevent_entity_use": {
+    "type": "origins:prevent_entity_use"
+  },
+  "prevent_feature_render": {
+    "type": "origins:prevent_feature_render",
+    "feature": "held_item"
+  },
+  "prevent_item_use": {
+    "type": "origins:prevent_item_use"
+  }
+}

@@ -29,7 +29,7 @@
 		"moonsorigins:alchemist/polishing/tooltips"
 	],
 	"icon": "minecraft:cauldron",
-	"order": 0,
+	"order": 1000,
 	"impact": 3,
 	"name": "Spirit Alchemist",
 	"description": "Risen from the grave, you seek to use your alchemical knowledge to aid your allies."

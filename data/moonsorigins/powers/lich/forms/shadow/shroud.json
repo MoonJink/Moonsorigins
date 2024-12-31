@@ -260,5 +260,6 @@
       "sprite_location": "minecraft:textures/gui/moonpack_bars_2.png",
       "bar_index": 2
     }
-  }
+  },
+  "hidden": true
 }

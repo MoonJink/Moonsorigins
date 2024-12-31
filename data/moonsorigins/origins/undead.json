@@ -26,7 +26,7 @@
 		"origins:scare_creepers"
 	],
 	"icon": "minecraft:rotten_flesh",
-	"order": 0,
+	"order": 1000,
 	"impact": 2,
 	"name": "The Undead",
 	"description": "Undead again.."

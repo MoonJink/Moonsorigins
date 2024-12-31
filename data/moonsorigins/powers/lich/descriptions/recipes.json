@@ -1,0 +1,122 @@
+{
+  "type": "origins:simple",
+  "name": "[RECIPES] >>>",
+  "description": "Recipes are listed above\n",
+  "badges": [
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "minecraft:textures/item/iron_chestplate.png",
+      "recipe":{
+        "type": "minecraft:crafting_shaped",
+        "id": "moonsoriginsmod:empty_gauntlet",
+        "pattern": [
+          "XAX",
+          "L L",
+          "XWX"
+        ],
+        "key": {
+          "X": {
+            "item": "moonsoriginsmod:lich_borne_iron"
+          },
+          "L": {
+            "item": "minecraft:leather"
+          },
+          "A": {
+            "item": "moonsoriginsmod:arcane_crystal"
+          },
+          "W": {
+            "item": "moonsoriginsmod:water_crystal"
+          }
+        },
+        "result": {
+          "item": "moonsoriginsmod:lich_gauntlet_empty",
+          "count": 1
+        }
+      }
+    },
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "moonsoriginsmod:textures/item/soul_crystal.png",
+      "recipe":{
+        "type": "minecraft:crafting_shaped",
+        "id": "moonsoriginsmod:soul_crystal",
+        "pattern": [
+          "X#X",
+          "#A#",
+          "X#X"
+        ],
+        "key": {
+          "#": {
+            "item": "minecraft:bone"
+          },
+          "A": {
+            "item": "minecraft:amethyst_block"
+          },
+          "X": {
+            "item": "minecraft:amethyst_shard"
+          }
+        },
+        "result": {
+          "item": "moonsoriginsmod:soul_crystal",
+          "count": 1
+        }
+      }
+    },
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "moonsoriginsmod:textures/item/shadow_crystal.png",
+      "recipe":{
+        "type": "minecraft:crafting_shaped",
+        "id": "moonsoriginsmod:shadow_crystal",
+        "pattern": [
+          "#B#",
+          "BDB",
+          "#B#"
+        ],
+        "key": {
+          "#": {
+            "item": "minecraft:magma_block"
+          },
+          "B": {
+            "item": "minecraft:blaze_powder"
+          },
+          "D": {
+            "item": "minecraft:diamond"
+          }
+        },
+        "result": {
+          "item": "moonsoriginsmod:shadow_crystal",
+          "count": 1
+        }
+      }
+    },
+    {
+      "type": "origins:crafting_recipe",
+      "sprite": "moonsoriginsmod:textures/item/lich_borne_iron.png",
+      "recipe":{
+        "type": "minecraft:crafting_shaped",
+        "id": "moonsoriginsmod:lich_borne_iron",
+        "pattern": [
+          " # ",
+          "BiB",
+          " # "
+        ],
+        "key": {
+          "#": {
+            "item": "minecraft:coal"
+          },
+          "B": {
+            "item": "minecraft:bone"
+          },
+          "i": {
+            "item": "minecraft:iron_ingot"
+          }
+        },
+        "result": {
+          "item": "moonsoriginsmod:lich_borne_iron",
+          "count": 1
+        }
+      }
+    }
+  ]
+}

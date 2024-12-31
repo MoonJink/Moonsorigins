@@ -1,0 +1,12 @@
+{
+  "type": "origins:simple",
+  "name": "Transform: MIST",
+  "description": "Transform into mist using 15 blood 🩸 and gain: invulnerability (to all but fire damage), phasing and jump boost. Lose 16 maximum hearts and be unable to interact with the world. \uD83C\uDF2B\uD83C\uDF2B\uD83C\uDF2B\n",
+  "badges": [
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Trigger with [tertiary]"
+    }
+  ]
+}

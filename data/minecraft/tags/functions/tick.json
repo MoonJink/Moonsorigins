@@ -8,6 +8,7 @@
     "drowned:tick",
     "vampire:tick",
     "vengeful_spirit:tick",
-    "lich:tick"
+    "lich:tick",
+    "gorgon:tick"
   ]
 }

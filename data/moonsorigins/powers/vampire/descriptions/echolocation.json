@@ -1,0 +1,12 @@
+{
+  "type": "origins:simple",
+  "name": "Hunter's Sight",
+  "description": "Consume 5 blood to see living entites within a 50 block radius\uD83D\uDDFF\uD83D\uDDFF.\n",
+  "badges": [
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Trigger with [secondary]"
+    }
+  ]
+}

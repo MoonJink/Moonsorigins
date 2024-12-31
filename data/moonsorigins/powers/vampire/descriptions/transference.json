@@ -1,0 +1,12 @@
+{
+  "type": "origins:simple",
+  "name": "Blood transference",
+  "description": "Use 15 blood to swap places with a raycasted entity in a 50 block radius 👿👿👿.\n",
+  "badges": [
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Trigger with [primary]"
+    }
+  ]
+}

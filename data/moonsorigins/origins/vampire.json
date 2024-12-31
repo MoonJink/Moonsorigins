@@ -1,15 +1,33 @@
  {
 	"powers": [
+		"moonsorigins:general_power_library/hide_armour",
+		"moonsorigins:general_power_library/chainmail_recipe",
+
 		"moonsorigins:vampire/invitation",
 		"moonsorigins:vampire/night_benefits_power_switch",
+		"moonsorigins:vampire/weakness_to_wood_and_iron",
+		"moonsorigins:vampire/summon_fiend",
+		"moonsorigins:vampire/burns_in_the_sun",
+		"moonsorigins:vampire/vampiric_benefits",
+
 		"moonsorigins:vampire/blood/blood",
 		"moonsorigins:vampire/blood/blood_missile",
 		"moonsorigins:vampire/blood/transference",
 		"moonsorigins:vampire/blood/echolocation",
-		"moonsorigins:vampire/summon_fiend"
+
+		"moonsorigins:vampire/blood/mist_form_power",
+		"moonsorigins:vampire/blood/mist_form_cooldown",
+		"moonsorigins:vampire/blood/mist_form_duration",
+		"moonsorigins:vampire/blood/mist_form_remove_power_on_respawn",
+
+		"moonsorigins:vampire/descriptions/blood_meter",
+		"moonsorigins:vampire/descriptions/transference",
+		"moonsorigins:vampire/descriptions/echolocation",
+		"moonsorigins:vampire/descriptions/mist_form",
+		"moonsorigins:vampire/descriptions/vampirism"
 	],
-	"icon": "minecraft:scute",
-	"order": 0,
+	"icon": "moonsoriginsmod:greater_blood_vial",
+	"order": 1000,
 	"impact": 3,
 	"name": "The Vampire",
 	"description": "Risen again 👿👿"

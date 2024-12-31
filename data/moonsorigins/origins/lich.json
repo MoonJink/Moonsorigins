@@ -32,15 +32,18 @@
 		"moonsorigins:lich/forms/shadow/faded_grasp_cooldown_display",
 
 
-		"moonsorigins:lich/polishing/lich",
-		"moonsorigins:lich/polishing/form_switch",
-		"moonsorigins:lich/polishing/form_arcane",
-		"moonsorigins:lich/polishing/form_soul",
-		"moonsorigins:lich/polishing/form_flame",
-		"moonsorigins:lich/polishing/tooltips"
+		"moonsorigins:lich/descriptions/lich_form",
+		"moonsorigins:lich/descriptions/formless",
+		"moonsorigins:lich/descriptions/gauntlet",
+		"moonsorigins:lich/descriptions/arcane",
+		"moonsorigins:lich/descriptions/soul_meter",
+		"moonsorigins:lich/descriptions/soul",
+		"moonsorigins:lich/descriptions/shadow",
+		"moonsorigins:lich/descriptions/ainir",
+		"moonsorigins:lich/descriptions/recipes"
 	],
-	"icon": "minecraft:soul_lantern",
-	"order": 0,
+	"icon": "moonsoriginsmod:shadow_crystal",
+	"order": 1000,
 	"impact": 3,
 	"name": "The Lich",
 	"description": "You desired life beyond your natural fate so you performed a profane ritual to gain immortality. Now you use your magic to conquer the land, at a grave cost..."

@@ -1,0 +1,5 @@
+{
+  "type": "origins:simple",
+  "name": "Form: Soul",
+  "description": "When in Soul form you can use three spells:\n\n(USE)\n\"Ainir's Blessing\"\nUse one soul and shoot a blessing beam, which rejuvenates allies.\n\n(PRIMARY)\n\"Summon Lich-borne\"\nUsing 2 souls summon a Lich-borne for a limited time\n\n(SECONDARY)\n\"Summon Lich-borne ravager\"\nUsing 6 souls, summon a Lich-borne ravager for 30 seconds. Along with one Lich-Borne.\n"
+}
