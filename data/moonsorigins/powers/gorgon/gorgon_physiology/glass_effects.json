@@ -1,0 +1,45 @@
+{
+  "type": "origins:action_over_time",
+  "interval": 10,
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:apply_effect",
+        "effects": [
+          {
+            "effect": "minecraft:blindness",
+            "amplifier": 2,
+            "duration": 60,
+            "show_particles": false,
+            "show_icon": true
+          },
+          {
+            "effect": "minecraft:darkness",
+            "amplifier": 2,
+            "duration": 60,
+            "show_particles": false,
+            "show_icon": true
+          }
+        ]
+      },
+      {
+        "type": "origins:damage",
+        "amount": 4,
+        "damage_type": "moonsorigins:frozen_in_stone"
+      }
+    ]
+  },
+  "condition": {
+    "type": "origins:raycast",
+    "distance": 15,
+    "block": true,
+    "entity": false,
+    "shape_type": "outline",
+    "fluid_handling": "any",
+    "block_condition": {
+      "type": "origins:in_tag",
+      "tag": "origins:glass"
+    }
+  }
+}

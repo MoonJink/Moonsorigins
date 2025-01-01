@@ -1,0 +1,45 @@
+{
+  "type": "origins:multiple",
+
+  "cannot_move": {
+    "type": "origins:modify_velocity",
+    "modifier": {
+      "value": 0,
+      "operation": "set_total"
+    },
+    "axes": [
+      "x",
+      "z"
+    ]
+  },
+  "remove_power": {
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+      "type": "origins:delay",
+      "ticks": 100,
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:execute_command",
+            "command": "function moonsorigins:gorgon/gorgonian_sight/remove_power"
+          },
+          {
+            "type": "origins:dismount"
+          }
+        ]
+      }
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "function moonsorigins:gorgon/gorgonian_sight/remove_power"
+    }
+  },
+  "unable_to_deal_damage": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "multiply_total_multiplicative",
+      "value": -1
+    }
+  }
+}

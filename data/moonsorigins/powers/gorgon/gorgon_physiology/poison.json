@@ -1,0 +1,26 @@
+{
+  "type": "origins:multiple",
+
+  "immune": {
+    "type": "origins:effect_immunity",
+    "effect": "minecraft:poison"
+  },
+  "apply_on_hit": {
+    "type": "origins:target_action_on_hit",
+    "entity_action": {
+      "type": "origins:apply_effect",
+      "effect": {
+        "effect": "minecraft:poison",
+        "amplifier": 1,
+        "duration": 200,
+        "show_particles": false,
+        "show_icon": true
+      }
+    },
+    "cooldown": 10,
+    "hud_render": {
+      "should_render": false
+    }
+  },
+  "hidden": true
+}

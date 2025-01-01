@@ -16,7 +16,7 @@
           "item_condition": {
             "type": "origins:ingredient",
             "ingredient": {
-              "tag": "origins:undead_helmets"
+              "tag": "origins:moonsorigins/head_armour"
             }
           },
           "inverted": true
@@ -52,7 +52,7 @@
                 "item_condition": {
                   "type": "origins:ingredient",
                   "ingredient": {
-                    "tag": "origins:undead_helmets"
+                    "tag": "origins:moonsorigins/head_armour"
                   }
                 }
               }

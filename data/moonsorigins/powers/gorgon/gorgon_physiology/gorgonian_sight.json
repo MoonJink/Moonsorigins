@@ -1,0 +1,54 @@
+{
+  "type": "origins:active_self",
+  "cooldown": 100,
+  "hud_render": {
+    "sprite_location": "minecraft:textures/gui/moonpack_bars_2.png",
+    "bar_index": 9
+  },
+  "key": {
+    "key": "key.origins.primary_active",
+    "continuous": false
+  },
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:raycast",
+        "distance": 30,
+        "block": true,
+        "entity": true,
+        "shape_type": "visual",
+        "fluid_handling": "any",
+        "bientity_action": {
+          "type": "origins:target_action",
+          "action": {
+            "type": "origins:execute_command",
+            "command": "function moonsorigins:gorgon/gorgonian_sight/turned_to_stone"
+          }
+        },
+        "bientity_condition": {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:living"
+          }
+        },
+        "command_along_ray": "function moonsorigins:gorgon/gorgonian_sight/particles",
+        "command_step": 0.05
+      }
+    ]
+  },
+  "condition": {
+    "type":"origins:raycast",
+    "block":false,
+    "shape_type": "visual",
+    "fluid_handling": "any",
+    "entity": true,
+    "distance":30,
+    "match_bientity_condition": {
+      "type": "origins:target_condition",
+      "condition": {
+        "type": "origins:living"
+      }
+    }
+  }
+}

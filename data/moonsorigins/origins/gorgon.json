@@ -1,10 +1,20 @@
  {
 	"powers": [
+		"moonsorigins:gorgon/gorgon_physiology/poison",
+		"moonsorigins:gorgon/gorgon_physiology/regen_increase",
+		"moonsorigins:gorgon/gorgon_physiology/prevent_helmet_use",
+		"moonsorigins:gorgon/gorgon_physiology/hunger_increase",
+		"moonsorigins:gorgon/gorgon_physiology/glass_effects",
+		"moonsorigins:gorgon/gorgon_physiology/gorgonian_sight",
+		"moonsorigins:gorgon/gorgon_physiology/sun_stone",
 
+		"moonsorigins:gorgon/cave_dweller/cave_sleep",
+		"moonsorigins:gorgon/cave_dweller/night_vision",
+		"moonsorigins:gorgon/cave_dweller/photophobia"
 	],
-	"icon": "minecraft:chain",
+	"icon": "minecraft:green_dye",
 	"order": 1000,
 	"impact": 3,
 	"name": "The Gorgon",
-	"description": "In life, you were a villager wronged by those around you, leading to your tragic demise and the curse of an unsettled spirit. Now, your rage and sorrow manifest in a haunting chill, seeking vengeance against the living. You wander through the Overworld, bound by the remnants of your painful past, able to influence but never fully return to the physical world. Your connection to the supernatural gives you unique powers, yet also curses you with weaknesses tied to the material realm you no longer belong to.\n"
+	"description": ""
 }

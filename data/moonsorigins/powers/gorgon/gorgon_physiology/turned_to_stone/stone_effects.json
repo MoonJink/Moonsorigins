@@ -1,0 +1,132 @@
+{
+  "type": "origins:multiple",
+
+  "stone_texture": {
+    "type": "apugli:entity_texture_overlay",
+    "texture_location": "minecraft:textures/skins/stone.png",
+    "show_first_person": true,
+    "render_original_model": false
+  },
+
+  "pick_up": {
+    "type": "origins:action_on_being_used",
+    "bientity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:invert",
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:mount"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "power grant @s moonsorigins:gorgon/gorgon_physiology/turned_to_stone/stone_effects_dismount"
+              }
+            ]
+          }
+        },
+        {
+          "type": "origins:actor_action",
+          "action": {
+            "type": "origins:execute_command",
+            "command": "power grant @s moonsorigins:gorgon/gorgon_physiology/turned_to_stone/stone_effects_dismount"
+          }
+        }
+      ]
+    },
+    "bientity_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:riding",
+            "inverted": true
+          }
+        },
+        {
+          "type": "origins:actor_condition",
+          "condition": {
+            "type": "origins:riding",
+            "inverted": true
+          }
+        },
+        {
+          "type": "origins:target_condition",
+          "condition": {
+            "type": "origins:living"
+          }
+        },
+        {
+          "type": "origins:actor_condition",
+          "condition": {
+            "type": "origins:living"
+          }
+        },
+        {
+          "type": "origins:actor_condition",
+          "condition": {
+            "type": "origins:sneaking"
+          }
+        }
+      ]
+    },
+    "item_condition": {
+      "type": "origins:empty"
+    },
+    "hands": [
+      "main_hand"
+    ]
+  },
+  "dismount": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:riding"
+      },
+      "if_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:dismount"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "power remove @s moonsorigins:gorgon/gorgon_physiology/turned_to_stone/stone_effects_dismount"
+          }
+        ]
+      },
+      "else_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:passenger_action",
+            "action": {
+              "type": "origins:dismount"
+            }
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "power remove @s moonsorigins:gorgon/gorgon_physiology/turned_to_stone/stone_effects_dismount"
+          }
+        ]
+      }
+    },
+    "cooldown": 10,
+    "hud_render": {
+      "should_render": false
+    },
+    "key": {
+      "key": "key.sneak",
+      "continuous": false
+    }
+  },
+
+  "prevent_sprinting": {
+    "type": "origins:prevent_sprinting"
+  }
+}

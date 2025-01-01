@@ -1,0 +1,19 @@
+{
+  "type": "origins:prevent_sleep",
+  "block_condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:height",
+        "comparison": ">=",
+        "compare_to": 60
+      },
+      {
+        "type": "origins:height",
+        "comparison": "<=",
+        "compare_to": 120
+      }
+    ]
+  },
+  "message": "The wretched scent of the air pollutes your twisted nose, proceed higher or lower to sleep"
+}

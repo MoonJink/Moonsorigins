@@ -1,0 +1,10 @@
+{
+  "type": "origins:restrict_armor",
+  "head": {
+    "type": "origins:ingredient",
+    "ingredient": {
+      "tag": "origins:moonsorigins/head_armour"
+    }
+  },
+  "hidden": true
+}

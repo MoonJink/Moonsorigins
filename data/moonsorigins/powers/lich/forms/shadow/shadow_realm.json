@@ -38,5 +38,12 @@
       "type": "origins:fire"
     }
   },
+  "remove_power_on_respawn": {
+    "type": "origins:action_on_callback",
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "execute run power remove @s moonsorigins:lich/forms/shadow/shadow_realm"
+    }
+  },
   "hidden": true
 }

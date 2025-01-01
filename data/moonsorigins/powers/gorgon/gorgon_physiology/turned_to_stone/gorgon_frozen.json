@@ -1,0 +1,21 @@
+{
+  "type": "origins:multiple",
+  "limited_movement_xz": {
+    "type": "origins:modify_velocity",
+    "modifier": {
+      "value": -0.8,
+      "operation": "multiply_total_multiplicative"
+    },
+    "axes": [
+      "x",
+      "z"
+    ]
+  },
+  "unable_to_deal_damage": {
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+      "operation": "multiply_total_multiplicative",
+      "value": -0.5
+    }
+  }
+}

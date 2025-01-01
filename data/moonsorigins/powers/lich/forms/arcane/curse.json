@@ -172,7 +172,12 @@
           }
         }
       ]
+    },
+    "entity_action_respawned": {
+      "type": "origins:execute_command",
+      "command": "function moonsorigins:lich/curse/remove_curse"
     }
   },
+
   "hidden": true
 }
