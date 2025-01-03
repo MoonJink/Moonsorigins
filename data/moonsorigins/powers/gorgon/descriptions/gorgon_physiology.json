@@ -1,0 +1,5 @@
+{
+  "type": "origins:simple",
+  "name": "Gorgon physiology",
+  "description": "As a gorgon you have several benefits and downsides:\n\n(BENEFITS)\nFirstly, you are resistant to all poisons and apply poison on hit.\n\nSecondly, you have doubled healing from all sources (including natural regeneration)\n\nThirdly, you may turn a target to stone by looking at them\n\nLastly, you may enhance your healing abilities briefly.\n\n(DOWNSIDES)\nYou cannot wear a helmet, you have increased hunger consumption, you cannot look at any glass and turn to stone during the day.\n\n"
+}

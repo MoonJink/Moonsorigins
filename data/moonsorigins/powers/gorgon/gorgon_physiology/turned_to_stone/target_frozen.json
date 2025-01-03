@@ -41,5 +41,6 @@
       "operation": "multiply_total_multiplicative",
       "value": -1
     }
-  }
+  },
+  "hidden": true
 }

@@ -160,6 +160,7 @@
   "shader": {
     "type": "origins:shader",
     "shader": "minecraft:shaders/post/sobel.json",
+    "toggleable": false,
     "condition": {
       "type": "origins:resource",
       "resource": "moonsorigins:vampire/blood/echolocation_power",

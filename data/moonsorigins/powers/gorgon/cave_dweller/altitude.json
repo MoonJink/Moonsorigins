@@ -1,0 +1,103 @@
+{
+  "type": "origins:multiple",
+  "sleep_low_or_high": {
+    "type": "origins:prevent_sleep",
+    "block_condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:height",
+          "comparison": ">=",
+          "compare_to": 60
+        },
+        {
+          "type": "origins:height",
+          "comparison": "<=",
+          "compare_to": 120
+        }
+      ]
+    },
+    "message": "The wretched scent of the air pollutes your twisted nose, proceed higher or lower to sleep"
+  },
+  "speed_increase_xz": {
+    "type": "origins:modify_velocity",
+    "modifier": {
+      "value": 0.3,
+      "operation": "multiply_total_multiplicative"
+    },
+    "axes": [
+      "x",
+      "z"
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:block_in_radius",
+          "block_condition": {
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:height",
+                "comparison": "<=",
+                "compare_to": 60
+              },
+              {
+                "type": "origins:height",
+                "comparison": ">=",
+                "compare_to": 120
+              }
+            ]
+          },
+          "radius": 1,
+          "shape": "cube",
+          "comparison": ">=",
+          "compare_to": 1
+        }
+      ]
+    }
+  },
+  "speed_increase_y": {
+    "type": "origins:modify_velocity",
+    "modifier": {
+      "value": 0.1,
+      "operation": "multiply_total_multiplicative"
+    },
+    "axes": [
+      "y"
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:block_in_radius",
+          "block_condition": {
+            "type": "origins:or",
+            "conditions": [
+              {
+                "type": "origins:height",
+                "comparison": "<=",
+                "compare_to": 60
+              },
+              {
+                "type": "origins:height",
+                "comparison": ">=",
+                "compare_to": 120
+              }
+            ]
+          },
+          "radius": 1,
+          "shape": "cube",
+          "comparison": ">=",
+          "compare_to": 1
+        },
+        {
+          "type": "origins:fall_distance",
+          "comparison": "==",
+          "compare_to": 0
+        }
+      ]
+    }
+  },
+  "hidden": true
+}

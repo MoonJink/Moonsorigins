@@ -128,5 +128,6 @@
 
   "prevent_sprinting": {
     "type": "origins:prevent_sprinting"
-  }
+  },
+  "hidden": true
 }

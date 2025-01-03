@@ -1,0 +1,12 @@
+{
+  "type": "origins:simple",
+  "name": "Gorgonian sight",
+  "description": "You are able to turn a target to stone briefly, targets that are turned to stone can be picked up for the duration of their stone-form.\n",
+  "badges": [
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Trigger with [primary]"
+    }
+  ]
+}

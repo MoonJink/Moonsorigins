@@ -1,6 +1,6 @@
 {
   "type": "origins:active_self",
-  "cooldown": 100,
+  "cooldown": 50,
   "hud_render": {
     "sprite_location": "minecraft:textures/gui/moonpack_bars_2.png",
     "bar_index": 9
@@ -50,5 +50,6 @@
         "type": "origins:living"
       }
     }
-  }
+  },
+  "hidden": true
 }

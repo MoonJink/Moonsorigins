@@ -140,7 +140,8 @@
       "resource": "moonsorigins:vengeful_spirit/ethereal_form_resource",
       "comparison": "==",
       "compare_to": 1
-    }
+    },
+    "toggleable": false
   },
   "particle_soul": {
     "type": "origins:particle",

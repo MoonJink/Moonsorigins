@@ -41,5 +41,6 @@
       "type": "origins:in_tag",
       "tag": "origins:glass"
     }
-  }
+  },
+  "hidden": true
 }

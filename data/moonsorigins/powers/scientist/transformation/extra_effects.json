@@ -48,7 +48,7 @@
   "shader": {
     "type": "origins:shader",
     "shader": "minecraft:shaders/post/scan_pincushion.json",
-    "toggleable": true,
+    "toggleable": false,
     "condition": {
       "type": "origins:and",
       "conditions": [

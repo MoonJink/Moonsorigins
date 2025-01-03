@@ -1,0 +1,12 @@
+{
+  "type": "origins:simple",
+  "name": "Empower healing",
+  "description": "You are able to quickly effect yourself with a high volume of regeneration briefly.\n\n",
+  "badges": [
+    {
+      "type": "origins:keybind",
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Trigger with [secondary]"
+    }
+  ]
+}

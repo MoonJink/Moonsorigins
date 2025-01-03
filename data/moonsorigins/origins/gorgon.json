@@ -7,14 +7,23 @@
 		"moonsorigins:gorgon/gorgon_physiology/glass_effects",
 		"moonsorigins:gorgon/gorgon_physiology/gorgonian_sight",
 		"moonsorigins:gorgon/gorgon_physiology/sun_stone",
+		"moonsorigins:gorgon/gorgon_physiology/channel_healing",
 
-		"moonsorigins:gorgon/cave_dweller/cave_sleep",
+		"moonsorigins:gorgon/cave_dweller/altitude",
 		"moonsorigins:gorgon/cave_dweller/night_vision",
-		"moonsorigins:gorgon/cave_dweller/photophobia"
+		"moonsorigins:gorgon/cave_dweller/photophobia",
+
+		"moonsorigins:gorgon/reputation/no_villagers",
+
+		"moonsorigins:gorgon/descriptions/gorgon_physiology",
+		"moonsorigins:gorgon/descriptions/gorgonian_sight",
+		"moonsorigins:gorgon/descriptions/channel_healing",
+		"moonsorigins:gorgon/descriptions/cave_dweller",
+		"moonsorigins:gorgon/descriptions/poor_reputation"
 	],
 	"icon": "minecraft:green_dye",
 	"order": 1000,
 	"impact": 3,
 	"name": "The Gorgon",
-	"description": ""
+	"description": "You are the Gorgon, a repulsive creature who dwells in the most extreme of altitudes that defends itself with its extreme healing and petrification."
 }

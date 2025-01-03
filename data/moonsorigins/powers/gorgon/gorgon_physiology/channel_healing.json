@@ -1,0 +1,97 @@
+{
+  "type": "origins:multiple",
+
+  "power": {
+    "type": "origins:active_self",
+    "cooldown": 300,
+    "key": {
+      "key" : "key.origins.secondary_active",
+      "continuous": false
+    },
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:apply_effect",
+          "effects": {
+            "effect": "minecraft:regeneration",
+            "duration": 200,
+            "amplifier": 4,
+            "show_particles": false,
+            "show_icon": true
+          }
+        },
+        {
+          "type": "origins:trigger_cooldown",
+          "power": "moonsorigins:gorgon/gorgon_physiology/channel_healing_duration"
+        },
+        {
+          "type": "origins:delay",
+          "ticks": 150,
+          "action": {
+            "type": "origins:trigger_cooldown",
+            "power": "moonsorigins:gorgon/gorgon_physiology/channel_healing_cooldown"
+          }
+        }
+      ]
+    }
+  },
+
+  "overlay":{
+    "type":"origins:overlay",
+    "texture": "minecraft:textures/misc/nausea.png",
+    "red": 1,
+    "green": 0,
+    "blue": 0,
+    "strength":0.5,
+    "draw_mode": "nausea",
+    "draw_phase": "below_hud",
+    "hide_with_hud": false,
+    "visible_in_third_person": false,
+
+    "condition":{
+      "type": "origins:resource",
+      "resource": "moonsorigins:gorgon/gorgon_physiology/channel_healing_power",
+      "comparison": ">=",
+      "compare_to": 150
+    }
+  },
+  "heartbeat":{
+    "type":"origins:action_over_time",
+    "interval":20,
+    "entity_action":{
+      "type":"origins:play_sound",
+      "sound":"minecraft:entity.warden.heartbeat",
+      "volume": 0.5,
+      "pitch": 1.5,
+      "category": "player"
+    },
+    "condition":{
+      "type": "origins:resource",
+      "resource": "moonsorigins:gorgon/gorgon_physiology/channel_healing_power",
+      "comparison": ">=",
+      "compare_to": 150
+    }
+  },
+
+  "duration": {
+    "type": "origins:cooldown",
+    "cooldown": 150,
+    "hud_render": {
+      "should_render": true,
+      "inverted": true,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars_2.png",
+      "bar_index": 10
+    }
+  },
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 150,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "minecraft:textures/gui/moonpack_bars_2.png",
+      "bar_index": 6
+    }
+  },
+  "hidden": true
+}
