@@ -9,10 +9,6 @@
     "minecraft:rabbit",
     "minecraft:chicken",
     "minecraft:cod",
-    "minecraft:salmon",
-
-    "alexsmobs:kangaroo_meat",
-    "born_in_chaos_v1:intoxicating_decoction",
-    "born_in_chaos_v1:stimulating_decoction"
+    "minecraft:salmon"
   ]
 }

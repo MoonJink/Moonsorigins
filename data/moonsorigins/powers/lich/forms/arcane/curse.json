@@ -3,7 +3,7 @@
 
   "power": {
     "type": "origins:active_self",
-    "cooldown": 100,
+    "cooldown": 65,
     "hud_render": {
       "should_render": false,
       "sprite_location": "minecraft:textures/gui/moonpack_bars.png",
@@ -104,7 +104,7 @@
   },
   "cooldown_display": {
     "type": "origins:cooldown",
-    "cooldown": 100,
+    "cooldown": 65,
     "hud_render": {
       "should_render": true,
       "sprite_location": "minecraft:textures/gui/moonpack_bars.png",

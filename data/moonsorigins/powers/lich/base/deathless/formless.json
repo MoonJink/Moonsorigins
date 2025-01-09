@@ -44,7 +44,7 @@
     "interval": 1,
     "entity_action": {
       "type": "apoli:add_velocity",
-      "y": 0.09,
+      "y": 0.07,
       "space": "world",
       "set": true
     },
@@ -122,6 +122,28 @@
       "resource": "moonsorigins:lich/base/deathless/formless_resource",
       "comparison": "==",
       "compare_to": 1
+    }
+  },
+  "mine_while_flying": {
+    "type": "origins:modify_break_speed",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": 4
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:on_block",
+          "inverted": true
+        },
+        {
+          "type": "origins:resource",
+          "resource": "moonsorigins:lich/base/deathless/formless_resource",
+          "comparison": "==",
+          "compare_to": 1
+        }
+      ]
     }
   },
 

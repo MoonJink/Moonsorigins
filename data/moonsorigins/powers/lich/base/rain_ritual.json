@@ -1,0 +1,47 @@
+{
+  "type": "origins:action_on_block_use",
+  "held_item_action": {
+    "type": "origins:consume",
+    "amount": 1
+  },
+  "item_condition": {
+    "type": "origins:ingredient",
+    "ingredient": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "block_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:set_block",
+        "block": "minecraft:air"
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "function moonsorigins:lich/rain_ritual"
+      }
+    ]
+  },
+  "block_condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:block",
+        "block": "minecraft:gold_block"
+      }
+    ]
+  },
+  "condition": {
+    "type": "origins:block_in_radius",
+    "block_condition": {
+      "type": "origins:in_tag",
+      "tag": "minecraft:candles"
+    },
+    "radius": 5,
+    "shape": "cube",
+    "comparison": ">=",
+    "compare_to": 36
+  },
+  "hidden": true
+}

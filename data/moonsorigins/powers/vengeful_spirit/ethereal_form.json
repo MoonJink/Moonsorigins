@@ -131,6 +131,19 @@
       "compare_to": 1
     }
   },
+  "invulnerability": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "operation": "multiply_total_multiplicative",
+      "value": -1
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:vengeful_spirit/ethereal_form_resource",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
 
   "shader": {
     "type": "origins:shader",

@@ -4,9 +4,6 @@
   "prevent_player_being_used": {
     "type": "origins:prevent_being_used"
   },
-  "prevent_block_place": {
-    "type": "origins:prevent_block_place"
-  },
   "prevent_block_selection": {
     "type": "origins:prevent_block_selection"
   },

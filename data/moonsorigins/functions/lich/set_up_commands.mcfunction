@@ -8,6 +8,4 @@ execute run team modify cursed color dark_purple
 execute run team add lichHealed
 execute run team modify lichHealed color aqua
 
-execute run team add lich
-execute run team join lich
-execute run team modify lich color dark_purple
+execute run tag @s add lich

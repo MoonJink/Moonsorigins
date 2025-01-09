@@ -12,7 +12,7 @@
           {
             "type": "origins:time_of_day",
             "comparison": ">=",
-            "compare_to": 13000
+            "compare_to": 12000
           },
           {
             "type": "origins:time_of_day",

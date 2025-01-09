@@ -1,0 +1,73 @@
+{
+  "type": "origins:multiple",
+
+  "night_vision": {
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:or",
+        "conditions": [
+          {
+            "type": "origins:brightness",
+            "comparison": "<=",
+            "compare_to": 0.25
+          },
+          {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:time_of_day",
+                "comparison": ">=",
+                "compare_to": 12000
+              },
+              {
+                "type": "origins:time_of_day",
+                "comparison": "<=",
+                "compare_to": 23000
+              }
+            ]
+          }
+        ]
+      },
+      "if_action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:apply_effect",
+            "effect": {
+              "effect": "minecraft:night_vision",
+              "duration": -1,
+              "amplifier": 0,
+              "show_icon": false,
+              "show_particles": false
+            }
+          },
+          {
+            "type": "origins:trigger_cooldown",
+            "power": "moonsorigins:lich/base/night_vision_cooldown"
+          }
+        ]
+      },
+      "else_action": {
+        "type": "origins:execute_command",
+        "command": "effect clear @s minecraft:night_vision"
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "moonsorigins:lich/base/night_vision_cooldown",
+      "comparison": "==",
+      "compare_to": 0
+    }
+  },
+  "cooldown": {
+    "type": "origins:cooldown",
+    "cooldown": 200,
+    "hud_render": {
+      "should_render": false
+    }
+  },
+  "hidden": true
+}
